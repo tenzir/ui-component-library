@@ -16,25 +16,25 @@ A ReasonML-first UI component library
 </h4>
 
 ## Introduction
-Most UI-Libraries for use with ReasonML have bindings to existing UI-Libraries. Wanting to be fully type-safe without outdated component bindings, leveraging things like pattern-matching along the way, we decided to build our own UI-Library, ReasonML-first. We will continuing to build on this and add components as we need them. This means components may be missing, or lack support of all the web API's needed in your specific use-case. We encourage contribution ([_Contributing Guidelines_][contributing-url]) in these cases.
+Most UI-Libraries for use with ReasonML have bindings to existing UI-Libraries. Wanting to be fully type-safe without outdated component bindings, leveraging things like pattern-matching along the way, we decided to build our own UI-Library, ReasonML-first. We will continuing to build on this and add components as we need them. This means components may be missing, or lack support of all the web API's needed in your specific use-case. We encourage contribution ([Contributing Guidelines][contributing-url]) in these cases.
 
 ### Components
 The following components are currently built.
 - Button
 - Card
 - Checkbox
-- Icons - A script generates bindings for [_React Icons_](https://github.com/react-icons/react-icons). Currently sub-set to [_Feather Icons_](https://feathericons.com/) (MIT licenced).
+- Icons - A script generates bindings for [React Icons](https://github.com/react-icons/react-icons). Currently subset to [Feather Icons](https://feathericons.com/) (MIT licenced).
 - Input
 - Textarea
 
 ## Getting Started
 ### Installation
-*Add project*
+**Add dependency:**
 ```sh
-( yarn add / npm install ) bs-tenzir-ui-components
+yarn add bs-tenzir-ui-components
 ```
 
-*Add the library to the bs-dependencies in your bsconfig.json*
+**Add the library to the `bs-dependencies` in your `bsconfig.json`:**
 ```sh
 {
   ...
@@ -45,19 +45,19 @@ The following components are currently built.
 ### Contributing / Development
 We develop the components application agnostically with the help of [_Storybook_](https://storybook.js.org/). The ReasonML code is compiled first and is then imported as plain Javascript in the Storybook stories.
 
-*Install Dependencies*
+**Install dependencies:**
 ```sh
-( yarn / npm )
+yarn
 ```
 
-*Start ReasonML compiler with file watcher*
+**Start ReasonML compiler with file-watcher:**
 ```sh
-( yarn / npm ) start 
+yarn start 
 ```
 
-*Start Storybook server (should be ran simultaniously)*
+**Start Storybook server (should be ran simultaniously):**
 ```sh
-( yarn / npm ) storybook
+yarn storybook
 ```
 
 ## License
