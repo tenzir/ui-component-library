@@ -1,4 +1,5 @@
-<h1 align="center">
+<:set colorcolumn=72
+h1 align="center">
   Tenzir UI Component Library
 </h1>
 <h4 align="center">
@@ -16,14 +17,22 @@ A ReasonML-first UI component library
 </h4>
 
 ## Introduction
-Most UI-Libraries for use with ReasonML have bindings to existing UI-Libraries. Wanting to be fully type-safe without outdated component bindings, leveraging things like pattern-matching along the way, we decided to build our own UI-Library, ReasonML-first. We will continuing to build on this and add components as we need them. This means components may be missing, or lack support of all the web API's needed in your specific use-case. We encourage contribution ([Contributing Guidelines][contributing-url]) in these cases.
+Most UI-Libraries for use with ReasonML have bindings to existing UI-Libraries.
+Wanting to be fully type-safe without outdated component bindings, leveraging 
+things like pattern-matching along the way, we decided to build our own 
+UI-Library, ReasonML-first. We will continuing to build on this and add 
+components as we need them. This means components may be missing, or lack 
+support of all the web API's needed in your specific use-case. We encourage 
+contribution ([Contributing Guidelines][contributing-url]) in these cases.
 
 ### Components
 The following components are currently built.
 - Button
 - Card
 - Checkbox
-- Icons - A script generates bindings for [React Icons](https://github.com/react-icons/react-icons). Currently subset to [Feather Icons](https://feathericons.com/) (MIT licenced).
+- Icons - A script generates bindings for 
+- [React Icons](https://github.com/react-icons/react-icons). Currently subset 
+- to [Feather Icons](https://feathericons.com/) (MIT licenced).
 - Input
 - Textarea
 
@@ -43,7 +52,9 @@ yarn add bs-tenzir-ui-components
 ```
 
 ### Contributing / Development
-We develop the components application agnostically with the help of [_Storybook_](https://storybook.js.org/). The ReasonML code is compiled first and is then imported as plain Javascript in the Storybook stories.
+We develop the components application agnostically with the help of 
+[_Storybook_](https://storybook.js.org/). The ReasonML code is compiled first 
+and is then imported as plain Javascript in the Storybook stories.
 
 **Install dependencies:**
 ```sh
@@ -62,7 +73,6 @@ yarn storybook
 
 ## License
 Tenzir UI-Component Library comes with a [3-clause BSD license][license-url].
-
 
 [contributing-url]: https://github.com/tenzir/.github/blob/master/contributing.md
 [latest-release-badge]: https://img.shields.io/github/commits-since/tenzir/ui-components/latest.svg?color=green
