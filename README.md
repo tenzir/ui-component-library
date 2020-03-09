@@ -1,5 +1,4 @@
-<:set colorcolumn=72
-h1 align="center">
+<h1 align="center">
   Tenzir UI Component Library
 </h1>
 <h4 align="center">
@@ -20,7 +19,7 @@ A ReasonML-first UI component library
 Most UI-Libraries for use with ReasonML have bindings to existing UI-Libraries.
 Wanting to be fully type-safe without outdated component bindings, leveraging 
 things like pattern-matching along the way, we decided to build our own 
-UI-Library, ReasonML-first. We will continuing to build on this and add 
+UI-Library, ReasonML-first. We will continually build on this and add 
 components as we need them. This means components may be missing, or lack 
 support of all the web API's needed in your specific use-case. We encourage 
 contribution ([Contributing Guidelines][contributing-url]) in these cases.
@@ -30,9 +29,10 @@ The following components are currently built.
 - Button
 - Card
 - Checkbox
-- Icons - A script generates bindings for 
-- [React Icons](https://github.com/react-icons/react-icons). Currently subset 
-- to [Feather Icons](https://feathericons.com/) (MIT licenced).
+- Icons - A script generates bindings for [React 
+  Icons](https://github.com/react-icons/react-icons). We currently generate
+  bindings to a subset that includes just the [Feather 
+  Icons](https://feathericons.com/) (MIT licensed).
 - Input
 - Textarea
 
