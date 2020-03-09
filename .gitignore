@@ -1,0 +1,19 @@
+# -- general -------------------------------------------------------------------
+.DS_Store
+.*sw?
+.cache
+
+# -- general -------------------------------------------------------------------
+
+.merlin
+.bsb.lock
+*.bs.js
+
+npm-debug.log
+yarn-error.log
+/lib/
+/storybook-static/
+/node_modules/
+/src/node_modules/
+/bundleOutput/
+/build/
