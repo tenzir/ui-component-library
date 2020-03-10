@@ -1,2511 +1,3348 @@
 module Activity = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiActivity";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiActivity";
 };
 module Airplay = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAirplay";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAirplay";
 };
 module AlertCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlertCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlertCircle";
 };
 module AlertOctagon = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlertOctagon";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlertOctagon";
 };
 module AlertTriangle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlertTriangle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlertTriangle";
 };
 module AlignCenter = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlignCenter";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlignCenter";
 };
 module AlignJustify = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlignJustify";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlignJustify";
 };
 module AlignLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlignLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlignLeft";
 };
 module AlignRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAlignRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAlignRight";
 };
 module Anchor = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAnchor";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAnchor";
 };
 module Aperture = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAperture";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAperture";
 };
 module Archive = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArchive";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArchive";
 };
 module ArrowDownCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowDownCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowDownCircle";
 };
 module ArrowDownLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowDownLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowDownLeft";
 };
 module ArrowDownRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowDownRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowDownRight";
 };
 module ArrowDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowDown";
 };
 module ArrowLeftCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowLeftCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowLeftCircle";
 };
 module ArrowLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowLeft";
 };
 module ArrowRightCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowRightCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowRightCircle";
 };
 module ArrowRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowRight";
 };
 module ArrowUpCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowUpCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowUpCircle";
 };
 module ArrowUpLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowUpLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowUpLeft";
 };
 module ArrowUpRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowUpRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowUpRight";
 };
 module ArrowUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiArrowUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiArrowUp";
 };
 module AtSign = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAtSign";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAtSign";
 };
 module Award = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiAward";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiAward";
 };
 module BarChart2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBarChart2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBarChart2";
 };
 module BarChart = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBarChart";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBarChart";
 };
 module BatteryCharging = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBatteryCharging";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBatteryCharging";
 };
 module Battery = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBattery";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBattery";
 };
 module BellOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBellOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBellOff";
 };
 module Bell = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBell";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBell";
 };
 module Bluetooth = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBluetooth";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBluetooth";
 };
 module Bold = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBold";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBold";
 };
 module BookOpen = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBookOpen";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBookOpen";
 };
 module Book = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBook";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBook";
 };
 module Bookmark = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBookmark";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBookmark";
 };
 module Box = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBox";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBox";
 };
 module Briefcase = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiBriefcase";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiBriefcase";
 };
 module Calendar = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCalendar";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCalendar";
 };
 module CameraOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCameraOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCameraOff";
 };
 module Camera = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCamera";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCamera";
 };
 module Cast = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCast";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCast";
 };
 module CheckCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCheckCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCheckCircle";
 };
 module CheckSquare = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCheckSquare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCheckSquare";
 };
 module Check = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCheck";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCheck";
 };
 module ChevronDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronDown";
 };
 module ChevronLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronLeft";
 };
 module ChevronRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronRight";
 };
 module ChevronUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronUp";
 };
 module ChevronsDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronsDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronsDown";
 };
 module ChevronsLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronsLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronsLeft";
 };
 module ChevronsRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronsRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronsRight";
 };
 module ChevronsUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChevronsUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChevronsUp";
 };
 module Chrome = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiChrome";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiChrome";
 };
 module Circle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCircle";
 };
 module Clipboard = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiClipboard";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiClipboard";
 };
 module Clock = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiClock";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiClock";
 };
 module CloudDrizzle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCloudDrizzle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCloudDrizzle";
 };
 module CloudLightning = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCloudLightning";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCloudLightning";
 };
 module CloudOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCloudOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCloudOff";
 };
 module CloudRain = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCloudRain";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCloudRain";
 };
 module CloudSnow = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCloudSnow";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCloudSnow";
 };
 module Cloud = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCloud";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCloud";
 };
 module Code = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCode";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCode";
 };
 module Codepen = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCodepen";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCodepen";
 };
 module Codesandbox = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCodesandbox";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCodesandbox";
 };
 module Coffee = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCoffee";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCoffee";
 };
 module Columns = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiColumns";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiColumns";
 };
 module Command = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCommand";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCommand";
 };
 module Compass = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCompass";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCompass";
 };
 module Copy = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCopy";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCopy";
 };
 module CornerDownLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerDownLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerDownLeft";
 };
 module CornerDownRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerDownRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerDownRight";
 };
 module CornerLeftDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerLeftDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerLeftDown";
 };
 module CornerLeftUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerLeftUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerLeftUp";
 };
 module CornerRightDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerRightDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerRightDown";
 };
 module CornerRightUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerRightUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerRightUp";
 };
 module CornerUpLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerUpLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerUpLeft";
 };
 module CornerUpRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCornerUpRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCornerUpRight";
 };
 module Cpu = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCpu";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCpu";
 };
 module CreditCard = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCreditCard";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCreditCard";
 };
 module Crop = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCrop";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCrop";
 };
 module Crosshair = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiCrosshair";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiCrosshair";
 };
 module Database = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDatabase";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDatabase";
 };
 module Delete = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDelete";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDelete";
 };
 module Disc = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDisc";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDisc";
 };
 module DollarSign = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDollarSign";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDollarSign";
 };
 module DownloadCloud = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDownloadCloud";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDownloadCloud";
 };
 module Download = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDownload";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDownload";
 };
 module Droplet = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiDroplet";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiDroplet";
 };
 module Edit2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiEdit2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiEdit2";
 };
 module Edit3 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiEdit3";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiEdit3";
 };
 module Edit = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiEdit";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiEdit";
 };
 module ExternalLink = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiExternalLink";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiExternalLink";
 };
 module EyeOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiEyeOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiEyeOff";
 };
 module Eye = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiEye";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiEye";
 };
 module Facebook = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFacebook";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFacebook";
 };
 module FastForward = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFastForward";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFastForward";
 };
 module Feather = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFeather";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFeather";
 };
 module Figma = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFigma";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFigma";
 };
 module FileMinus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFileMinus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFileMinus";
 };
 module FilePlus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFilePlus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFilePlus";
 };
 module FileText = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFileText";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFileText";
 };
 module File = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFile";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFile";
 };
 module Film = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFilm";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFilm";
 };
 module Filter = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFilter";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFilter";
 };
 module Flag = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFlag";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFlag";
 };
 module FolderMinus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFolderMinus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFolderMinus";
 };
 module FolderPlus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFolderPlus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFolderPlus";
 };
 module Folder = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFolder";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFolder";
 };
 module Frown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiFrown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiFrown";
 };
 module Gift = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGift";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGift";
 };
 module GitBranch = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGitBranch";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGitBranch";
 };
 module GitCommit = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGitCommit";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGitCommit";
 };
 module GitMerge = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGitMerge";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGitMerge";
 };
 module GitPullRequest = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGitPullRequest";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGitPullRequest";
 };
 module Github = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGithub";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGithub";
 };
 module Gitlab = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGitlab";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGitlab";
 };
 module Globe = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGlobe";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGlobe";
 };
 module Grid = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiGrid";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiGrid";
 };
 module HardDrive = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHardDrive";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHardDrive";
 };
 module Hash = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHash";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHash";
 };
 module Headphones = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHeadphones";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHeadphones";
 };
 module Heart = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHeart";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHeart";
 };
 module HelpCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHelpCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHelpCircle";
 };
 module Hexagon = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHexagon";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHexagon";
 };
 module Home = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiHome";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiHome";
 };
 module Image = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiImage";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiImage";
 };
 module Inbox = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiInbox";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiInbox";
 };
 module Info = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiInfo";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiInfo";
 };
 module Instagram = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiInstagram";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiInstagram";
 };
 module Italic = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiItalic";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiItalic";
 };
 module Key = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiKey";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiKey";
 };
 module Layers = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLayers";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLayers";
 };
 module Layout = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLayout";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLayout";
 };
 module LifeBuoy = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLifeBuoy";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLifeBuoy";
 };
 module Link2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLink2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLink2";
 };
 module Link = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLink";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLink";
 };
 module Linkedin = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLinkedin";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLinkedin";
 };
 module List = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiList";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiList";
 };
 module Loader = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLoader";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLoader";
 };
 module Lock = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLock";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLock";
 };
 module LogIn = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLogIn";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLogIn";
 };
 module LogOut = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiLogOut";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiLogOut";
 };
 module Mail = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMail";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMail";
 };
 module MapPin = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMapPin";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMapPin";
 };
 module Map = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMap";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMap";
 };
 module Maximize2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMaximize2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMaximize2";
 };
 module Maximize = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMaximize";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMaximize";
 };
 module Meh = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMeh";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMeh";
 };
 module Menu = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMenu";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMenu";
 };
 module MessageCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMessageCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMessageCircle";
 };
 module MessageSquare = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMessageSquare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMessageSquare";
 };
 module MicOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMicOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMicOff";
 };
 module Mic = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMic";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMic";
 };
 module Minimize2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMinimize2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMinimize2";
 };
 module Minimize = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMinimize";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMinimize";
 };
 module MinusCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMinusCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMinusCircle";
 };
 module MinusSquare = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMinusSquare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMinusSquare";
 };
 module Minus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMinus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMinus";
 };
 module Monitor = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMonitor";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMonitor";
 };
 module Moon = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMoon";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMoon";
 };
 module MoreHorizontal = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMoreHorizontal";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMoreHorizontal";
 };
 module MoreVertical = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMoreVertical";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMoreVertical";
 };
 module MousePointer = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMousePointer";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMousePointer";
 };
 module Move = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMove";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMove";
 };
 module Music = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiMusic";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiMusic";
 };
 module Navigation2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiNavigation2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiNavigation2";
 };
 module Navigation = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiNavigation";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiNavigation";
 };
 module Octagon = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiOctagon";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiOctagon";
 };
 module Package = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPackage";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPackage";
 };
 module Paperclip = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPaperclip";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPaperclip";
 };
 module PauseCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPauseCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPauseCircle";
 };
 module Pause = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPause";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPause";
 };
 module PenTool = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPenTool";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPenTool";
 };
 module Percent = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPercent";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPercent";
 };
 module PhoneCall = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhoneCall";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhoneCall";
 };
 module PhoneForwarded = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhoneForwarded";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhoneForwarded";
 };
 module PhoneIncoming = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhoneIncoming";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhoneIncoming";
 };
 module PhoneMissed = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhoneMissed";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhoneMissed";
 };
 module PhoneOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhoneOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhoneOff";
 };
 module PhoneOutgoing = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhoneOutgoing";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhoneOutgoing";
 };
 module Phone = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPhone";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPhone";
 };
 module PieChart = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPieChart";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPieChart";
 };
 module PlayCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPlayCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPlayCircle";
 };
 module Play = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPlay";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPlay";
 };
 module PlusCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPlusCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPlusCircle";
 };
 module PlusSquare = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPlusSquare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPlusSquare";
 };
 module Plus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPlus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPlus";
 };
 module Pocket = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPocket";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPocket";
 };
 module Power = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPower";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPower";
 };
 module Printer = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiPrinter";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiPrinter";
 };
 module Radio = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRadio";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRadio";
 };
 module RefreshCcw = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRefreshCcw";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRefreshCcw";
 };
 module RefreshCw = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRefreshCw";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRefreshCw";
 };
 module Repeat = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRepeat";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRepeat";
 };
 module Rewind = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRewind";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRewind";
 };
 module RotateCcw = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRotateCcw";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRotateCcw";
 };
 module RotateCw = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRotateCw";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRotateCw";
 };
 module Rss = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiRss";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiRss";
 };
 module Save = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSave";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSave";
 };
 module Scissors = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiScissors";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiScissors";
 };
 module Search = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSearch";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSearch";
 };
 module Send = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSend";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSend";
 };
 module Server = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiServer";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiServer";
 };
 module Settings = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSettings";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSettings";
 };
 module Share2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShare2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShare2";
 };
 module Share = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShare";
 };
 module ShieldOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShieldOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShieldOff";
 };
 module Shield = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShield";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShield";
 };
 module ShoppingBag = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShoppingBag";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShoppingBag";
 };
 module ShoppingCart = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShoppingCart";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShoppingCart";
 };
 module Shuffle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiShuffle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiShuffle";
 };
 module Sidebar = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSidebar";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSidebar";
 };
 module SkipBack = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSkipBack";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSkipBack";
 };
 module SkipForward = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSkipForward";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSkipForward";
 };
 module Slack = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSlack";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSlack";
 };
 module Slash = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSlash";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSlash";
 };
 module Sliders = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSliders";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSliders";
 };
 module Smartphone = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSmartphone";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSmartphone";
 };
 module Smile = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSmile";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSmile";
 };
 module Speaker = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSpeaker";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSpeaker";
 };
 module Square = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSquare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSquare";
 };
 module Star = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiStar";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiStar";
 };
 module StopCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiStopCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiStopCircle";
 };
 module Sun = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSun";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSun";
 };
 module Sunrise = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSunrise";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSunrise";
 };
 module Sunset = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiSunset";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiSunset";
 };
 module Tablet = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTablet";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTablet";
 };
 module Tag = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTag";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTag";
 };
 module Target = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTarget";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTarget";
 };
 module Terminal = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTerminal";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTerminal";
 };
 module Thermometer = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiThermometer";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiThermometer";
 };
 module ThumbsDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiThumbsDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiThumbsDown";
 };
 module ThumbsUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiThumbsUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiThumbsUp";
 };
 module ToggleLeft = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiToggleLeft";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiToggleLeft";
 };
 module ToggleRight = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiToggleRight";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiToggleRight";
 };
 module Trash2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTrash2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTrash2";
 };
 module Trash = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTrash";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTrash";
 };
 module Trello = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTrello";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTrello";
 };
 module TrendingDown = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTrendingDown";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTrendingDown";
 };
 module TrendingUp = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTrendingUp";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTrendingUp";
 };
 module Triangle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTriangle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTriangle";
 };
 module Truck = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTruck";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTruck";
 };
 module Tv = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTv";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTv";
 };
 module Twitter = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiTwitter";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiTwitter";
 };
 module Type = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiType";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiType";
 };
 module Umbrella = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUmbrella";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUmbrella";
 };
 module Underline = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUnderline";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUnderline";
 };
 module Unlock = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUnlock";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUnlock";
 };
 module UploadCloud = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUploadCloud";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUploadCloud";
 };
 module Upload = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUpload";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUpload";
 };
 module UserCheck = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUserCheck";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUserCheck";
 };
 module UserMinus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUserMinus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUserMinus";
 };
 module UserPlus = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUserPlus";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUserPlus";
 };
 module UserX = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUserX";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUserX";
 };
 module User = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUser";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUser";
 };
 module Users = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiUsers";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiUsers";
 };
 module VideoOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVideoOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVideoOff";
 };
 module Video = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVideo";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVideo";
 };
 module Voicemail = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVoicemail";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVoicemail";
 };
 module Volume1 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVolume1";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVolume1";
 };
 module Volume2 = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVolume2";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVolume2";
 };
 module VolumeX = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVolumeX";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVolumeX";
 };
 module Volume = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiVolume";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiVolume";
 };
 module Watch = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiWatch";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiWatch";
 };
 module WifiOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiWifiOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiWifiOff";
 };
 module Wifi = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiWifi";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiWifi";
 };
 module Wind = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiWind";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiWind";
 };
 module XCircle = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiXCircle";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiXCircle";
 };
 module XOctagon = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiXOctagon";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiXOctagon";
 };
 module XSquare = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiXSquare";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiXSquare";
 };
 module X = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiX";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiX";
 };
 module Youtube = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiYoutube";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiYoutube";
 };
 module ZapOff = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiZapOff";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiZapOff";
 };
 module Zap = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiZap";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiZap";
 };
 module ZoomIn = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiZoomIn";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiZoomIn";
 };
 module ZoomOut = {
   [@bs.module "react-icons/fi"] [@react.component]
-  external make: (
-    ~className: string=?,
-    ~color: string=?,
-    ~size: int=?,
-    ~style: ReactDOMRe.Style.t=?
-  ) => React.element = "FiZoomOut";
+  external make:
+    (
+      ~className: string=?,
+      ~color: string=?,
+      ~size: int=?,
+      ~style: ReactDOMRe.Style.t=?
+    ) =>
+    React.element =
+    "FiZoomOut";
 };

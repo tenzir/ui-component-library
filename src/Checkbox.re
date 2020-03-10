@@ -15,26 +15,26 @@ let make =
     ) => {
   let identifier =
     switch (id) {
-    | (Some(idString)) => idString
-    | (None) => label
+    | Some(idString) => idString
+    | None => label
     };
 
   <div className={inputContainerStyles(~pctWidth=width, ())}>
-       <label className={labelStyles(~theme?, ~validity,())} htmlFor=identifier>
-         <input
-           onChange={
-             switch (onChange) {
-             | Some(fn) => fn
-             | None => ignore
-             }
-           }
-           id=identifier
-           type_="checkbox"
-           checked=defaultValue
-           placeholder
-           className={inputStyles(~theme?,  ())}
-         />
-         {label -> React.string}
-       </label>
+    <label className={labelStyles(~theme?, ~validity, ())} htmlFor=identifier>
+      <input
+        onChange={
+          switch (onChange) {
+          | Some(fn) => fn
+          | None => ignore
+          }
+        }
+        id=identifier
+        type_="checkbox"
+        checked=defaultValue
+        placeholder
+        className={inputStyles(~theme?, ())}
+      />
+      label->React.string
+    </label>
   </div>;
 };
