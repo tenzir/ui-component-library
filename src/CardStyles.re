@@ -21,7 +21,6 @@ let deteriminePadding = spacing => {
   };
 };
 
-
 let card = (~theme=?, ~spacing=Normal, ~depth, ~styles, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let extraStyles = Belt.Option.getWithDefault(styles, []);
@@ -29,13 +28,15 @@ let card = (~theme=?, ~spacing=Normal, ~depth, ~styles, ()) => {
     width(100.0->pct),
     height(100.0->pct),
     overflow(`hidden),
-    backgroundColor(StyleHelpers.offsetBgColor(theme, depth, colors.background)),
+    backgroundColor(
+      StyleHelpers.offsetBgColor(theme, depth, colors.background),
+    ),
     color(colors.font),
     fontFamily(Typography.family_default),
     fontWeight(Typography.weight_default),
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
     deteriminePadding(spacing),
-    ...extraStyles
+    ...extraStyles,
   ]);
 };

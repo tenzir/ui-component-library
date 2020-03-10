@@ -27,15 +27,15 @@ let inputFontColor = (colors: colors, componentState) =>
   };
 
 let inputBordercolor = (colors: colors, componentState, ~validity=Valid, ()) =>
-  switch ((componentState, validity)) {
-  | ( Base, Invalid ) => colors.danger
-  | ( Hovering, Invalid ) => StyleHelpers.lighten(25, colors.danger)
-  | ( Active, Invalid )
-  | ( Focus, Invalid ) => StyleHelpers.lighten(8, colors.danger)
-  | ( Base, Valid ) => StyleHelpers.lighten(80, colors.input)
-  | ( Hovering, Valid ) => StyleHelpers.lighten(50, colors.input)
-  | ( Active, Valid )
-  | ( Focus, Valid ) => StyleHelpers.lighten(40, colors.input)
+  switch (componentState, validity) {
+  | (Base, Invalid) => colors.danger
+  | (Hovering, Invalid) => StyleHelpers.lighten(25, colors.danger)
+  | (Active, Invalid)
+  | (Focus, Invalid) => StyleHelpers.lighten(8, colors.danger)
+  | (Base, Valid) => StyleHelpers.lighten(80, colors.input)
+  | (Hovering, Valid) => StyleHelpers.lighten(50, colors.input)
+  | (Active, Valid)
+  | (Focus, Valid) => StyleHelpers.lighten(40, colors.input)
   };
 
 let inputContainerStyles = (~pctWidth=100.0, ~labeled=false, ()) =>
@@ -53,7 +53,7 @@ let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
     width(100.0->pct),
     borderStyle(`solid),
     borderWidth(2->px),
-    borderColor( inputBordercolor(colors, Base, ~validity, ())),
+    borderColor(inputBordercolor(colors, Base, ~validity, ())),
     outlineStyle(`none),
     color(inputFontColor(colors, Base)),
     fontFamily(variant->inputFontFamily),
@@ -66,11 +66,11 @@ let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
     paddingBottom(0.6->rem),
     hover([
       color(inputFontColor(colors, Hovering)),
-      borderColor(inputBordercolor(colors, Hovering, ~validity,())),
+      borderColor(inputBordercolor(colors, Hovering, ~validity, ())),
     ]),
     focus([
       color(inputFontColor(colors, Focus)),
-      borderColor(inputBordercolor(colors, Focus , ~validity,())),
+      borderColor(inputBordercolor(colors, Focus, ~validity, ())),
     ]),
     ...Misc.baseTransitions,
   ]);

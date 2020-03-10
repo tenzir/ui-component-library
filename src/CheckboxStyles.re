@@ -3,7 +3,7 @@ open Config;
 open UiTypes;
 
 let labelFontColor = (colors: colors, componentState, ~validity=Valid, ()) =>
-  switch (( componentState, validity )) {
+  switch (componentState, validity) {
   | (Hovering, Invalid) => StyleHelpers.lighten(20, colors.danger)
   | (_, Invalid) => colors.danger
   | (Hovering, Valid) => StyleHelpers.lighten(20, colors.font)

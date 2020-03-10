@@ -59,7 +59,14 @@ let make =
       cols
       defaultValue
       placeholder
-      className={textareaStyles(~variant, ~theme?, ~resize, ~validity,  ~styles, ())}
+      className={textareaStyles(
+        ~variant,
+        ~theme?,
+        ~resize,
+        ~validity,
+        ~styles,
+        (),
+      )}
     />
   </div>;
 };

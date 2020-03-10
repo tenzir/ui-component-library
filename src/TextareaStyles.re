@@ -35,16 +35,17 @@ let textareaFontColor = (colors: colors, componentState) =>
   | _ => colors.input
   };
 
-let textareaBordercolor = (colors: colors, componentState, ~validity=Valid, ()) =>
-  switch ((componentState, validity)) {
-  | ( Base, Invalid ) => colors.danger
-  | ( Hovering, Invalid ) => StyleHelpers.lighten(25, colors.danger)
-  | ( Active, Invalid )
-  | ( Focus, Invalid ) => StyleHelpers.lighten(8, colors.danger)
-  | ( Base, Valid ) => StyleHelpers.lighten(80, colors.input)
-  | ( Hovering, Valid ) => StyleHelpers.lighten(50, colors.input)
-  | ( Active, Valid )
-  | ( Focus, Valid ) => StyleHelpers.lighten(40, colors.input)
+let textareaBordercolor =
+    (colors: colors, componentState, ~validity=Valid, ()) =>
+  switch (componentState, validity) {
+  | (Base, Invalid) => colors.danger
+  | (Hovering, Invalid) => StyleHelpers.lighten(25, colors.danger)
+  | (Active, Invalid)
+  | (Focus, Invalid) => StyleHelpers.lighten(8, colors.danger)
+  | (Base, Valid) => StyleHelpers.lighten(80, colors.input)
+  | (Hovering, Valid) => StyleHelpers.lighten(50, colors.input)
+  | (Active, Valid)
+  | (Focus, Valid) => StyleHelpers.lighten(40, colors.input)
   };
 
 let textareaResize = resize =>
@@ -66,7 +67,14 @@ let textareaContainerStyles = (~pctWidth=100.0, ~labeled=false, ()) =>
   ]);
 
 let textareaStyles =
-    (~theme=?, ~variant=Normal, ~resize as resizeType, ~validity, ~styles=[], ()) => {
+    (
+      ~theme=?,
+      ~variant=Normal,
+      ~resize as resizeType,
+      ~validity,
+      ~styles=[],
+      (),
+    ) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     resize(textareaResize(resizeType)),

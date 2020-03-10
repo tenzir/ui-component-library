@@ -1,21 +1,27 @@
 {
-  "name": "tenzir-ui-component",
-  "reason": {
-    "react-jsx": 3
-  },
-  "sources": {
-    "dir": "src",
-    "subdirs": true
-  },
-  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
-  "package-specs": [
-    {
-      "module": "es6-global",
-      "in-source": true
-    }
-  ],
-  "suffix": ".bs.js",
-  "namespace": true,
-  "bs-dependencies": ["reason-react", "bs-css"],
-  "refmt": 3
+	"name": "tenzir-ui-component",
+	"reason": {
+		"react-jsx": 3
+	},
+	"sources": [
+		{
+			"dir": "src",
+			"subdirs": true
+		},
+		{
+			"dir": "__tests__",
+			"type": "dev"
+		}
+	],
+	"bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+	"package-specs": [
+		{
+			"module": "es6-global",
+			"in-source": true
+		}
+	],
+	"suffix": ".bs.js",
+	"namespace": true,
+	"bs-dependencies": ["reason-react", "bs-css", "@glennsl/bs-jest"],
+	"refmt": 3
 }

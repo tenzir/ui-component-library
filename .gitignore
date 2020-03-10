@@ -3,17 +3,21 @@
 .*sw?
 .cache
 
-# -- general -------------------------------------------------------------------
-
+# -- bucklescript --------------------------------------------------------------
 .merlin
 .bsb.lock
 *.bs.js
-
-npm-debug.log
-yarn-error.log
 /lib/
-/storybook-static/
+
+# -- dependencies --------------------------------------------------------------
 /node_modules/
 /src/node_modules/
+
+# -- generated -----------------------------------------------------------------
+/storybook-static/
 /bundleOutput/
 /build/
+
+# -- logs ----------------------------------------------------------------------
+npm-debug.log
+yarn-error.log
