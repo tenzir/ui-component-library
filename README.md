@@ -5,6 +5,7 @@
 
 A ReasonML-first UI component library
 
+[![NPM Version][npm-badge]][npm-url]
 [![Development Status][alpha-badge]][latest-release-url]
 [![License][license-badge]][license-url]
 
@@ -74,6 +75,8 @@ yarn storybook
 ## License
 Tenzir UI-Component Library comes with a [3-clause BSD license][license-url].
 
+[npm-badge]: https://img.shields.io/npm/v/tenzir-ui-component-library
+[npm-url]: https://www.npmjs.com/package/tenzir-ui-component-library
 [contributing-url]: https://github.com/tenzir/.github/blob/master/contributing.md
 [latest-release-badge]: https://img.shields.io/github/commits-since/tenzir/ui-components/latest.svg?color=green
 [latest-release-url]: https://github.com/tenzir/ui-components/releases
