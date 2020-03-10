@@ -1,41 +1,46 @@
 {
-  "name": "tenzir-ui-components",
-  "author": "Tenzir",
-  "version": "0.1.24",
-  "scripts": {
-    "start": "bsb -make-world -w -ws _ ",
-    "clean": "bsb -clean-world",
-    "build": "bsb -make-world && yarn build-storybook",
-    "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
-  },
-  "keywords": [
-    "UI-Library",
-    "UI-Components",
-    "ReasonML",
-    "ReasonReact",
-    "Reason-React"
-  ],
-  "license": "BSD-3-Clause",
-  "dependencies": {
-    "bs-css": "^11.0.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-icons": "^3.8.0",
-    "reason-react": ">=0.7.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@storybook/addon-actions": "^5.3.8",
-    "@storybook/addon-links": "^5.3.8",
-    "@storybook/addons": "^5.3.8",
-    "@storybook/react": "^5.3.8",
-    "babel-loader": "^8.0.6",
-    "bs-platform": "^7.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "prettier": "^1.19.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.10.1"
-  }
+	"name": "tenzir-ui-components",
+	"author": "Tenzir",
+	"version": "0.1.24",
+	"scripts": {
+		"tdd": "jest --watchAll",
+		"start": "bsb -make-world -w -ws _ ",
+		"clean": "bsb -clean-world",
+		"build": "bsb -make-world && yarn build-storybook",
+		"build-storybook": "build-storybook",
+		"storybook": "start-storybook -p 6006"
+	},
+	"keywords": [
+		"UI-Library",
+		"UI-Components",
+		"ReasonML",
+		"ReasonReact",
+		"Reason-React"
+	],
+	"license": "BSD-3-Clause",
+	"dependencies": {
+		"@glennsl/bs-jest": "^0.4.10",
+		"bs-css": "^11.0.0",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-icons": "^3.8.0",
+		"reason-react": ">=0.7.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.8.3",
+		"@storybook/addon-actions": "^5.3.8",
+		"@storybook/addon-links": "^5.3.8",
+		"@storybook/addons": "^5.3.8",
+		"@storybook/react": "^5.3.8",
+		"babel-loader": "^8.0.6",
+		"bs-platform": "^7.0.1",
+		"html-webpack-plugin": "^3.2.0",
+		"prettier": "^1.19.1",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.9",
+		"webpack-dev-server": "^3.10.1"
+	},
+	"jest": {
+		"transformIgnorePatterns": [ "node_modules/(?!(@glennsl|bs-platform|bs-css)/)" ]
+	}
 }
