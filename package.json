@@ -3,12 +3,13 @@
 	"author": "Tenzir",
 	"version": "0.1.24",
 	"scripts": {
-		"tdd": "jest --watchAll",
-		"start": "bsb -make-world -w -ws _ ",
-		"clean": "bsb -clean-world",
 		"build": "bsb -make-world && yarn build-storybook",
 		"build-storybook": "build-storybook",
-		"storybook": "start-storybook -p 6006"
+		"clean": "bsb -clean-world",
+		"start": "bsb -make-world -w -ws _ ",
+		"storybook": "start-storybook -p 6006",
+		"test": "jest",
+		"tdd": "jest --watchAll"
 	},
 	"keywords": [
 		"UI-Library",
