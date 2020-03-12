@@ -22,12 +22,7 @@ let make =
   <div className={inputContainerStyles(~pctWidth=width, ())}>
     <label className={labelStyles(~theme?, ~validity, ())} htmlFor=identifier>
       <input
-        onChange={
-          switch (onChange) {
-          | Some(fn) => fn
-          | None => ignore
-          }
-        }
+        onChange={GenericHelpers.optionFn(onChange)}
         id=identifier
         type_="checkbox"
         checked=defaultValue

@@ -6,7 +6,7 @@ let make =
     (
       ~_type="text",
       ~defaultValue="",
-      ~label=?,
+      ~label=Unlabeled,
       ~id=?,
       ~validity=Valid,
       ~variant=Normal,
@@ -16,41 +16,13 @@ let make =
       ~onChange=?,
       ~onBlur=?,
     ) => {
-  let identifier =
-    switch (id, label) {
-    | (Some(idString), _) => idString
-    | (None, Some(labelString)) => labelString
-    | (None, None) => ""
-    };
+  let identifier = GenericHelpers.genIdentifier(id, label);
 
-  let labeled =
-    switch (label) {
-    | Some(_) => true
-    | None => false
-    };
-
-  <div className={inputContainerStyles(~pctWidth=width, ~labeled, ())}>
-    {switch (label) {
-     | Some(labelString) =>
-       <label
-         className={labelStyles(~variant, ~theme?, ())} htmlFor=identifier>
-         {React.string(labelString)}
-       </label>
-     | None => React.string("")
-     }}
+  <div className={inputContainerStyles(~pctWidth=width, ~label, ())}>
+    <Label label identifier variant theme />
     <input
-      onBlur={
-        switch (onBlur) {
-        | Some(fn) => fn
-        | None => ignore
-        }
-      }
-      onChange={
-        switch (onChange) {
-        | Some(fn) => fn
-        | None => ignore
-        }
-      }
+      onBlur={GenericHelpers.optionFn(onBlur)}
+      onChange={GenericHelpers.optionFn(onChange)}
       id=identifier
       type_=_type
       defaultValue

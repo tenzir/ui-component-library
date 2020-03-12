@@ -1,7 +1,15 @@
 import React from "react";
 import { make as Textarea } from "../src/Textarea.bs.js";
 import { make as Card } from "../src/Card.bs.js";
-import { light, dark, normal, mono, valid, invalid } from "../src/UiTypes.bs";
+import {
+  labeled,
+  light,
+  dark,
+  normal,
+  mono,
+  valid,
+  invalid
+} from "../src/UiTypes.bs";
 import { horizontal, vertical, both } from "../src/TextareaStyles.bs.js";
 import { tiny, huge } from "../src/CardStyles.bs";
 
@@ -20,7 +28,12 @@ export const textarea = () => {
         <h3>Full Width</h3>
         <div style={margin}>
           <Card theme={dark}>
-            <Textarea theme={dark} variant={normal} placeholder="test" />
+            <Textarea
+              onBlur={e => console.log(e)}
+              theme={dark}
+              variant={normal}
+              placeholder="test"
+            />
           </Card>
           <Card theme={dark}>
             <Textarea
@@ -82,13 +95,13 @@ export const withLabel = () => {
         <Card theme={dark} spacing={tiny}>
           <div style={margin}>
             <Textarea
-              label="Label Dark 01"
+              label={labeled("Label Dark 01")}
               width={50.0}
               theme={dark}
               variant={normal}
             />
             <Textarea
-              label="Label Dark 02"
+              label={labeled("Label Dark 02")}
               width={50.0}
               theme={dark}
               variant={normal}
@@ -100,13 +113,13 @@ export const withLabel = () => {
         <Card theme={light} spacing={tiny}>
           <div style={margin}>
             <Textarea
-              label="Label Light 01"
+              label={labeled("Label Light 01")}
               width={50.0}
               theme={light}
               variant={normal}
             />
             <Textarea
-              label="Label Light 02"
+              label={labeled("Label Light 02")}
               width={50.0}
               theme={light}
               variant={normal}
@@ -126,13 +139,13 @@ export const normalAndMono = () => {
         <Card theme={dark} spacing={tiny}>
           <div style={margin}>
             <Textarea
-              label="Normal Label Dark 01"
+              label={labeled("Normal Label Dark 01")}
               width={50.0}
               theme={dark}
               variant={normal}
             />
             <Textarea
-              label="Normal Label Dark 02"
+              label={labeled("Normal Label Dark 02")}
               width={50.0}
               theme={dark}
               variant={normal}
@@ -145,13 +158,13 @@ export const normalAndMono = () => {
         <Card theme={light} spacing={tiny}>
           <div style={margin}>
             <Textarea
-              label="Normal Label Light 01"
+              label={labeled("Normal Label Light 01")}
               width={50.0}
               theme={light}
               variant={normal}
             />
             <Textarea
-              label="Normal Label Light 02"
+              label={labeled("Normal Label Light 02")}
               width={50.0}
               theme={light}
               variant={normal}
@@ -165,13 +178,13 @@ export const normalAndMono = () => {
         <Card theme={dark} spacing={tiny}>
           <div style={margin}>
             <Textarea
-              label="Mono Label Dark 01"
+              label={labeled("Mono Label Dark 01")}
               width={50.0}
               theme={dark}
               variant={mono}
             />
             <Textarea
-              label="Mono Label Dark 02"
+              label={labeled("Mono Label Dark 02")}
               width={50.0}
               theme={dark}
               variant={mono}
@@ -184,13 +197,13 @@ export const normalAndMono = () => {
         <Card theme={light} spacing={tiny}>
           <div style={margin}>
             <Textarea
-              label="Mono Label Light 01"
+              label={labeled("Mono Label Light 01")}
               width={50.0}
               theme={light}
               variant={mono}
             />
             <Textarea
-              label="Mono Label Light 02"
+              label={labeled("Mono Label Light 02")}
               width={50.0}
               theme={light}
               variant={mono}

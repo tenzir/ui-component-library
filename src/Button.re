@@ -11,12 +11,7 @@ let make =
       ~children,
     ) =>
   <button
-    onClick={
-      switch (onClick) {
-      | Some(fn) => fn
-      | None => ignore
-      }
-    }
+    onClick={GenericHelpers.optionFn(onClick)}
     type_
     disabled
     className={button(~variant, ~theme?, ())}>

@@ -35,3 +35,16 @@ describe("operatePercent", () => {
   test("Subtract", () =>
     expect(GenericHelpers.operatePercent(percentage, UiTypes.Subtract, baseValue)) |> toBe(25))
 });
+
+describe("genIdentifier", () => {
+  open UiTypes;
+
+  test("Opt id over label", () =>
+    expect(GenericHelpers.genIdentifier(Some("id"), Labeled("label"))) |> toBe("id"))
+
+  test("Fall back to label if no id", () =>
+    expect(GenericHelpers.genIdentifier(None, Labeled("label"))) |> toBe("label"))
+
+  test("Fall back to empty string if no id and no label", () =>
+    expect(GenericHelpers.genIdentifier(None, Unlabeled)) |> toBe(""))
+});

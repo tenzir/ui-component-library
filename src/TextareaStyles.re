@@ -58,10 +58,15 @@ let textareaResize = resize =>
   | Inherit => `inherit_
   };
 
-let textareaContainerStyles = (~pctWidth=100.0, ~labeled=false, ()) =>
+let textareaContainerStyles = (~pctWidth=100.0, ~label=Unlabeled, ()) =>
   style([
     width(pctWidth->pct),
-    paddingTop(labeled ? 0.7->rem : 0.0->rem),
+    paddingTop(
+      switch (label) {
+      | Labeled(_) => 0.7->rem
+      | Unlabeled => 0.0->rem
+      },
+    ),
     display(`inlineBlock),
     position(`relative),
   ]);
