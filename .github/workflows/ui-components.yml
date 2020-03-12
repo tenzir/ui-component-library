@@ -5,13 +5,15 @@ on:
     - master
   pull_request:
     types: [opened, synchronize]
+  release:
+    types: published
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
 
@@ -23,3 +25,25 @@ jobs:
 
     - name: Run Tests
       run: yarn test
+
+  npm-release:
+    name: NPM Release
+    runs-on: ubuntu-latest
+    if: github.event.action == 'published'
+    needs: build
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v1
+        with:
+          always-auth: true
+          registry-url: "https://registry.npmjs.org"
+
+      - env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          yarn publish
