@@ -1,5 +1,5 @@
 {
-	"name": "tenzir-ui-component",
+	"name": "tenzir-ui-component-library",
 	"reason": {
 		"react-jsx": 3
 	},
@@ -22,6 +22,7 @@
 	],
 	"suffix": ".bs.js",
 	"namespace": true,
-	"bs-dependencies": ["reason-react", "bs-css", "@glennsl/bs-jest"],
+	"bs-dependencies": ["reason-react", "bs-css"],
+	"bs-dev-dependencies": ["@glennsl/bs-jest"],
 	"refmt": 3
 }

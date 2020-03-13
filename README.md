@@ -49,7 +49,7 @@ yarn add bs-tenzir-ui-components
 ```sh
 {
   ...
-  "bs-dependencies": ["bs-tenzir-ui-components"]
+  "bs-dependencies": ["tenzir-ui-component-library"]
 }
 ```
 

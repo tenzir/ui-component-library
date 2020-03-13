@@ -113,9 +113,7 @@ let button = (~theme=?, ~variant, ()) => {
   ]);
 };
 
-let icon = () => {
-  style([backgroundColor(`rgb((0, 0, 0)))]);
-};
+let icon = () => style([backgroundColor(`rgb((0, 0, 0)))]);
 
 let buttonGroup =
   style([

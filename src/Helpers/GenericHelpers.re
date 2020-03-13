@@ -22,3 +22,27 @@ let operatePercent = (percentage, operation, value) => {
   | Subtract => value - amount
   };
 };
+
+/*
+ * When not providing an id for inputs with labels, we would still need to generate one.
+ * We do this by re-using the labelstring in this case. There could be duplicates but this
+ * will be caught by React and give a console output error. However, in 90% of the cases,
+ * falling back to the label string will be just fine.
+ */
+let genIdentifier = (id, label) =>
+  switch (id, label) {
+  | (Some(idString), _) => idString
+  | (None, Labeled(labelString)) => labelString
+  | (None, Unlabeled) => ""
+  };
+
+/*
+ * When adding events like 'onBlur' or 'onChange', we would want the input to be of an optional value.
+ * This could possibly entail adding a function like the one below in every single place. Hence, this abstraction.
+ */
+type optionFn('a, 'b) = (option('a => 'b), 'a) => 'b;
+let optionFn = optionalFunction =>
+  switch (optionalFunction) {
+  | Some(fn) => fn
+  | None => ignore
+  };

@@ -24,6 +24,11 @@ type changeTypes =
   | Darken;
 
 [@bs.deriving accessors]
+type labels =
+  | Labeled(string)
+  | Unlabeled;
+
+[@bs.deriving accessors]
 type validation =
   | Valid
   | Invalid;

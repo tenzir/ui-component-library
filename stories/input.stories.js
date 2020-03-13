@@ -1,7 +1,15 @@
 import React from "react";
 import { make as Input } from "../src/Input.bs.js";
 import { make as Card } from "../src/Card.bs.js";
-import { light, dark, normal, mono, valid, invalid } from "../src/UiTypes.bs";
+import {
+  labeled,
+  light,
+  dark,
+  normal,
+  mono,
+  valid,
+  invalid
+} from "../src/UiTypes.bs";
 import { tiny, huge } from "../src/CardStyles.bs";
 
 export default {
@@ -134,13 +142,13 @@ export const withLabel = () => {
         <Card theme={dark} spacing={tiny}>
           <div style={margin}>
             <Input
-              label="Label Dark 01"
+              label={labeled("Label Dark 01")}
               width={50.0}
               theme={dark}
               variant={normal}
             />
             <Input
-              label="Label Dark 02"
+              label={labeled("Label Dark 02")}
               width={50.0}
               theme={dark}
               variant={normal}
@@ -152,13 +160,13 @@ export const withLabel = () => {
         <Card theme={light} spacing={tiny}>
           <div style={margin}>
             <Input
-              label="Label Light 01"
+              label={labeled("Label Light 01")}
               width={50.0}
               theme={light}
               variant={normal}
             />
             <Input
-              label="Label Light 02"
+              label={labeled("Label Light 02")}
               width={50.0}
               theme={light}
               variant={normal}
@@ -178,13 +186,13 @@ export const normalAndMono = () => {
         <Card theme={dark} spacing={tiny}>
           <div style={margin}>
             <Input
-              label="Normal Label Dark 01"
+              label={labeled("Normal Label Dark 01")}
               width={50.0}
               theme={dark}
               variant={normal}
             />
             <Input
-              label="Normal Label Dark 02"
+              label={labeled("Normal Label Dark 02")}
               width={50.0}
               theme={dark}
               variant={normal}
@@ -197,13 +205,13 @@ export const normalAndMono = () => {
         <Card theme={light} spacing={tiny}>
           <div style={margin}>
             <Input
-              label="Normal Label Light 01"
+              label={labeled("Normal Label Light 01")}
               width={50.0}
               theme={light}
               variant={normal}
             />
             <Input
-              label="Normal Label Light 02"
+              label={labeled("Normal Label Light 02")}
               width={50.0}
               theme={light}
               variant={normal}
@@ -217,13 +225,13 @@ export const normalAndMono = () => {
         <Card theme={dark} spacing={tiny}>
           <div style={margin}>
             <Input
-              label="Mono Label Dark 01"
+              label={labeled("Mono Label Dark 01")}
               width={50.0}
               theme={dark}
               variant={mono}
             />
             <Input
-              label="Mono Label Dark 02"
+              label={labeled("Mono Label Dark 02")}
               width={50.0}
               theme={dark}
               variant={mono}
@@ -236,13 +244,13 @@ export const normalAndMono = () => {
         <Card theme={light} spacing={tiny}>
           <div style={margin}>
             <Input
-              label="Mono Label Light 01"
+              label={labeled("Mono Label Light 01")}
               width={50.0}
               theme={light}
               variant={mono}
             />
             <Input
-              label="Mono Label Light 02"
+              label={labeled("Mono Label Light 02")}
               width={50.0}
               theme={light}
               variant={mono}

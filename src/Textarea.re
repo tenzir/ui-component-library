@@ -5,7 +5,7 @@ open TextareaStyles;
 let make =
     (
       ~defaultValue="",
-      ~label=?,
+      ~label=Unlabeled,
       ~id=?,
       ~variant=Normal,
       ~validity=Valid,
@@ -19,54 +19,21 @@ let make =
       ~rows=4,
       ~cols=50,
     ) => {
-  let identifier =
-    switch (id, label) {
-    | (Some(idString), _) => idString
-    | (None, Some(labelString)) => labelString
-    | (None, None) => ""
-    };
+  let identifier = GenericHelpers.genIdentifier(id, label);
 
-  let labeled =
-    switch (label) {
-    | Some(_) => true
-    | None => false
-    };
-
-  <div className={textareaContainerStyles(~pctWidth=width, ~labeled, ())}>
-    {switch (label) {
-     | Some(labelString) =>
-       <label
-         className={labelStyles(~variant, ~theme?, ())} htmlFor=identifier>
-         {React.string(labelString)}
-       </label>
-     | None => React.string("")
-     }}
+  <div className={textareaContainerStyles(~pctWidth=width, ~label, ())}>
+    <Label label identifier variant theme />
     <textarea
-      onBlur={
-        switch (onBlur) {
-        | Some(fn) => fn
-        | None => ignore
-        }
-      }
-      onChange={
-        switch (onChange) {
-        | Some(fn) => fn
-        | None => ignore
-        }
-      }
+      onBlur={GenericHelpers.optionFn(onBlur)}
+      onChange={GenericHelpers.optionFn(onChange)}
       id=identifier
       rows
       cols
       defaultValue
       placeholder
-      className={textareaStyles(
-        ~variant,
-        ~theme?,
-        ~resize,
-        ~validity,
-        ~styles,
-        (),
-      )}
+      className={
+        textareaStyles(~variant, ~theme?, ~resize, ~validity, ~styles, ())
+      }
     />
   </div>;
 };
