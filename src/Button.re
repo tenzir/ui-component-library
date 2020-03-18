@@ -1,12 +1,11 @@
-open ButtonStyles;
-
 [@react.component]
 let make =
     (
       ~disabled=false,
       ~type_="button",
-      ~variant=Primary,
+      ~variant=ButtonStyles.Primary,
       ~theme=?,
+      ~icon=?,
       ~onClick=?,
       ~children,
     ) =>
@@ -14,11 +13,16 @@ let make =
     onClick={GenericHelpers.optionFn(onClick)}
     type_
     disabled
-    className={button(~variant, ~theme?, ())}>
+    className={ButtonStyles.button(~variant, ~theme?, icon, ())}>
+    {switch (icon) {
+     | Some(icon) => <span className=ButtonStyles.icon> icon </span>
+     | None => <Empty />
+     }}
     children
   </button>;
 
 module Group = {
   [@react.component]
-  let make = (~children) => <div className=buttonGroup> children </div>;
+  let make = (~children) =>
+    <div className=ButtonStyles.buttonGroup> children </div>;
 };

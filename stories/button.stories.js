@@ -1,5 +1,6 @@
 import React from "react";
 import { make as Button, Group } from "../src/Button.bs.js";
+import { FiActivity as Activity } from "react-icons/fi";
 import { make as Card } from "../src/Card.bs.js";
 import { light, dark } from "../src/UiTypes.bs";
 import {
@@ -87,6 +88,39 @@ export const Buttons = () => {
       </div>
 
       <div style={margin}>
+        <h3>With Icons</h3>
+        <div style={margin}>
+          <Card theme={dark}>
+            <span style={margin}>
+              <Button icon={<Activity />} theme={light} variant={primary}>
+                Primary
+              </Button>
+            </span>
+            <span style={margin}>
+              <Button icon={<Activity />} theme={light} variant={secondary}>
+                Secondary
+              </Button>
+            </span>
+            <span style={margin}>
+              <Button icon={<Activity />} theme={light} variant={success}>
+                Success
+              </Button>
+            </span>
+            <span style={margin}>
+              <Button icon={<Activity />} theme={light} variant={warning}>
+                Warning
+              </Button>
+            </span>
+            <span style={margin}>
+              <Button icon={<Activity />} theme={light} variant={danger}>
+                Danger
+              </Button>
+            </span>
+          </Card>
+        </div>
+      </div>
+
+      <div style={margin}>
         <h3>Disable</h3>
         <div style={margin}>
           <Card theme={dark}>
@@ -118,6 +152,7 @@ export const Buttons = () => {
           </Card>
         </div>
       </div>
+
       <div style={margin}>
         <h3>Buttongroup</h3>
         <div style={margin}>
