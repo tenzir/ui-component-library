@@ -77,7 +77,7 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
   modifier(baseColorDirectlyMapped(colors, variant));
 };
 
-let button = (~theme=?, ~variant, ()) => {
+let button = (~theme=?, ~variant, icon, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let btnFontColor = buttonFontColor(colors, variant);
@@ -94,10 +94,16 @@ let button = (~theme=?, ~variant, ()) => {
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
     letterSpacing(0.01->rem),
-    paddingLeft(1.2->rem),
+    paddingLeft(
+      switch (icon) {
+      | Some(_) => 2.2->rem
+      | None => 1.2->rem
+      },
+    ),
     paddingRight(1.2->rem),
     paddingTop(0.6->rem),
     paddingBottom(0.65->rem),
+    position(`relative),
     hover([
       boxShadow(btnShadow(Hovering)),
       color(btnFontColor(Hovering)),
@@ -113,7 +119,13 @@ let button = (~theme=?, ~variant, ()) => {
   ]);
 };
 
-let icon = () => style([backgroundColor(`rgb((0, 0, 0)))]);
+let icon =
+  style([
+    position(`absolute),
+    left(0.8->rem),
+    top(11->px),
+    selector("& svg", [height(16->px)]),
+  ]);
 
 let buttonGroup =
   style([
