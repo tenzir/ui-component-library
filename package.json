@@ -42,7 +42,8 @@
 		"webpack-dev-server": "^3.10.3"
 	},
 	"resolutions": {
-		"acorn": "^6.4.1"
+		"acorn": "^6.4.1",
+		"minimist": "^1.2.2"
 	},
 	"jest": {
 		"transformIgnorePatterns": [
