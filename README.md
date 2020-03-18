@@ -37,6 +37,7 @@ The following components are currently built.
   Icons](https://feathericons.com/) (MIT licensed).
 - Input
 - Textarea
+- Loader
 
 ## Getting Started
 ### Installation
