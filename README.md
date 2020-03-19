@@ -38,6 +38,7 @@ The following components are currently built.
 - Input
 - Textarea
 - Loader
+- Alert
 
 ## Getting Started
 ### Installation

@@ -27,7 +27,7 @@ let pillShadow = (colors, variant, componentState) => {
         color =>
           base(
             ~blur=px(5),
-            TenzirUiComponentLibrary.StyleHelpers.rgbWithAlpha(color, 0.2),
+            StyleHelpers.rgbWithAlpha(color, 0.2),
           )
       )
     | Active => (
@@ -35,8 +35,8 @@ let pillShadow = (colors, variant, componentState) => {
           base(
             ~blur=px(5),
             ~inset=true,
-            TenzirUiComponentLibrary.StyleHelpers.rgbWithAlpha(
-              TenzirUiComponentLibrary.StyleHelpers.darken(5, color),
+            StyleHelpers.rgbWithAlpha(
+              StyleHelpers.darken(5, color),
               0.8,
             ),
           )
@@ -45,14 +45,14 @@ let pillShadow = (colors, variant, componentState) => {
         color =>
           base(
             ~blur=px(10),
-            TenzirUiComponentLibrary.StyleHelpers.rgbWithAlpha(color, 0.5),
+            StyleHelpers.rgbWithAlpha(color, 0.5),
           )
       )
     | _ => (
         color =>
           base(
             ~blur=px(5),
-            TenzirUiComponentLibrary.StyleHelpers.rgbWithAlpha(color, 0.3),
+            StyleHelpers.rgbWithAlpha(color, 0.3),
           )
       )
     };
@@ -65,11 +65,11 @@ let pillFontColor = (colors: colors, variant, componentState) => {
     switch (variant) {
     | Primary
     | Danger =>
-      TenzirUiComponentLibrary.StyleHelpers.rgbWithAlpha(colors.white, 0.95)
+      StyleHelpers.rgbWithAlpha(colors.white, 0.95)
     | Secondary
     | Success
     | Warning =>
-      TenzirUiComponentLibrary.StyleHelpers.rgbWithAlpha(colors.black, 0.7)
+      StyleHelpers.rgbWithAlpha(colors.black, 0.7)
     };
 
   let modifier =
@@ -77,7 +77,7 @@ let pillFontColor = (colors: colors, variant, componentState) => {
     | Hovering
     | Base => (x => x)
     | Focus
-    | Active => TenzirUiComponentLibrary.StyleHelpers.lighten(10)
+    | Active => StyleHelpers.lighten(10)
     };
 
   modifier(baseColor);
@@ -86,8 +86,8 @@ let pillFontColor = (colors: colors, variant, componentState) => {
 let defineBackgroundColor = (colors: colors, variant, componentState) => {
   let modifier =
     switch (componentState) {
-    | Active => TenzirUiComponentLibrary.StyleHelpers.activeColorChange
-    | Hovering => TenzirUiComponentLibrary.StyleHelpers.hoverColorChange
+    | Active => StyleHelpers.activeColorChange
+    | Hovering => StyleHelpers.hoverColorChange
     | _ => (x => x)
     };
 
@@ -96,7 +96,7 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
 
 let messagePill = (~theme=?, ~variant, ()) => {
   let colors =
-    TenzirUiComponentLibrary.StyleHelpers.colorsFromThemeVariant(theme);
+    StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let pillFontColor = pillFontColor(colors, variant);
   let pillShadow = pillShadow(colors, variant);
