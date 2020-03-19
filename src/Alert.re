@@ -1,4 +1,4 @@
-open MessagePillStyles;
+open AlertStyles;
 
 [@react.component]
 let make = (~variant=Primary, ~theme=?, ~message) =>
