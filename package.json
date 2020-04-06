@@ -21,28 +21,28 @@
 	"license": "BSD-3-Clause",
 	"dependencies": {
 		"bs-css": "^11.0.0",
-		"react": "^16.13.0",
-		"react-dom": "^16.13.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
 		"react-icons": "^3.9.0",
 		"reason-react": ">=0.7.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.8.7",
-		"@glennsl/bs-jest": "^0.4.10",
-		"@storybook/addon-actions": "^5.3.17",
-		"@storybook/addon-links": "^5.3.17",
-		"@storybook/addons": "^5.3.17",
-		"@storybook/react": "^5.3.17",
-		"babel-loader": "^8.0.6",
+		"@babel/core": "^7.9.0",
+		"@glennsl/bs-jest": "^0.5.1",
+		"@storybook/addon-actions": "^5.3.18",
+		"@storybook/addon-links": "^5.3.18",
+		"@storybook/addons": "^5.3.18",
+		"@storybook/react": "^5.3.18",
+		"babel-loader": "^8.1.0",
 		"bs-platform": "^7.2.2",
-		"html-webpack-plugin": "^3.2.0",
-		"prettier": "^1.19.1",
-		"webpack": "^4.42.0",
+		"html-webpack-plugin": "^4.0.4",
+		"prettier": "^2.0.4",
+		"webpack": "^4.42.1",
 		"webpack-cli": "^3.3.11",
 		"webpack-dev-server": "^3.10.3"
 	},
 	"resolutions": {
-		"acorn": "^6.4.1",
+		"acorn": "^7.1.1",
 		"minimist": "^1.2.2"
 	},
 	"jest": {
