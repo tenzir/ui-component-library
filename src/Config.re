@@ -63,7 +63,7 @@ module Misc = {
   let baseXPadding = 1.0->rem;
   let baseYPadding = 0.5->rem;
   let borderRadius = 0.2->rem;
-  let cardDarkeningPct = 2;
+  let cardDarkeningPct = 5;
   let baseTransitions = [
     transitionProperty("all"),
     transitionDuration(200),
