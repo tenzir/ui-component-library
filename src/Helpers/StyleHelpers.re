@@ -45,7 +45,7 @@ let offsetBgColor = (theme, depth, color) => {
     switch (theme) {
     | Some(UiTypes.Dark)
     | Some(UiTypes.TenzirBlue) => Misc.cardDarkeningPct * (depth * (-1) - 1)
-    | _ => Misc.cardDarkeningPct * (depth + 1)
+    | _ => Misc.cardDarkeningPct * depth
     };
   darken(offset, color);
 };
