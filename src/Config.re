@@ -21,7 +21,7 @@ module Colors = {
   let activeChangeType = Darken;
   let activeChangePercent = 5;
   let light = {
-    background: `rgb((241, 242, 242)),
+    background: `rgb((254, 255, 255)),
     darkBlueBg: `rgba((0, 51, 77, 1.0)),
     primary: `rgb((0, 164, 241)),
     secondary: `rgb((189, 207, 219)),

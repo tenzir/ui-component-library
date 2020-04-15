@@ -1,4 +1,5 @@
 import { addParameters, configure } from "@storybook/react";
+import { themes } from "@storybook/theming";
 
 // Option defaults:
 addParameters({
@@ -11,9 +12,13 @@ addParameters({
     hierarchyRootSeparator: /\|/,
     sidebarAnimations: true,
     enableShortcuts: false,
-    isToolshown: false,
-    storySort: undefined
-  }
+    isToolshown: true,
+    storySort: undefined,
+  },
+  darkMode: {
+    dark: { ...themes.dark, appBg: "rgb(34, 38, 38)" },
+    light: themes.light,
+  },
 });
 
 // automatically import all files ending in *.stories.js
