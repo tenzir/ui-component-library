@@ -61,7 +61,7 @@ export const card = () => {
   ~footer: option(React.Element),
   ~children: option(React.Element),
   ~className: option(string),
-  ~styles: option(array(Css.rule), /* These get concatenated with the existing styles array */
+  ~styles: option(array(Css.rule), /* DEPRECATED -- These will be removed in future release in favor of "className" */
 ) => React.element;`}
         </SyntaxHighlighter>
 
