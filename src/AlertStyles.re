@@ -24,36 +24,21 @@ let pillShadow = (colors, variant, componentState) => {
   let modifier =
     switch (componentState) {
     | Base => (
-        color =>
-          base(
-            ~blur=px(5),
-            StyleHelpers.rgbWithAlpha(color, 0.2),
-          )
+        color => base(~blur=px(5), StyleHelpers.rgbWithAlpha(color, 0.2))
       )
     | Active => (
         color =>
           base(
             ~blur=px(5),
             ~inset=true,
-            StyleHelpers.rgbWithAlpha(
-              StyleHelpers.darken(5, color),
-              0.8,
-            ),
+            StyleHelpers.rgbWithAlpha(StyleHelpers.darken(5, color), 0.8),
           )
       )
     | Hovering => (
-        color =>
-          base(
-            ~blur=px(10),
-            StyleHelpers.rgbWithAlpha(color, 0.5),
-          )
+        color => base(~blur=px(10), StyleHelpers.rgbWithAlpha(color, 0.5))
       )
     | _ => (
-        color =>
-          base(
-            ~blur=px(5),
-            StyleHelpers.rgbWithAlpha(color, 0.3),
-          )
+        color => base(~blur=px(5), StyleHelpers.rgbWithAlpha(color, 0.3))
       )
     };
 
@@ -64,12 +49,10 @@ let pillFontColor = (colors: colors, variant, componentState) => {
   let baseColor =
     switch (variant) {
     | Primary
-    | Danger =>
-      StyleHelpers.rgbWithAlpha(colors.white, 0.95)
+    | Danger => StyleHelpers.rgbWithAlpha(colors.white, 0.95)
     | Secondary
     | Success
-    | Warning =>
-      StyleHelpers.rgbWithAlpha(colors.black, 0.7)
+    | Warning => StyleHelpers.rgbWithAlpha(colors.black, 0.7)
     };
 
   let modifier =
@@ -95,8 +78,7 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
 };
 
 let messagePill = (~theme=?, ~variant, ()) => {
-  let colors =
-    StyleHelpers.colorsFromThemeVariant(theme);
+  let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let pillFontColor = pillFontColor(colors, variant);
   let pillShadow = pillShadow(colors, variant);
