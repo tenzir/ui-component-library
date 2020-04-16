@@ -24,6 +24,7 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-icons": "^3.9.0",
+		"react-syntax-highlighter": "^12.2.1",
 		"reason-react": ">=0.7.0"
 	},
 	"devDependencies": {
@@ -37,6 +38,7 @@
 		"bs-platform": "^7.2.2",
 		"html-webpack-plugin": "^4.0.4",
 		"prettier": "^2.0.4",
+		"storybook-dark-mode": "^0.4.0",
 		"webpack": "^4.42.1",
 		"webpack-cli": "^3.3.11",
 		"webpack-dev-server": "^3.10.3"

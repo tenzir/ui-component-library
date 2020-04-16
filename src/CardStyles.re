@@ -37,6 +37,50 @@ let card = (~theme=?, ~spacing=Normal, ~depth, ~styles, ()) => {
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
     deteriminePadding(spacing),
+    position(`relative),
     ...extraStyles,
+  ]);
+};
+
+let cardHeader = (~theme=?, ~depth, ()) => {
+  let colors = StyleHelpers.colorsFromThemeVariant(theme);
+  style([
+    height(3.5->rem),
+    position(`absolute),
+    left(`zero),
+    top(`zero),
+    display(`flex),
+    alignItems(`center),
+    padding2(~h=0.0->rem, ~v=0.0->rem),
+    width(100.0->pct),
+    backgroundColor(
+      StyleHelpers.offsetBgColor(theme, depth + 1, colors.background)
+      -> StyleHelpers.rgbWithAlpha(0.5),
+    ),
+  ]);
+};
+
+let cardContent = (~hasHeader, ~hasFooter) => {
+  style([
+    paddingTop(hasHeader ? 3.5->rem : 0.0->rem),
+    paddingBottom(hasFooter ? 3.5->rem : 0.0->rem),
+  ]);
+};
+
+let cardFooter = (~theme=?, ~depth, ()) => {
+  let colors = StyleHelpers.colorsFromThemeVariant(theme);
+  style([
+    height(3.5->rem),
+    position(`absolute),
+    left(`zero),
+    bottom(`zero),
+    display(`flex),
+    alignItems(`center),
+    padding2(~h=0.0->rem, ~v=0.0->rem),
+    width(100.0->pct),
+    backgroundColor(
+      StyleHelpers.offsetBgColor(theme, depth + 1, colors.background)
+      -> StyleHelpers.rgbWithAlpha(0.5),
+    ),
   ]);
 };

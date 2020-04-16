@@ -16,15 +16,22 @@ let inputFontColor = (colors: colors, componentState) =>
   | _ => colors.input
   };
 
-let inputContainerStyles = (~pctWidth=100.0, ()) =>
+let inputContainerStyles = (~pctWidth=100.0, ~disabled,()) =>
   style([
     width(pctWidth->pct),
     paddingTop(0.7->rem),
     display(`inlineBlock),
     position(`relative),
+    opacity(disabled ? 0.5 : 1.0),
+          selector("& input, & label", [
+          cursor(disabled ? `notAllowed : `default)
+          ]),
+    hover([
+          cursor(disabled ? `notAllowed : `default)
+    ])
   ]);
 
-let inputStyles = (~theme=?, ()) => {
+let checkboxStyles = (~theme=?, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     display(`inline),

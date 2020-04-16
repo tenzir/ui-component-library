@@ -21,7 +21,7 @@ module Colors = {
   let activeChangeType = Darken;
   let activeChangePercent = 5;
   let light = {
-    background: `rgb((241, 242, 242)),
+    background: `rgb((254, 255, 255)),
     darkBlueBg: `rgba((0, 51, 77, 1.0)),
     primary: `rgb((0, 164, 241)),
     secondary: `rgb((189, 207, 219)),
@@ -63,7 +63,7 @@ module Misc = {
   let baseXPadding = 1.0->rem;
   let baseYPadding = 0.5->rem;
   let borderRadius = 0.2->rem;
-  let cardDarkeningPct = 5;
+  let cardDarkeningPct = 4;
   let baseTransitions = [
     transitionProperty("all"),
     transitionDuration(200),

@@ -5,6 +5,7 @@ open UiTypes;
 let make =
     (
       ~defaultValue=false,
+      ~disabled=false,
       ~label,
       ~id=?,
       ~width=[@reason.preserve_braces] 100.0,
@@ -19,15 +20,16 @@ let make =
     | None => label
     };
 
-  <div className={inputContainerStyles(~pctWidth=width, ())}>
+  <div className={inputContainerStyles(~pctWidth=width, ~disabled, ())}>
     <label className={labelStyles(~theme?, ~validity, ())} htmlFor=identifier>
       <input
+        disabled
         onChange={GenericHelpers.optionFn(onChange)}
         id=identifier
         type_="checkbox"
         checked=defaultValue
         placeholder
-        className={inputStyles(~theme?, ())}
+        className={checkboxStyles(~theme?, ())}
       />
       label->React.string
     </label>

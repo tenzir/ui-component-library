@@ -1,5 +1,8 @@
 import React from "react";
 import { make as Button, Group } from "../src/Button.bs.js";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useDarkMode } from "storybook-dark-mode";
 import { FiActivity as Activity } from "react-icons/fi";
 import { make as Card } from "../src/Card.bs.js";
 import { light, dark } from "../src/UiTypes.bs";
@@ -8,269 +11,105 @@ import {
   secondary,
   success,
   warning,
-  danger
+  danger,
 } from "../src/ButtonStyles.bs";
 
 const ButtonGroup = Group.make;
 export default {
-  title: "Button"
+  title: "Button",
 };
 
 const margin = {
-  margin: "1rem"
+  margin: "1rem",
 };
+
+const buttons = [
+  { variant: primary, text: "Primary" },
+  { variant: secondary, text: "Secondary" },
+  { variant: success, text: "Success" },
+  { variant: warning, text: "Warning" },
+  { variant: danger, text: "Danger" },
+];
+
 export const Buttons = () => {
+  const theme = useDarkMode() ? dark : light;
   return (
     <>
       <div style={margin}>
-        <h3>Light Background</h3>
-        <div style={margin}>
-          <Card theme={light}>
-            <span style={margin}>
-              <Button theme={light} variant={primary}>
-                Primary
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={secondary}>
-                Secondary
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={success}>
-                Success
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={warning}>
-                Warning
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={danger}>
-                Danger
-              </Button>
-            </span>
-          </Card>
-        </div>
-      </div>
-      <div style={margin}>
-        <h3>Dark Background</h3>
-        <div style={margin}>
-          <Card theme={dark}>
-            <span style={margin}>
-              <Button theme={light} variant={primary}>
-                Primary
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={secondary}>
-                Secondary
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={success}>
-                Success
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={warning}>
-                Warning
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button theme={light} variant={danger}>
-                Danger
-              </Button>
-            </span>
-          </Card>
-        </div>
-      </div>
+        <Card theme={theme}>
+          <h1>Buttons</h1>
+          <h3>Interface</h3>
+          <SyntaxHighlighter language="reason" style={okaidia} showLineNumbers>
+            {`type Button: (
+  ~disabled:boolean,
+  ~type_: string,
+  ~variant:ButtonStyles.Primary
+  ~theme: option(UiTypes.theme)),
+  ~icon=option(React.Element),
+  ~onClick=option(React.SyntheticEvent.t->unit),
+  ~children=option(React.Element)
+)=> React.element;`}
+          </SyntaxHighlighter>
 
-      <div style={margin}>
-        <h3>With Icons</h3>
-        <div style={margin}>
-          <Card theme={dark}>
+          <h3>Previews</h3>
+          <h4>Normal Buttons</h4>
+          {buttons.map(({ variant, text }) => (
             <span style={margin}>
-              <Button icon={<Activity />} theme={light} variant={primary}>
-                Primary
+              <Button theme={theme} variant={variant}>
+                {text}
               </Button>
             </span>
-            <span style={margin}>
-              <Button icon={<Activity />} theme={light} variant={secondary}>
-                Secondary
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button icon={<Activity />} theme={light} variant={success}>
-                Success
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button icon={<Activity />} theme={light} variant={warning}>
-                Warning
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button icon={<Activity />} theme={light} variant={danger}>
-                Danger
-              </Button>
-            </span>
-          </Card>
-        </div>
-      </div>
+          ))}
 
-      <div style={margin}>
-        <h3>Disable</h3>
-        <div style={margin}>
-          <Card theme={dark}>
+          <h4>Disabled</h4>
+          {buttons.map(({ variant, text }) => (
             <span style={margin}>
-              <Button disabled={true} theme={light} variant={primary}>
-                Primary
+              <Button disabled theme={theme} variant={variant}>
+                {text}
               </Button>
             </span>
-            <span style={margin}>
-              <Button disabled={true} theme={light} variant={secondary}>
-                Secondary
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button disabled={true} theme={light} variant={success}>
-                Success
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button disabled={true} theme={light} variant={warning}>
-                Warning
-              </Button>
-            </span>
-            <span style={margin}>
-              <Button disabled={true} theme={light} variant={danger}>
-                Danger
-              </Button>
-            </span>
-          </Card>
-        </div>
-      </div>
+          ))}
 
-      <div style={margin}>
-        <h3>Buttongroup</h3>
-        <div style={margin}>
-          <Card theme={dark}>
+          <h4>With Icons</h4>
+          {buttons.map(({ variant, text }) => (
+            <span style={margin}>
+              <Button icon={<Activity />} theme={theme} variant={variant}>
+                {text}
+              </Button>
+            </span>
+          ))}
+
+          <h4>Grouped</h4>
+          {buttons.map(({ variant, text }) => (
             <span style={margin}>
               <ButtonGroup>
-                <Button theme={light} variant={primary}>
-                  Left
+                <Button theme={theme} variant={variant}>
+                  {text}
                 </Button>
-                <Button theme={light} variant={primary}>
-                  Middle
+                <Button theme={theme} variant={variant}>
+                  {text}
                 </Button>
-                <Button theme={light} variant={primary}>
-                  Right
+                <Button icon={<Activity />} theme={theme} variant={variant}>
+                  {text}
                 </Button>
               </ButtonGroup>
             </span>
+          ))}
+
+          <h4>Grouped with Mixed Variants</h4>
+          {buttons.map(({ variant, text }) => (
             <span style={margin}>
               <ButtonGroup>
-                <Button theme={light} variant={secondary}>
-                  Left
+                <Button theme={theme} variant={secondary}>
+                  {text}
                 </Button>
-                <Button theme={light} variant={secondary}>
-                  Middle
-                </Button>
-                <Button theme={light} variant={secondary}>
-                  Right
+                <Button icon={<Activity />} theme={theme} variant={variant}>
+                  {text}
                 </Button>
               </ButtonGroup>
             </span>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={success}>
-                  Left
-                </Button>
-                <Button theme={light} variant={success}>
-                  Middle
-                </Button>
-                <Button theme={light} variant={success}>
-                  Right
-                </Button>
-              </ButtonGroup>
-            </span>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={warning}>
-                  Left
-                </Button>
-                <Button theme={light} variant={warning}>
-                  Middle
-                </Button>
-                <Button theme={light} variant={warning}>
-                  Right
-                </Button>
-              </ButtonGroup>
-            </span>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={danger}>
-                  Left
-                </Button>
-                <Button theme={light} variant={danger}>
-                  Middle
-                </Button>
-                <Button theme={light} variant={danger}>
-                  Right
-                </Button>
-              </ButtonGroup>
-            </span>
-          </Card>
-        </div>
-      </div>
-      <div style={margin}>
-        <h3>Mix & Match</h3>
-        <div style={margin}>
-          <Card theme={dark}>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={secondary}>
-                  Cancel
-                </Button>
-                <Button theme={light} variant={primary}>
-                  Go
-                </Button>
-              </ButtonGroup>
-            </span>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={secondary}>
-                  Cancel
-                </Button>
-                <Button theme={light} variant={success}>
-                  Go!
-                </Button>
-              </ButtonGroup>
-            </span>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={secondary}>
-                  Cancel
-                </Button>
-                <Button theme={light} variant={danger}>
-                  No Go!
-                </Button>
-              </ButtonGroup>
-            </span>
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={light} variant={secondary}>
-                  Cancel
-                </Button>
-                <Button theme={light} variant={warning}>
-                  Maybe Go
-                </Button>
-              </ButtonGroup>
-            </span>
-          </Card>
-        </div>
+          ))}
+        </Card>
       </div>
     </>
   );

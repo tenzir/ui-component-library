@@ -84,7 +84,7 @@ let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
 let labelStyles = (~theme=?, ~variant=Normal, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
-    display(`inlineBlock),
+    display(`block),
     color(labelFontColor(colors, Base)),
     fontFamily(variant->inputFontFamily),
     fontWeight(variant->inputFontWeight),

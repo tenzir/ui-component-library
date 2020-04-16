@@ -1,5 +1,8 @@
 import React from "react";
 import { make as Textarea } from "../src/Textarea.bs.js";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useDarkMode } from "storybook-dark-mode";
 import { make as Card } from "../src/Card.bs.js";
 import {
   labeled,
@@ -8,209 +11,151 @@ import {
   normal,
   mono,
   valid,
-  invalid
+  invalid,
 } from "../src/UiTypes.bs";
-import { horizontal, vertical, both } from "../src/TextareaStyles.bs.js";
+import { both, horizontal, vertical } from "../src/TextareaStyles.bs";
 import { tiny, huge } from "../src/CardStyles.bs";
 
 export default {
-  title: "Textarea"
+  title: "Textarea",
 };
 
 const margin = {
-  margin: "1rem"
+  margin: "1rem",
 };
 
 export const textarea = () => {
-  return (
-    <>
-      <div style={margin}>
-        <h3>Full Width</h3>
-        <div style={margin}>
-          <Card theme={dark}>
-            <Textarea
-              onBlur={e => console.log(e)}
-              theme={dark}
-              variant={normal}
-              placeholder="test"
-            />
-          </Card>
-          <Card theme={dark}>
-            <Textarea
-              validity={invalid}
-              theme={dark}
-              variant={normal}
-              placeholder="test"
-            />
-          </Card>
-        </div>
-        <div style={margin}>
-          <Card theme={light}>
-            <Textarea theme={light} variant={normal} placeholder="test" />
-          </Card>
-        </div>
-      </div>
-      <div style={margin}>
-        <h3>Resizeable</h3>
-        <div style={margin}>
-          <Card theme={dark}>
-            <Textarea
-              theme={dark}
-              variant={normal}
-              resize={both}
-              placeholder="both"
-            />
-          </Card>
-        </div>
-        <div style={margin}>
-          <Card theme={light}>
-            <Textarea
-              theme={dark}
-              variant={normal}
-              resize={horizontal}
-              placeholder="horizontal"
-            />
-          </Card>
-        </div>
-        <div style={margin}>
-          <Card theme={light}>
-            <Textarea
-              theme={dark}
-              variant={normal}
-              resize={horizontal}
-              placeholder="horizontal"
-            />
-          </Card>
-        </div>
-      </div>
-    </>
-  );
-};
+  const theme = useDarkMode() ? dark : light;
 
-export const withLabel = () => {
   return (
     <div style={margin}>
-      <h3>Labeled</h3>
-      <div style={margin}>
-        <Card theme={dark} spacing={tiny}>
-          <div style={margin}>
-            <Textarea
-              label={labeled("Label Dark 01")}
-              width={50.0}
-              theme={dark}
-              variant={normal}
-            />
-            <Textarea
-              label={labeled("Label Dark 02")}
-              width={50.0}
-              theme={dark}
-              variant={normal}
-            />
-          </div>
-        </Card>
-      </div>
-      <div style={margin}>
-        <Card theme={light} spacing={tiny}>
-          <div style={margin}>
-            <Textarea
-              label={labeled("Label Light 01")}
-              width={50.0}
-              theme={light}
-              variant={normal}
-            />
-            <Textarea
-              label={labeled("Label Light 02")}
-              width={50.0}
-              theme={light}
-              variant={normal}
-            />
-          </div>
-        </Card>
-      </div>
-    </div>
-  );
-};
+      <Card theme={theme}>
+        <h1>Textarea</h1>
 
-export const normalAndMono = () => {
-  return (
-    <div style={margin}>
-      <h3>Normal Font</h3>
-      <div style={margin}>
-        <Card theme={dark} spacing={tiny}>
-          <div style={margin}>
-            <Textarea
-              label={labeled("Normal Label Dark 01")}
-              width={50.0}
-              theme={dark}
-              variant={normal}
-            />
-            <Textarea
-              label={labeled("Normal Label Dark 02")}
-              width={50.0}
-              theme={dark}
-              variant={normal}
-            />
-          </div>
-        </Card>
-      </div>
+        <h3>Interface</h3>
+        <p>
+          As there is the option to have a label, we need to have an id so that
+          we can make that clickable and link the label and the input. We can
+          infer the id from the label, but this may clash. When in doubt, add an
+          id.
+        </p>
+        <SyntaxHighlighter language="reason" style={okaidia} showLineNumbers>
+          {`type Textarea: (
+  ~_type: option(string), /* maps to "type", defaults to "text" */
+  ~defaultValue: option(string), /* defaults to empty string */
+  ~label: option(UiStyles.labels), /* defaults to "UiStyles.Unlabeled" */
+  ~id: option(string), /* the id is used to make labels clickable. This falls back to the label */
+  ~validity: option(UiStyles.validation), /* defaults to "UiStyles.Valid" */
+  ~width: option(float), /* as a percentage. Defaults to "100.0" */
+  ~resize=option(TextareaStyles.resize), /* Defauls to NoResize */
+  ~theme: option(UiTypes.theme)
+  ~placeholder: option(string) /* defaults to empty string */
+  ~onChange=option(React.SyntheticEvent.t->unit),
+  ~onBlur=option(React.SyntheticEvent.t->unit),
+  ~styles=option(array(Css.rule)),
+  ~rows=option(int), /* Defaults to 4 rows */
+  ~cols=option(int), /* Defaults to 50 rows */
+) => React.element;
+`}
+        </SyntaxHighlighter>
 
-      <div style={margin}>
-        <Card theme={light} spacing={tiny}>
-          <div style={margin}>
-            <Textarea
-              label={labeled("Normal Label Light 01")}
-              width={50.0}
-              theme={light}
-              variant={normal}
-            />
-            <Textarea
-              label={labeled("Normal Label Light 02")}
-              width={50.0}
-              theme={light}
-              variant={normal}
-            />
-          </div>
-        </Card>
-      </div>
+        <h3>Preview</h3>
+        <h4>Custom Width</h4>
+        <p>Sizing can either be done via the 'Width' attribute.</p>
+        <Textarea
+          label={labeled("I'm a tiny input")}
+          placeholder="Like for a zipcode"
+          width={10.0}
+          theme={theme}
+          variant={normal}
+        />
+        <Textarea
+          label={labeled("I'm a bit bigger")}
+          placeholder="Like for a name"
+          width={60.0}
+          theme={theme}
+          variant={normal}
+        />
+        <Textarea
+          label={labeled("If the total width stays under 100%")}
+          placeholder="We stay inline"
+          width={30.0}
+          theme={theme}
+          variant={normal}
+        />
+        <h4>Custom Height</h4>
+        <Textarea
+          label={labeled("I'm not that tall")}
+          placeholder="Only 2 rows"
+          width={50}
+          rows={2}
+          theme={theme}
+          variant={normal}
+        />
+        <Textarea
+          label={labeled("I'm a bit bigger")}
+          placeholder="10 rows for me"
+          width={50}
+          rows={10}
+          theme={theme}
+          variant={normal}
+        />
+        <h4>Labeled vs Unlabeled</h4>
+        <Textarea
+          label={labeled("I have a label")}
+          placeholder="Check my cool label above"
+          width={50.0}
+          theme={theme}
+          variant={normal}
+        />
+        <Textarea
+          placeholder="I don't"
+          width={50.0}
+          theme={theme}
+          variant={normal}
+        />
 
-      <h3>Monospaced Font</h3>
-      <div style={margin}>
-        <Card theme={dark} spacing={tiny}>
-          <div style={margin}>
-            <Textarea
-              label={labeled("Mono Label Dark 01")}
-              width={50.0}
-              theme={dark}
-              variant={mono}
-            />
-            <Textarea
-              label={labeled("Mono Label Dark 02")}
-              width={50.0}
-              theme={dark}
-              variant={mono}
-            />
-          </div>
-        </Card>
-      </div>
+        <h4>Normal / Mono fonts</h4>
+        <Textarea
+          label={labeled("Normal Font")}
+          placeholder="Font setting will also have effect in the placeholder"
+          width={50.0}
+          theme={theme}
+          variant={normal}
+        />
+        <Textarea
+          label={labeled("Mono Font")}
+          placeholder="And in the label"
+          width={50.0}
+          theme={theme}
+          variant={mono}
+        />
 
-      <div style={margin}>
-        <Card theme={light} spacing={tiny}>
-          <div style={margin}>
-            <Textarea
-              label={labeled("Mono Label Light 01")}
-              width={50.0}
-              theme={light}
-              variant={mono}
-            />
-            <Textarea
-              label={labeled("Mono Label Light 02")}
-              width={50.0}
-              theme={light}
-              variant={mono}
-            />
-          </div>
-        </Card>
-      </div>
+        <h4>Resizeable</h4>
+        <Textarea
+          label={labeled("I'm not resizable")}
+          placeholder="Neither horizontally nor vertically"
+          theme={theme}
+        />
+        <Textarea
+          label={labeled("I can resize")}
+          placeholder="Horizontally only"
+          resize={horizontal}
+          theme={theme}
+        />
+        <Textarea
+          label={labeled("I can resize")}
+          placeholder="Vertically only"
+          resize={vertical}
+          theme={theme}
+        />
+        <Textarea
+          label={labeled("I can resize")}
+          placeholder="All the ways"
+          resize={both}
+          theme={theme}
+        />
+      </Card>
     </div>
   );
 };
