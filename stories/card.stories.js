@@ -122,7 +122,7 @@ export const card = () => {
             }
             footer={
               <div style={headerStyles}>
-                <h3>Some Header</h3>
+                <h3>Some Footer</h3>
               </div>
             }
             spacing={tiny}

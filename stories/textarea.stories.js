@@ -13,7 +13,7 @@ import {
   valid,
   invalid,
 } from "../src/UiTypes.bs";
-import { horizontal, vertical } from "../src/TextareaStyles.bs";
+import { both, horizontal, vertical } from "../src/TextareaStyles.bs";
 import { tiny, huge } from "../src/CardStyles.bs";
 
 export default {
@@ -135,25 +135,25 @@ export const textarea = () => {
         <Textarea
           label={labeled("I'm not resizable")}
           placeholder="Neither horizontally nor vertically"
-          width={30.0}
           theme={theme}
-          variant={normal}
         />
         <Textarea
           label={labeled("I can resize")}
           placeholder="Horizontally only"
           resize={horizontal}
-          width={30.0}
           theme={theme}
-          variant={mono}
         />
         <Textarea
           label={labeled("I can resize")}
           placeholder="Vertically only"
           resize={vertical}
-          width={30.0}
           theme={theme}
-          variant={mono}
+        />
+        <Textarea
+          label={labeled("I can resize")}
+          placeholder="All the ways"
+          resize={both}
+          theme={theme}
         />
       </Card>
     </div>
