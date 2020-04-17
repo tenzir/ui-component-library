@@ -1,55 +1,67 @@
 {
-	"name": "tenzir-ui-component-library",
-	"author": "Tenzir",
-	"version": "0.2.2",
-	"scripts": {
-		"build": "bsb -make-world && yarn build-storybook",
-		"build-storybook": "build-storybook",
-		"clean": "bsb -clean-world",
-		"start": "bsb -make-world -w -ws _ ",
-		"storybook": "start-storybook -p 6006",
-		"test": "jest",
-		"tdd": "jest --watchAll"
-	},
-	"keywords": [
-		"UI-Library",
-		"UI-Components",
-		"ReasonML",
-		"ReasonReact",
-		"Reason-React"
-	],
-	"license": "BSD-3-Clause",
-	"dependencies": {
-		"bs-css": "^11.0.0",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-icons": "^3.9.0",
-		"react-syntax-highlighter": "^12.2.1",
-		"reason-react": ">=0.7.0"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.9.0",
-		"@glennsl/bs-jest": "^0.5.1",
-		"@storybook/addon-actions": "^5.3.18",
-		"@storybook/addon-links": "^5.3.18",
-		"@storybook/addons": "^5.3.18",
-		"@storybook/react": "^5.3.18",
-		"babel-loader": "^8.1.0",
-		"bs-platform": "^7.2.2",
-		"html-webpack-plugin": "^4.0.4",
-		"prettier": "^2.0.4",
-		"storybook-dark-mode": "^0.4.0",
-		"webpack": "^4.42.1",
-		"webpack-cli": "^3.3.11",
-		"webpack-dev-server": "^3.10.3"
-	},
-	"resolutions": {
-		"acorn": "^7.1.1",
-		"minimist": "^1.2.2"
-	},
-	"jest": {
-		"transformIgnorePatterns": [
-			"node_modules/(?!(@glennsl|bs-platform|bs-css)/)"
-		]
-	}
+  "name": "tenzir-ui-component-library",
+  "author": "Tenzir",
+  "version": "0.2.3",
+  "scripts": {
+    "build": "bsb -make-world && yarn build-storybook",
+    "build-storybook": "build-storybook",
+    "clean": "bsb -clean-world",
+    "start": "bsb -make-world -w -ws _ ",
+    "storybook": "start-storybook -p 6006",
+    "test": "jest",
+    "tdd": "jest --watchAll"
+  },
+  "lint-staged": {
+    "*.{re,rei}": [
+      "refmt --in-place"
+    ]
+  },
+  "keywords": [
+    "UI-Library",
+    "UI-Components",
+    "ReasonML",
+    "ReasonReact",
+    "Reason-React"
+  ],
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "bs-css": "^11.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.9.0",
+    "react-syntax-highlighter": "^12.2.1",
+    "reason-react": ">=0.7.0",
+    "storybook-dark-mode": "^0.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@glennsl/bs-jest": "^0.5.1",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "babel-loader": "^8.1.0",
+    "bs-platform": "^7.2.2",
+    "html-webpack-plugin": "^4.0.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "resolutions": {
+    "acorn": "^7.1.1",
+    "minimist": "^1.2.2"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@glennsl|bs-platform|bs-css)/)"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
