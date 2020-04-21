@@ -68,22 +68,22 @@ export const card = () => {
         <h3>Preview</h3>
         <h4>Padding</h4>
         <div style={smallCardContainer}>
-          <Card spacing={tiny} depth={1} theme={theme}>
+          <Card spacing={tiny} depth={2} theme={theme}>
             <h2>Tiny Padding</h2>
           </Card>
         </div>
         <div style={smallCardContainer}>
-          <Card depth={1} theme={theme}>
+          <Card depth={2} theme={theme}>
             <h2>Normal Padding</h2>
           </Card>
         </div>
         <div style={smallCardContainer}>
-          <Card spacing={large} depth={1} theme={theme}>
+          <Card spacing={large} depth={2} theme={theme}>
             <h2>Large Padding</h2>
           </Card>
         </div>
         <div style={smallCardContainer}>
-          <Card spacing={huge} depth={1} theme={theme}>
+          <Card spacing={huge} depth={2} theme={theme}>
             <h2>Huge Padding</h2>
           </Card>
         </div>
@@ -95,11 +95,11 @@ export const card = () => {
           cards.
         </p>
         <div style={nestedCardContainer}>
-          <Card spacing={tiny} depth={1} theme={theme}>
+          <Card spacing={tiny} depth={2} theme={theme}>
             <h2>No. 1</h2>
-            <Card spacing={tiny} depth={2} theme={theme}>
+            <Card spacing={tiny} depth={3} theme={theme}>
               <h2>No. 2</h2>
-              <Card spacing={tiny} depth={3} theme={theme}>
+              <Card spacing={tiny} depth={4} theme={theme}>
                 <h2>Cards all the way down</h2>
               </Card>
             </Card>
@@ -126,7 +126,7 @@ export const card = () => {
               </div>
             }
             spacing={tiny}
-            depth={1}
+            depth={2}
             theme={theme}
           >
             <h2>No. 1</h2>
@@ -146,7 +146,7 @@ export const card = () => {
               </div>
             }
             spacing={tiny}
-            depth={1}
+            depth={2}
             theme={theme}
           >
             <p>Some forms could go here...</p>
