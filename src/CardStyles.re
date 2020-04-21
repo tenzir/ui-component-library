@@ -55,7 +55,7 @@ let cardHeader = (~theme=?, ~depth, ()) => {
     width(100.0->pct),
     backgroundColor(
       StyleHelpers.offsetBgColor(theme, depth + 1, colors.background)
-      -> StyleHelpers.rgbWithAlpha(0.5),
+      ->StyleHelpers.rgbWithAlpha(0.5),
     ),
   ]);
 };
@@ -64,6 +64,8 @@ let cardContent = (~hasHeader, ~hasFooter) => {
   style([
     paddingTop(hasHeader ? 3.5->rem : 0.0->rem),
     paddingBottom(hasFooter ? 3.5->rem : 0.0->rem),
+    width(100.0->pct),
+    height(100.0->pct),
   ]);
 };
 
@@ -80,7 +82,7 @@ let cardFooter = (~theme=?, ~depth, ()) => {
     width(100.0->pct),
     backgroundColor(
       StyleHelpers.offsetBgColor(theme, depth + 1, colors.background)
-      -> StyleHelpers.rgbWithAlpha(0.5),
+      ->StyleHelpers.rgbWithAlpha(0.5),
     ),
   ]);
 };
