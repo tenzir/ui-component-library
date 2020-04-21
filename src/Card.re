@@ -5,7 +5,7 @@ let make =
     (
       ~spacing=Normal,
       ~theme=?,
-      ~depth=0,
+      ~depth=1,
       ~className="",
       ~header=?,
       ~footer=?,
@@ -24,21 +24,17 @@ let make =
     className={
       card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  " ++ className
     }>
-
-    {header->Belt.Option.mapWithDefault(<Empty />, (header) =>
+    {header->Belt.Option.mapWithDefault(<Empty />, header =>
        <div className={cardHeader(~theme?, ~depth, ())}> header </div>
      )}
-
-    <div className={
-      cardContent(
+    <div
+      className={cardContent(
         ~hasHeader=header->Belt.Option.isSome,
-        ~hasFooter=footer->Belt.Option.isSome
-      )
-    }>
+        ~hasFooter=footer->Belt.Option.isSome,
+      )}>
       children
-      </div>
-
-    {footer->Belt.Option.mapWithDefault(<Empty />, (footer) =>
+    </div>
+    {footer->Belt.Option.mapWithDefault(<Empty />, footer =>
        <div className={cardFooter(~theme?, ~depth, ())}> footer </div>
      )}
   </div>;
