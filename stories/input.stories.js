@@ -42,6 +42,7 @@ export const input = () => {
           {`type Input: (
   ~_type: option(string), /* maps to "type", defaults to "text" */
   ~defaultValue: option(string), /* defaults to empty string */
+  ~value: option(string),
   ~label: option(UiStyles.labels), /* defaults to "UiStyles.Unlabeled" */
   ~id: option(string), /* the id is used to make labels clickable. This falls back to the label */
   ~validity: option(UiStyles.validation), /* defaults to "UiStyles.Valid" */

@@ -5,6 +5,7 @@ open TextareaStyles;
 let make =
     (
       ~defaultValue="",
+      ~value=?,
       ~label=Unlabeled,
       ~id=?,
       ~variant=Normal,
@@ -23,22 +24,43 @@ let make =
 
   <div className={textareaContainerStyles(~pctWidth=width, ~label, ())}>
     <Label label identifier variant theme />
-    <textarea
-      onBlur={GenericHelpers.optionFn(onBlur)}
-      onChange={GenericHelpers.optionFn(onChange)}
-      id=identifier
-      rows
-      cols
-      defaultValue
-      placeholder
-      className={textareaStyles(
-        ~variant,
-        ~theme?,
-        ~resize,
-        ~validity,
-        ~styles,
-        (),
-      )}
-    />
+    {switch (value) {
+     | Some(value) =>
+       <textarea
+         onBlur={GenericHelpers.optionFn(onBlur)}
+         onChange={GenericHelpers.optionFn(onChange)}
+         id=identifier
+         rows
+         cols
+         value
+         placeholder
+         className={textareaStyles(
+           ~variant,
+           ~theme?,
+           ~resize,
+           ~validity,
+           ~styles,
+           (),
+         )}
+       />
+     | None =>
+       <textarea
+         onBlur={GenericHelpers.optionFn(onBlur)}
+         onChange={GenericHelpers.optionFn(onChange)}
+         id=identifier
+         rows
+         cols
+         defaultValue
+         placeholder
+         className={textareaStyles(
+           ~variant,
+           ~theme?,
+           ~resize,
+           ~validity,
+           ~styles,
+           (),
+         )}
+       />
+     }}
   </div>;
 };
