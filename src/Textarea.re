@@ -7,6 +7,7 @@ let make =
       ~defaultValue="",
       ~value=?,
       ~label=Unlabeled,
+      ~disabled=false,
       ~id=?,
       ~variant=Normal,
       ~validity=Valid,
@@ -31,6 +32,7 @@ let make =
          onChange={GenericHelpers.optionFn(onChange)}
          id=identifier
          rows
+         disabled
          cols
          value
          placeholder
@@ -48,6 +50,7 @@ let make =
          onBlur={GenericHelpers.optionFn(onBlur)}
          onChange={GenericHelpers.optionFn(onChange)}
          id=identifier
+         disabled
          rows
          cols
          defaultValue
