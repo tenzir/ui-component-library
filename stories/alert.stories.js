@@ -31,8 +31,10 @@ export const Alerts = () => {
         <h3>Interface</h3>
         <SyntaxHighlighter language="reason" style={okaidia} showLineNumbers>
           {`type Alert: (
-  ~message:string,
+  ~message: option(string),
+  ~children: option(React.Element), /* Note that both message and children can be passed in at once */
   ~variant: AlertStyles.variant,
+  ~className: option(string),
   ~theme: option(UiTypes.theme)
 ) => React.element;
 `}

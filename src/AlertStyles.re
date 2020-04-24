@@ -83,6 +83,7 @@ let messagePill = (~theme=?, ~variant, ()) => {
   let pillFontColor = pillFontColor(colors, variant);
   let pillShadow = pillShadow(colors, variant);
   style([
+    width(`fitContent),
     backgroundColor(bgColor(Base)),
     borderStyle(`none),
     outlineStyle(`none),
@@ -97,6 +98,7 @@ let messagePill = (~theme=?, ~variant, ()) => {
     paddingRight(1.2->rem),
     paddingTop(0.6->rem),
     paddingBottom(0.65->rem),
+    margin(`zero),
     position(`relative),
     hover([
       boxShadow(pillShadow(Hovering)),
