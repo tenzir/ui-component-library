@@ -10,6 +10,10 @@ type variant =
   | Warning
   | Danger;
 
+type iconPosition =
+  | Left
+  | Right;
+
 let baseColorDirectlyMapped = (colors, variant) =>
   switch (variant) {
   | Primary => colors.primary
@@ -77,11 +81,35 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
   modifier(baseColorDirectlyMapped(colors, variant));
 };
 
-let button = (~theme=?, ~variant, icon, ()) => {
+let button = (~theme=?, ~variant, icon, iconPosition, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let btnFontColor = buttonFontColor(colors, variant);
   let btnShadow = buttonShadow(colors, variant);
+  let padding =
+    switch (icon, iconPosition) {
+    | (None, _) =>
+      padding4(
+        ~left=1.2->rem,
+        ~right=1.2->rem,
+        ~top=0.6->rem,
+        ~bottom=0.65->rem,
+      )
+    | (Some(_), Left) =>
+      padding4(
+        ~left=2.2->rem,
+        ~right=1.2->rem,
+        ~top=0.6->rem,
+        ~bottom=0.65->rem,
+      )
+    | (Some(_), Right) =>
+      padding4(
+        ~left=1.2->rem,
+        ~right=2.2->rem,
+        ~top=0.6->rem,
+        ~bottom=0.65->rem,
+      )
+    };
   style([
     backgroundColor(bgColor(Base)),
     borderStyle(`none),
@@ -94,15 +122,7 @@ let button = (~theme=?, ~variant, icon, ()) => {
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
     letterSpacing(0.01->rem),
-    paddingLeft(
-      switch (icon) {
-      | Some(_) => 2.2->rem
-      | None => 1.2->rem
-      },
-    ),
-    paddingRight(1.2->rem),
-    paddingTop(0.6->rem),
-    paddingBottom(0.65->rem),
+    padding,
     position(`relative),
     hover([
       boxShadow(btnShadow(Hovering)),
@@ -119,13 +139,19 @@ let button = (~theme=?, ~variant, icon, ()) => {
   ]);
 };
 
-let icon =
+let icon = iconPosition => {
+  let pos =
+    switch (iconPosition) {
+    | Left => left(0.8->rem)
+    | Right => right(0.8->rem)
+    };
   style([
+    pos,
     position(`absolute),
-    left(0.8->rem),
     top(11->px),
     selector("& svg", [height(16->px)]),
   ]);
+};
 
 let buttonGroup =
   style([

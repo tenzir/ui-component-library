@@ -6,23 +6,32 @@ let make =
       ~variant=ButtonStyles.Primary,
       ~theme=?,
       ~icon=?,
+      ~iconPosition=ButtonStyles.Left,
       ~onClick=?,
+      ~className="",
       ~children,
     ) =>
   <button
     onClick={GenericHelpers.optionFn(onClick)}
     type_
     disabled
-    className={ButtonStyles.button(~variant, ~theme?, icon, ())}>
+    className={
+      ButtonStyles.button(~variant, ~theme?, icon, iconPosition, ())
+      ++ " "
+      ++ className
+    }>
     {switch (icon) {
-     | Some(icon) => <span className=ButtonStyles.icon> icon </span>
+     | Some(icon) =>
+       <span className={ButtonStyles.icon(iconPosition)}> icon </span>
      | None => <Empty />
      }}
-    children
+    <span> children </span>
   </button>;
 
 module Group = {
   [@react.component]
-  let make = (~children) =>
-    <div className=ButtonStyles.buttonGroup> children </div>;
+  let make = (~children, ~className="") =>
+    <div className={ButtonStyles.buttonGroup ++ "  " ++ className}>
+      children
+    </div>;
 };
