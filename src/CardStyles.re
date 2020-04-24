@@ -11,13 +11,14 @@ type spacing =
 let deteriminePadding = spacing => {
   let baseBadding = 1.0;
   switch (spacing) {
-  | Tiny => padding2(~h=(baseBadding *. 1.2)->rem, ~v=baseBadding->rem)
+  | Tiny =>
+    padding2(~h=(baseBadding *. 0.8)->rem, ~v=(baseBadding *. 0.6)->rem)
   | Normal =>
-    padding2(~h=(baseBadding *. 2.2)->rem, ~v=(baseBadding *. 2.0)->rem)
+    padding2(~h=(baseBadding *. 1.2)->rem, ~v=(baseBadding *. 1.1)->rem)
   | Large =>
-    padding2(~h=(baseBadding *. 3.2)->rem, ~v=(baseBadding *. 3.0)->rem)
+    padding2(~h=(baseBadding *. 2.2)->rem, ~v=(baseBadding *. 1.6)->rem)
   | Huge =>
-    padding2(~h=(baseBadding *. 4.2)->rem, ~v=(baseBadding *. 4.0)->rem)
+    padding2(~h=(baseBadding *. 3.2)->rem, ~v=(baseBadding *. 2.6)->rem)
   };
 };
 
