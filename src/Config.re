@@ -67,6 +67,6 @@ module Misc = {
   let baseTransitions = [
     transitionProperty("all"),
     transitionDuration(200),
-    transitionTimingFunction(`cubicBezier((0.72, 0.37, 0.51, 1.23))),
+    transitionTimingFunction(`easeInOut),
   ];
 };
