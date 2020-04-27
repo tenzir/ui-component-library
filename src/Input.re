@@ -7,6 +7,7 @@ let make =
       ~_type="text",
       ~defaultValue="",
       ~value=?,
+      ~disabled=false,
       ~label=Unlabeled,
       ~id=?,
       ~validity=Valid,
@@ -27,6 +28,7 @@ let make =
          onBlur={GenericHelpers.optionFn(onBlur)}
          onChange={GenericHelpers.optionFn(onChange)}
          id=identifier
+         disabled
          type_=_type
          value
          placeholder
@@ -37,6 +39,7 @@ let make =
          onBlur={GenericHelpers.optionFn(onBlur)}
          onChange={GenericHelpers.optionFn(onChange)}
          id=identifier
+         disabled
          type_=_type
          defaultValue
          placeholder
