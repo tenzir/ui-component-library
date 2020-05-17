@@ -35,14 +35,3 @@ let genIdentifier = (id, label) =>
   | (None, Labeled(labelString)) => labelString
   | (None, Unlabeled) => ""
   };
-
-/*
- * When adding events like 'onBlur' or 'onChange', we would want the input to be of an optional value.
- * This could possibly entail adding a function like the one below in every single place. Hence, this abstraction.
- */
-type optionFn('a, 'b) = (option('a => 'b), 'a) => 'b;
-let optionFn = optionalFunction =>
-  switch (optionalFunction) {
-  | Some(fn) => fn
-  | None => ignore
-  };

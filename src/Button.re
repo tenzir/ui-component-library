@@ -12,7 +12,7 @@ let make =
       ~children,
     ) =>
   <button
-    onClick={GenericHelpers.optionFn(onClick)}
+    ?onClick
     type_
     disabled
     className={
@@ -20,11 +20,13 @@ let make =
       ++ " "
       ++ className
     }>
-    {switch (icon) {
-     | Some(icon) =>
-       <span className={ButtonStyles.icon(iconPosition)}> icon </span>
-     | None => <Empty />
-     }}
+    {
+      switch (icon) {
+      | Some(icon) =>
+        <span className={ButtonStyles.icon(iconPosition)}> icon </span>
+      | None => <Empty />
+      }
+    }
     <span> children </span>
   </button>;
 

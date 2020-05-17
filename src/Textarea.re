@@ -25,45 +25,37 @@ let make =
 
   <div className={textareaContainerStyles(~pctWidth=width, ~label, ())}>
     <Label label identifier variant theme />
-    {switch (value) {
-     | Some(value) =>
-       <textarea
-         onBlur={GenericHelpers.optionFn(onBlur)}
-         onChange={GenericHelpers.optionFn(onChange)}
-         id=identifier
-         rows
-         disabled
-         cols
-         value
-         placeholder
-         className={textareaStyles(
-           ~variant,
-           ~theme?,
-           ~resize,
-           ~validity,
-           ~styles,
-           (),
-         )}
-       />
-     | None =>
-       <textarea
-         onBlur={GenericHelpers.optionFn(onBlur)}
-         onChange={GenericHelpers.optionFn(onChange)}
-         id=identifier
-         disabled
-         rows
-         cols
-         defaultValue
-         placeholder
-         className={textareaStyles(
-           ~variant,
-           ~theme?,
-           ~resize,
-           ~validity,
-           ~styles,
-           (),
-         )}
-       />
-     }}
+    {
+      switch (value) {
+      | Some(value) =>
+        <textarea
+          ?onBlur
+          ?onChange
+          id=identifier
+          rows
+          disabled
+          cols
+          value
+          placeholder
+          className={
+            textareaStyles(~variant, ~theme?, ~resize, ~validity, ~styles, ())
+          }
+        />
+      | None =>
+        <textarea
+          ?onBlur
+          ?onChange
+          id=identifier
+          disabled
+          rows
+          cols
+          defaultValue
+          placeholder
+          className={
+            textareaStyles(~variant, ~theme?, ~resize, ~validity, ~styles, ())
+          }
+        />
+      }
+    }
   </div>;
 };
