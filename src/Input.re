@@ -22,31 +22,29 @@ let make =
 
   <div className={inputContainerStyles(~pctWidth=width, ~label, ())}>
     <Label label identifier variant theme />
-    {
-      switch (value) {
-      | Some(value) =>
-        <input
-          ?onBlur
-          ?onChange
-          id=identifier
-          disabled
-          type_=_type
-          value
-          placeholder
-          className={inputStyles(~variant, ~validity, ~theme?, ())}
-        />
-      | None =>
-        <input
-          ?onBlur
-          ?onChange
-          id=identifier
-          disabled
-          type_=_type
-          defaultValue
-          placeholder
-          className={inputStyles(~variant, ~validity, ~theme?, ())}
-        />
-      }
-    }
+    {switch (value) {
+     | Some(value) =>
+       <input
+         ?onBlur
+         ?onChange
+         id=identifier
+         disabled
+         type_=_type
+         value
+         placeholder
+         className={inputStyles(~variant, ~validity, ~theme?, ())}
+       />
+     | None =>
+       <input
+         ?onBlur
+         ?onChange
+         id=identifier
+         disabled
+         type_=_type
+         defaultValue
+         placeholder
+         className={inputStyles(~variant, ~validity, ~theme?, ())}
+       />
+     }}
   </div>;
 };
