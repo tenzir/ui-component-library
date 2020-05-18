@@ -30,7 +30,7 @@
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
     "react-syntax-highlighter": "^12.2.1",
-    "reason-react": ">=0.7.1",
+    "reason-react": ">=0.8.0",
     "storybook-dark-mode": "^0.4.1"
   },
   "devDependencies": {
