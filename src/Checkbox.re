@@ -24,7 +24,7 @@ let make =
     <label className={labelStyles(~theme?, ~validity, ())} htmlFor=identifier>
       <input
         disabled
-        onChange={GenericHelpers.optionFn(onChange)}
+        ?onChange
         id=identifier
         type_="checkbox"
         checked=defaultValue

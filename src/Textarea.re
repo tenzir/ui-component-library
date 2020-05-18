@@ -28,8 +28,8 @@ let make =
     {switch (value) {
      | Some(value) =>
        <textarea
-         onBlur={GenericHelpers.optionFn(onBlur)}
-         onChange={GenericHelpers.optionFn(onChange)}
+         ?onBlur
+         ?onChange
          id=identifier
          rows
          disabled
@@ -47,8 +47,8 @@ let make =
        />
      | None =>
        <textarea
-         onBlur={GenericHelpers.optionFn(onBlur)}
-         onChange={GenericHelpers.optionFn(onChange)}
+         ?onBlur
+         ?onChange
          id=identifier
          disabled
          rows

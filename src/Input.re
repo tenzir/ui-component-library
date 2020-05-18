@@ -25,8 +25,8 @@ let make =
     {switch (value) {
      | Some(value) =>
        <input
-         onBlur={GenericHelpers.optionFn(onBlur)}
-         onChange={GenericHelpers.optionFn(onChange)}
+         ?onBlur
+         ?onChange
          id=identifier
          disabled
          type_=_type
@@ -36,8 +36,8 @@ let make =
        />
      | None =>
        <input
-         onBlur={GenericHelpers.optionFn(onBlur)}
-         onChange={GenericHelpers.optionFn(onChange)}
+         ?onBlur
+         ?onChange
          id=identifier
          disabled
          type_=_type

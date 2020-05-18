@@ -12,7 +12,7 @@ let make =
       ~children,
     ) =>
   <button
-    onClick={GenericHelpers.optionFn(onClick)}
+    ?onClick
     type_
     disabled
     className={
