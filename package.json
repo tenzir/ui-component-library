@@ -13,7 +13,7 @@
   },
   "lint-staged": {
     "*.{re,rei}": [
-      "refmt --in-place"
+      "bsrefmt --in-place"
     ]
   },
   "keywords": [
