@@ -17,7 +17,11 @@ const margin = {
 
 export const checkbox = () => {
   const theme = useDarkMode() ? dark : light;
-  const [val, setVal] = React.useState(false);
+  const [val, setVal] = React.useState({
+    checkBox1: false,
+    checkBox2: false,
+    checkBox3: false,
+  });
   return (
     <>
       <div style={margin}>
@@ -45,8 +49,8 @@ export const checkbox = () => {
               label="We inline by default"
               width={50.0}
               variant={normal}
-              defaultValue={val}
-              onChange={(e) => setVal(!val)}
+              defaultValue={val.checkBox1}
+              onChange={(e) => setVal({ ...val, checkBox1: !val.checkBox1 })}
             />
             <Checkbox
               theme={theme}
@@ -54,16 +58,16 @@ export const checkbox = () => {
               width={50.0}
               label="Being invalid turns me red"
               variant={normal}
-              defaultValue={val}
-              onChange={(e) => setVal(!val)}
+              defaultValue={val.checkBox2}
+              onChange={(e) => setVal({ ...val, checkBox2: !val.checkBox2 })}
             />
             <Checkbox
               theme={theme}
               width={100.0}
               label="By being wide enough, we can also cover the whole page"
               variant={normal}
-              defaultValue={val}
-              onChange={(e) => setVal(!val)}
+              defaultValue={val.checkBox3}
+              onChange={(e) => setVal({ ...val, checkBox3: !val.checkBox3 })}
             />
             <Checkbox
               theme={theme}
