@@ -12,6 +12,9 @@
     "tdd": "jest --watchAll"
   },
   "lint-staged": {
+    "*.js": [
+      "npx prettier --print-width 80 --write"
+    ],
     "*.{re,rei}": [
       "bsrefmt --in-place"
     ]
