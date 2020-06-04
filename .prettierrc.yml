@@ -1,0 +1,6 @@
+# .prettierrc
+printWidth: 80
+trailingComma: "es5"
+tabWidth: 2
+singleQuote: false
+semi: true
