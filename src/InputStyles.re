@@ -69,6 +69,10 @@ let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
     paddingRight(1.1->rem),
     paddingTop(0.6->rem),
     paddingBottom(0.6->rem),
+    disabled([
+      cursor(`notAllowed),
+      backgroundColor(StyleHelpers.rgbWithAlpha(colors.background, 0.8)),
+    ]),
     hover([
       color(inputFontColor(colors, Hovering)),
       borderColor(inputBordercolor(colors, Hovering, ~validity, ())),

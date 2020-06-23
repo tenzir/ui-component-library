@@ -6,6 +6,7 @@ let make =
     (
       ~_type="text",
       ~defaultValue="",
+      ~className="",
       ~value=?,
       ~disabled=false,
       ~label=Unlabeled,
@@ -16,6 +17,7 @@ let make =
       ~theme=?,
       ~placeholder="",
       ~onChange=?,
+      ~onKeyDown=?,
       ~onBlur=?,
     ) => {
   let identifier = GenericHelpers.genIdentifier(id, label);
@@ -27,23 +29,29 @@ let make =
        <input
          ?onBlur
          ?onChange
+         ?onKeyDown
          id=identifier
          disabled
          type_=_type
          value
          placeholder
-         className={inputStyles(~variant, ~validity, ~theme?, ())}
+         className={
+           inputStyles(~variant, ~validity, ~theme?, ()) ++ " " ++ className
+         }
        />
      | None =>
        <input
          ?onBlur
          ?onChange
+         ?onKeyDown
          id=identifier
          disabled
          type_=_type
          defaultValue
          placeholder
-         className={inputStyles(~variant, ~validity, ~theme?, ())}
+         className={
+           inputStyles(~variant, ~validity, ~theme?, ()) ++ " " ++ className
+         }
        />
      }}
   </div>;
