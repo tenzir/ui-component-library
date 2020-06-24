@@ -25,7 +25,7 @@ module Styles = {
       minWidth(minimumWidth->px),
     ]);
   let searchBox = style([marginBottom(1.0->rem)]);
-  let listContainer = (minimumWidth, maximumHeight) =>
+  let listContainer = maximumHeight =>
     style([
       boxShadow(
         Shadow.box(
@@ -91,8 +91,7 @@ let make =
   let (name, setName) = React.useState(_ => "");
 
   let possiblyClose = e =>
-    element
-    ->React.Ref.current
+    element.current
     ->Js.Nullable.toOption
     ->Belt.Option.map(domElement => {
         let targetElement =
@@ -105,12 +104,12 @@ let make =
   let toggleState = _ => {
     switch (state) {
     | Open =>
-      Document.addMouseDownEventListener(possiblyClose, document);
       setFilter(_ => "");
       setState(_ => Closed);
-    | Closed =>
       Document.removeMouseDownEventListener(possiblyClose, document);
+    | Closed =>
       setState(_ => Open);
+      Document.addMouseDownEventListener(possiblyClose, document);
     };
   };
 
@@ -181,7 +180,7 @@ let make =
          theme
          depth
          spacing=CardStyles.tiny
-         className={Styles.listContainer(minWidth, maxHeight)}>
+         className={Styles.listContainer(maxHeight)}>
          {enableSearch
             ? <Input
                 onKeyDown=possiblySubmit
