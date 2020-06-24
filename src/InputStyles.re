@@ -71,7 +71,7 @@ let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
     paddingBottom(0.6->rem),
     disabled([
       cursor(`notAllowed),
-      backgroundColor(StyleHelpers.rgbWithAlpha(colors.background, 0.8)),
+      backgroundColor(StyleHelpers.rgbWithAlpha(colors.white, 0.8)),
     ]),
     hover([
       color(inputFontColor(colors, Hovering)),
