@@ -3645,10 +3645,17 @@ bs-css@^11.0.0:
   dependencies:
     emotion "^10.0.7"
 
-bs-platform@^7.3.2:
-  version "7.3.2"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-7.3.2.tgz#301f5c9b4e8cf5713cb60ca22e145e56e793affe"
-  integrity sha512-seJL5g4anK9la4erv+B2o2sMHQCxDF6OCRl9en3hbaUos/S3JsusQ0sPp4ORsbx5eXfHLYBwPljwKXlgpXtsgQ==
+bs-flexboxgrid@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/bs-flexboxgrid/-/bs-flexboxgrid-1.1.1.tgz#d89c6bfea35eebaa9eafe463dee0a471a108455a"
+  integrity sha512-qdXPZUsq9YTJB6BRQtBVKgCqcK7GTG9kCxhf/VbF10aHixomqIB8kP43Lc3GAtaiNPMe1uY921GbZjwJO4fcqw==
+  dependencies:
+    flexboxgrid "^6.3.1"
+
+bs-platform@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.0.1.tgz#05d78492774c2f7e9b424a30eabe4f424fa951ae"
+  integrity sha512-zVIlJl1mkQ2DqhPyZmgbpTDyFHXtryUA6nJa6Q1DsLof0t5EbdNfH4UGT219YhiS7+m0xyEVVHPJIPHNZlssHQ==
 
 bser@2.1.1:
   version "2.1.1"
@@ -5634,6 +5641,11 @@ flatstr@^1.0.4:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/flatstr/-/flatstr-1.0.12.tgz#c2ba6a08173edbb6c9640e3055b95e287ceb5931"
   integrity sha512-4zPxDyhCyiN2wIAtSLI6gc82/EjqZc1onI4Mz/l0pWrAlsSfYH/2ZIcU+e3oA2wDwbzIWNKwa23F8rh6+DRWkw==
+
+flexboxgrid@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/flexboxgrid/-/flexboxgrid-6.3.1.tgz#e99898afc07b7047722bb81a958a5fba4d4e20fd"
+  integrity sha1-6ZiYr8B7cEdyK7galYpfuk1OIP0=
 
 flush-write-stream@^1.0.0:
   version "1.1.1"

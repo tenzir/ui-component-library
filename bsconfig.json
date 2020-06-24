@@ -22,7 +22,7 @@
 	],
 	"suffix": ".bs.js",
 	"namespace": true,
-	"bs-dependencies": ["reason-react", "bs-css"],
+	"bs-dependencies": ["bs-flexboxgrid", "reason-react", "bs-css"],
 	"bs-dev-dependencies": ["@glennsl/bs-jest"],
 	"refmt": 3
 }
