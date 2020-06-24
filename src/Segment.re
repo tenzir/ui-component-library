@@ -46,13 +46,17 @@ module Styles = {
 };
 
 [@react.component]
-let make = (~segments: array(t), ~onSegmentUpdate, ~theme=?) => {
+let make = (~segments: array(t), ~onSegmentUpdate, ~default=?, ~theme=?) => {
   let (active: option(string), setActive) =
     React.useState(_ =>
-      segments
-      ->Belt.Array.keep(x => !x.disabled)
-      ->Belt.Array.get(0)
-      ->Belt.Option.map(x => x.id)
+      switch (default) {
+      | Some(id) => id
+      | None =>
+        segments
+        ->Belt.Array.keep(x => !x.disabled)
+        ->Belt.Array.get(0)
+        ->Belt.Option.map(x => x.id)
+      }
     );
 
   React.useEffect1(

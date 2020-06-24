@@ -15,7 +15,7 @@ const segmentContainer = {
     display: 'inline-block',
     width: '40%',
     marginRight: '100px',
-    paddingBottom: '300px',
+    paddingBottom: '100px',
 }
 const margin = {
     margin: '1rem',
@@ -43,6 +43,7 @@ export const Segments = () => {
 type Dropdown: (
   ~theme: option(UiTypes.theme)
   ~segments: array(t),
+  ~default: option(string), /* The id of the item */
   ~onSegmentUpdate: string => unit, /* The changed id get's pushed back */
   ~title: option(string),
 ) => React.element;
@@ -51,7 +52,7 @@ type Dropdown: (
 
                 <h3>Preview</h3>
                 <div style={segmentContainer}>
-                    <p>A regular dropdown without anything</p>
+                    <p>A regular segment</p>
                     <Segment
                         theme={theme}
                         onSegmentUpdate={() => null}
@@ -72,6 +73,22 @@ type Dropdown: (
                         onSegmentUpdate={() => null}
                         segments={[
                             { title: 'Lorum', id: 0, disabled: true },
+                            { title: 'Ipsum', id: 1, disabled: false },
+                            { title: 'Dolor', id: 2, disabled: false },
+                        ]}
+                    />
+                </div>
+                <div style={segmentContainer}>
+                    <p>
+                        You can also specify a default selection. This will be
+                        selected upon first render.
+                    </p>
+                    <Segment
+                        theme={theme}
+                        default={2}
+                        onSegmentUpdate={() => null}
+                        segments={[
+                            { title: 'Lorum', id: 0, disabled: false },
                             { title: 'Ipsum', id: 1, disabled: false },
                             { title: 'Dolor', id: 2, disabled: false },
                         ]}
