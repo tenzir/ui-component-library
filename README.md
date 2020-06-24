@@ -39,6 +39,8 @@ The following components are currently built.
 - Textarea
 - Loader
 - Alert
+- Dropdown
+- Segment
 
 ## Getting Started
 ### Installation
