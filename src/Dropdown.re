@@ -1,3 +1,5 @@
+open Webapi.Dom;
+
 type t('a) = {
   name: string,
   value: 'a,
@@ -82,13 +84,34 @@ let make =
       ~title=?,
       ~className="",
     ) => {
+  let element = React.useRef(Js.Nullable.null);
   let (state, setState) = React.useState(_ => Closed);
   let (filter, setFilter) = React.useState(_ => "");
   let (filteredOptions, setFilteredOptions) = React.useState(_ => [||]);
   let (name, setName) = React.useState(_ => "");
+
+  let possiblyClose = e =>
+    element
+    ->React.Ref.current
+    ->Js.Nullable.toOption
+    ->Belt.Option.map(domElement => {
+        let targetElement =
+          MouseEvent.target(e) |> EventTarget.unsafeAsElement;
+        domElement |> Element.contains(targetElement)
+          ? () : setState(_ => Closed);
+      })
+    ->ignore;
+
   let toggleState = _ => {
-    setFilter(_ => "");
-    setState(current => current == Open ? Closed : Open);
+    switch (state) {
+    | Open =>
+      Document.addMouseDownEventListener(possiblyClose, document);
+      setFilter(_ => "");
+      setState(_ => Closed);
+    | Closed =>
+      Document.removeMouseDownEventListener(possiblyClose, document);
+      setState(_ => Open);
+    };
   };
 
   let possiblySubmit = e => {
@@ -100,6 +123,12 @@ let make =
     | _ => ()
     };
   };
+
+  React.useEffect0(() =>
+    Some(
+      () => Document.removeMouseDownEventListener(possiblyClose, document),
+    )
+  );
 
   React.useEffect1(
     () => {
@@ -129,7 +158,9 @@ let make =
     (options, filter),
   );
 
-  <div className={Styles.container(minWidth) ++ "  " ++ className}>
+  <div
+    ref={ReactDOMRe.Ref.domRef(element)}
+    className={Styles.container(minWidth) ++ "  " ++ className}>
     <div>
       <Button
         disabled
