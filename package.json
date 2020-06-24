@@ -3,7 +3,7 @@
   "author": "Tenzir",
   "version": "0.2.5",
   "scripts": {
-    "build": "bsb -make-world && yarn build-storybook",
+    "build": "bsb -clean-world && bsb -make-world && yarn build-storybook",
     "build-storybook": "build-storybook",
     "clean": "bsb -clean-world",
     "start": "bsb -make-world -w -ws _ ",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "bs-css": "^11.0.0",
-    "bs-flexboxgrid": "^1.1.1",
+    "bs-flexboxgrid": "^2.0.0",
     "bs-webapi": "^0.16.0",
     "react-icons": "^3.10.0",
     "react-syntax-highlighter": "^12.2.1",
@@ -54,7 +54,7 @@
     "@storybook/react": "^5.3.19",
     "@storybook/theming": "^5.3.19",
     "babel-loader": "^8.1.0",
-    "bs-platform": "^8.0.1",
+    "bs-platform": "^7.3.2",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
