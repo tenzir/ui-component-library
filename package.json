@@ -33,6 +33,7 @@
     "reason-react": ">=0.9.1"
   },
   "dependencies": {
+    "bs-css": "^12.2.0",
     "bs-css-emotion": "^1.2.0",
     "bs-flexboxgrid": "^2.0.0",
     "bs-webapi": "^0.16.1",
