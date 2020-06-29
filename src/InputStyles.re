@@ -8,11 +8,14 @@ let inputFontWeight = variant =>
   | Mono => Typography.weight_mono
   };
 
-let inputFontFamily = variant =>
-  switch (variant) {
-  | Normal => Typography.family_default
-  | Mono => Typography.family_mono
-  };
+let inputFontFamily = variant => {
+  let font =
+    switch (variant) {
+    | Normal => Typography.family_default
+    | Mono => Typography.family_mono
+    };
+  `custom(font);
+};
 
 let labelFontColor = (colors: colors, componentState) =>
   switch (componentState) {

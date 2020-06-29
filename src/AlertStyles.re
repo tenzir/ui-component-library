@@ -89,7 +89,7 @@ let messagePill = (~theme=?, ~variant, ()) => {
     outlineStyle(`none),
     boxShadow(pillShadow(Base)),
     color(pillFontColor(Base)),
-    fontFamily(Typography.family_default),
+    fontFamily(`custom(Typography.family_default)),
     fontWeight(Typography.weight_button),
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),

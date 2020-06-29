@@ -39,7 +39,7 @@ let checkboxStyles = (~theme=?, ()) => {
     borderColor(colors.danger),
     outlineStyle(`none),
     color(inputFontColor(colors, Base)),
-    fontFamily(Typography.family_default),
+    fontFamily(`custom(Typography.family_default)),
     fontWeight(Typography.weight_default),
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
@@ -56,7 +56,7 @@ let labelStyles = (~theme=?, ~validity, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     color(labelFontColor(colors, Base, ~validity, ())),
-    fontFamily(Typography.family_default),
+    fontFamily(`custom(Typography.family_default)),
     fontWeight(Typography.weight_default),
     fontSize(Typography.size_label),
     paddingLeft(0.6->rem),
