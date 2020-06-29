@@ -46,7 +46,13 @@ module Styles = {
 };
 
 [@react.component]
-let make = (~segments: array(t), ~onSegmentUpdate, ~default=?, ~theme=?) => {
+let make =
+    (
+      ~segments: array(t),
+      ~onSegmentUpdate: string => unit,
+      ~default=?,
+      ~theme=?,
+    ) => {
   let (active: option(string), setActive) =
     React.useState(_ =>
       switch (default) {
