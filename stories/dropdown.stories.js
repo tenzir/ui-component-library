@@ -63,7 +63,7 @@ type Dropdown: (
                         onChange={setValue}
                         value={value}
                         options={[
-                            { name: 'Lorum', value: 0 },
+                            { name: 'Lorem', value: 0 },
                             { name: 'Ipsum', value: 1 },
                             { name: 'Dolor', value: 2 },
                             { name: 'Sit', value: 3 },
@@ -81,7 +81,7 @@ type Dropdown: (
                         enableSearch
                         value={value}
                         options={[
-                            { name: 'Lorum', value: 0 },
+                            { name: 'Lorem', value: 0 },
                             { name: 'Ipsum', value: 1 },
                             { name: 'Dolor', value: 2 },
                             { name: 'Sit', value: 3 },
