@@ -91,7 +91,8 @@ let make =
   let (name, setName) = React.useState(_ => "");
 
   let possiblyClose = e =>
-    element.current
+    element
+    ->React.Ref.current
     ->Js.Nullable.toOption
     ->Belt.Option.map(domElement => {
         let targetElement =
