@@ -117,7 +117,7 @@ let button = (~theme=?, ~variant, icon, iconPosition, ()) => {
     cursor(`pointer),
     boxShadow(btnShadow(Base)),
     color(btnFontColor(Base)),
-    fontFamily(Typography.family_default),
+    fontFamily(`custom(Typography.family_default)),
     fontWeight(Typography.weight_button),
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
@@ -164,7 +164,7 @@ let buttonGroup =
         selector(
           "&:after",
           [
-            contentRule(""),
+            contentRule(`text("")),
             position(absolute),
             width(1->px),
             height(50.0->pct),

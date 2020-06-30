@@ -33,7 +33,7 @@ let card = (~theme=?, ~spacing=Normal, ~depth, ~styles, ()) => {
       StyleHelpers.offsetBgColor(theme, depth, colors.background),
     ),
     color(colors.font),
-    fontFamily(Typography.family_default),
+    fontFamily(`custom(Typography.family_default)),
     fontWeight(Typography.weight_default),
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
