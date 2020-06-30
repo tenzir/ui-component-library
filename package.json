@@ -1,7 +1,7 @@
 {
   "name": "tenzir-ui-component-library",
   "author": "Tenzir",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "build": "bsb -clean-world && bsb -make-world && yarn build-storybook",
     "build-storybook": "build-storybook",
