@@ -43,7 +43,7 @@ The following components are currently built.
 - Dropdown
 - Segment
 
-Preview here: [Tenzir-Ui-Component-Libary](https://tenzir.github.io/ui-component-library/)
+Preview here: [Tenzir-Ui-Component-Libary][storybook-url]
 
 ## Getting Started
 ### Installation
