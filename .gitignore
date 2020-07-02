@@ -17,6 +17,7 @@
 /storybook-static/
 /bundleOutput/
 /build/
+/.out/
 
 # -- logs ----------------------------------------------------------------------
 npm-debug.log

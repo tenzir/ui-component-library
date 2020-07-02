@@ -26,6 +26,18 @@ jobs:
     - name: Run Tests
       run: yarn test
 
+    - name: Build Storybook for GitHub Pages
+      run: yarn deploy-storybook -- --dry-run --out=.out
+
+    - name: Push Storybook Folder
+      if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.REPO_SCOPE_ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: .out
+
   npm-release:
     name: NPM Release
     runs-on: ubuntu-latest

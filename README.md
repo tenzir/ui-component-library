@@ -5,6 +5,7 @@
 
 A ReasonML-first UI component library
 
+[![Storybook][storybook-badge]][storybook-url]
 [![CI][ci-badge]][ci-url]
 [![NPM Version][npm-badge]][npm-url]
 [![Development Status][alpha-badge]][latest-release-url]
@@ -41,6 +42,8 @@ The following components are currently built.
 - Alert
 - Dropdown
 - Segment
+
+Preview here: [Tenzir-Ui-Component-Libary][storybook-url]
 
 ## Getting Started
 ### Installation
@@ -80,6 +83,8 @@ yarn storybook
 ## License
 Tenzir UI-Component Library comes with a [3-clause BSD license][license-url].
 
+[storybook-badge]: https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg 
+[storybook-url]: https://tenzir.github.io/ui-component-library/
 [ci-url]: https://github.com/tenzir/ui-component-library/actions?query=branch%3Amaster+workflow%3A%22UI%20Components%22
 [ci-badge]: https://github.com/tenzir/ui-component-library/workflows/UI%20Components/badge.svg?branch=master
 [npm-badge]: https://img.shields.io/npm/v/tenzir-ui-component-library
