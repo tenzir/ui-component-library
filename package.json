@@ -35,7 +35,7 @@
   "dependencies": {
     "bs-css": "^12.2.0",
     "bs-css-emotion": "^1.2.0",
-    "bs-flexboxgrid": "^2.0.0",
+    "bs-flexboxgrid": "^1.1.1",
     "bs-webapi": "^0.16.1",
     "react-icons": "^3.10.0",
     "react-syntax-highlighter": "^12.2.1",

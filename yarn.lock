@@ -3579,10 +3579,10 @@ bs-css@12.2.0, bs-css@^12.2.0:
   resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-12.2.0.tgz#926e758d7f95c02f516505ecdcd855e1d9dcb2a0"
   integrity sha512-JDaJAc8XKYZA05G8xVuDhB184yGKgNajdUloPC+OK+J8gGTnv8pfrhWKsFFKry87eJN4kKHhgsbXaN5U70g+3Q==
 
-bs-flexboxgrid@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/bs-flexboxgrid/-/bs-flexboxgrid-2.0.0.tgz#63c8f519b642afa3b71dc2dce7e90039a2ce83c8"
-  integrity sha512-zs8XdvIPdKn0921qoW+TWBPY4W7acyQhQX0Yxm04SDrQ3TuXe9au6SZAagHwdEocsD/M7pWci7jKM/etmx2G+g==
+bs-flexboxgrid@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/bs-flexboxgrid/-/bs-flexboxgrid-1.1.1.tgz#d89c6bfea35eebaa9eafe463dee0a471a108455a"
+  integrity sha512-qdXPZUsq9YTJB6BRQtBVKgCqcK7GTG9kCxhf/VbF10aHixomqIB8kP43Lc3GAtaiNPMe1uY921GbZjwJO4fcqw==
   dependencies:
     flexboxgrid "^6.3.1"
 
