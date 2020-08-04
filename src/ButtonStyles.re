@@ -3,6 +3,12 @@ open Config;
 open UiTypes;
 
 [@bs.deriving accessors]
+type size =
+  | Small
+  | Medium
+  | Large;
+
+[@bs.deriving accessors]
 type variant =
   | Primary
   | Secondary
@@ -81,7 +87,7 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
   modifier(baseColorDirectlyMapped(colors, variant));
 };
 
-let button = (~theme=?, ~variant, icon, iconPosition, ()) => {
+let button = (~theme=?, ~variant, size, icon, iconPosition, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let btnFontColor = buttonFontColor(colors, variant);
@@ -134,6 +140,13 @@ let button = (~theme=?, ~variant, icon, iconPosition, ()) => {
       color(btnFontColor(Active)),
       backgroundColor(bgColor(Active)),
     ]),
+    transform(
+      switch (size) {
+      | Small => scale(0.9, 0.9)
+      | Medium => scale(1.0, 1.0)
+      | Large => scale(1.1, 1.1)
+      },
+    ),
     selector("&[disabled]", [opacity(0.8), cursor(`notAllowed)]),
     ...Misc.baseTransitions,
   ]);

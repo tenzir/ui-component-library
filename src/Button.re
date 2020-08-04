@@ -4,6 +4,7 @@ let make =
       ~disabled=false,
       ~type_="button",
       ~variant=ButtonStyles.Primary,
+      ~size=ButtonStyles.Small,
       ~theme=?,
       ~icon=?,
       ~iconPosition=ButtonStyles.Left,
@@ -16,7 +17,7 @@ let make =
     type_
     disabled
     className={
-      ButtonStyles.button(~variant, ~theme?, icon, iconPosition, ())
+      ButtonStyles.button(~variant, ~theme?, size, icon, iconPosition, ())
       ++ " "
       ++ className
     }>
