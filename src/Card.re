@@ -22,7 +22,7 @@ let make =
 
   <div
     className={
-      card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  " ++ className
+      className ++ " " ++ card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  "
     }>
     {header->Belt.Option.mapWithDefault(<Empty />, header =>
        <div className={cardHeader(~theme?, ~depth, ())}> header </div>
