@@ -1,7 +1,7 @@
 {
   "name": "tenzir-ui-component-library",
   "author": "Tenzir",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "scripts": {
     "build:reason": "bsb -clean-world && bsb -make-world",
     "build:storybook": "build-storybook",
@@ -73,7 +73,9 @@
   "resolutions": {
     "acorn": "^7.1.1",
     "kind-of": "^6.0.3",
-    "minimist": "^1.2.2"
+    "minimist": "^1.2.2",
+    "lodash": "^4.17.19",
+    "elliptic": "^6.5.3"
   },
   "jest": {
     "transformIgnorePatterns": [
