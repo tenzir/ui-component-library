@@ -28,7 +28,7 @@ export const nofitication = () => {
     const theme = useDarkMode() ? dark : light
 
     const [notifications, setNotifications] = React.useState([
-        { id: 0, title: 'I just have a title' },
+        { id: 0, title: 'Here is the Preview' },
         { id: 1, title: 'I also have a body', body: 'Here is the body' },
         {
             id: 2,
@@ -39,6 +39,7 @@ export const nofitication = () => {
             id: 3,
             title: 'I go away automagically',
             body: 'Here is some text to go with my notification',
+            timeout: 3000,
             action: ['Action Title', () => alert('Hello')],
         },
     ])
@@ -75,12 +76,20 @@ export const nofitication = () => {
 type Notifications
   ~notifications: array(Notification),
   ~handleDismissal: option(id => unit),
+  ~defaultAnimationTime: int, /* In ms,  Defaults to 400 */
 ) => React.element;
 `}
                 </SyntaxHighlighter>
 
-                <h3>Preview</h3>
-                <Notifications notifications={notifications} theme={theme} />
+                <Notifications
+                    handleDismissal={(notificationId) =>
+                        setNotifications((arr) =>
+                            arr.filter(({ id }) => id !== notificationId)
+                        )
+                    }
+                    notifications={notifications}
+                    theme={theme}
+                />
             </Card>
         </div>
     )

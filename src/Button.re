@@ -17,9 +17,9 @@ let make =
     type_
     disabled
     className={
-      ButtonStyles.button(~variant, ~theme?, size, icon, iconPosition, ())
-      ++ " "
-      ++ className
+      className
+      ++ "  "
+      ++ ButtonStyles.button(~variant, ~theme?, size, icon, iconPosition, ())
     }>
     {switch (icon) {
      | Some(icon) =>

@@ -3,6 +3,8 @@ open CardStyles;
 [@react.component]
 let make =
     (
+      ~onMouseOver=?,
+      ~onMouseOut=?,
       ~spacing=Normal,
       ~theme=?,
       ~depth=1,
@@ -21,6 +23,8 @@ let make =
   };
 
   <div
+    ?onMouseOver
+    ?onMouseOut
     className={
       className ++ " " ++ card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  "
     }>
