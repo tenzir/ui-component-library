@@ -3,6 +3,8 @@ open CardStyles;
 [@react.component]
 let make =
     (
+      ~onMouseOver=?,
+      ~onMouseOut=?,
       ~spacing=Normal,
       ~theme=?,
       ~depth=1,
@@ -21,8 +23,10 @@ let make =
   };
 
   <div
+    ?onMouseOver
+    ?onMouseOut
     className={
-      card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  " ++ className
+      className ++ " " ++ card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  "
     }>
     {header->Belt.Option.mapWithDefault(<Empty />, header =>
        <div className={cardHeader(~theme?, ~depth, ())}> header </div>
