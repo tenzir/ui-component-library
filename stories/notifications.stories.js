@@ -1,4 +1,5 @@
 import React from 'react'
+import { make as Button } from '../src/Button.bs.js'
 import { make as Input } from '../src/Input.bs.js'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -42,7 +43,29 @@ export const nofitication = () => {
             timeout: 3000,
             action: ['Action Title', () => alert('Hello')],
         },
+        {
+            id: 4,
+            title: 'I go away automagically',
+            body: 'But hang around a little longer than my mate',
+            timeout: 8000,
+        },
     ])
+
+    const addNotification = () => {
+        setNotifications((arr) => [
+            ...arr,
+            {
+                id:
+                    arr.length === 0
+                        ? 0
+                        : Math.max(...arr.map((x) => x.id)) + 1,
+                title: 'I go away automagically',
+                body: 'Here is some text to go with my notification',
+                timeout: 3000,
+                action: ['Action Title', () => alert('Hello')],
+            },
+        ])
+    }
 
     return (
         <div style={margin}>
@@ -77,9 +100,14 @@ type Notifications
   ~notifications: array(Notification),
   ~handleDismissal: option(id => unit),
   ~defaultAnimationTime: int, /* In ms,  Defaults to 400 */
+  ~maxAmount: int, /* Max notifications to show at one point in time. Defaults to 5 */
 ) => React.element;
 `}
                 </SyntaxHighlighter>
+
+                <Button theme={theme} onClick={addNotification}>
+                    Add Notification
+                </Button>
 
                 <Notifications
                     handleDismissal={(notificationId) =>

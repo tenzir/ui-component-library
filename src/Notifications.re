@@ -20,11 +20,15 @@ let make =
       ~notifications: array(Notification.t),
       ~handleDismissal=_ => (),
       ~defaultAnimationTime=400,
+      ~maxAmount=5,
     ) => {
   <Row _end=`xs bottom=`xs className=Styles.container>
     <Col xs=12 sm=4 md=3 lg=3>
       <Row start=`xs>
         {notifications
+         ->Belt.Array.reverse
+         ->Belt.Array.slice(~offset=0, ~len=maxAmount)
+         ->Belt.Array.reverse
          ->Belt.Array.map(notification => {
              <Notification
                key={notification.id}
