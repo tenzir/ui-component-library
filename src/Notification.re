@@ -186,7 +186,7 @@ let make = (~theme, ~notification, ~handleDismissal, ~defaultAnimationTime) => {
          timeout => {
            Js.Global.setTimeout(
              () => setReadyForDismissal(_ => Timeout),
-             timeout /* We add 10% for the moving out of screen */
+             timeout,
            )
            ->ignore;
            <div className={Styles.timeout(theme, timeout, hovered)}>
