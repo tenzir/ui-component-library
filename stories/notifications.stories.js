@@ -25,7 +25,7 @@ const margin = {
     margin: '1rem',
 }
 
-export const nofitication = () => {
+export const notifications = () => {
     const theme = useDarkMode() ? dark : light
 
     const [notifications, setNotifications] = React.useState([
