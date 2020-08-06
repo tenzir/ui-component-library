@@ -42,8 +42,9 @@ The following components are currently built.
 - Alert
 - Dropdown
 - Segment
+- Notifications
 
-Preview here: [Tenzir-Ui-Component-Libary][storybook-url]
+Preview here: [Tenzir-Ui-Component-Library][storybook-url]
 
 ## Getting Started
 ### Installation
