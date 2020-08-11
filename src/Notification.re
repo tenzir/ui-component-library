@@ -9,6 +9,15 @@ type t = {
   timeout: option(int),
 };
 
+let create =
+    (~id=GenericHelpers.v4(), ~body=None, ~action=None, ~timeout=None, title) => {
+  id,
+  title,
+  body,
+  action,
+  timeout,
+};
+
 type state =
   | Entering
   | Stale
