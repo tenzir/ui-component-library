@@ -35,3 +35,8 @@ let genIdentifier = (id, label) =>
   | (None, Labeled(labelString)) => labelString
   | (None, Unlabeled) => ""
   };
+
+/*
+ * To aid the creation of random id's, we use UUID's v4 fn.
+ */
+[@bs.module "uuid"] [@bs.val] external v4: unit => string = "v4";
