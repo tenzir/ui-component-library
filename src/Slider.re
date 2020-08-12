@@ -203,7 +203,7 @@ let make =
       {children->Belt.Option.mapWithDefault(<Empty />, children =>
          <div
            className={
-             Styles.children(overlayPosition, yOffset) ++ " children"
+             Styles.children(overlayPosition, childrenOffset) ++ " children"
            }>
            children
          </div>
