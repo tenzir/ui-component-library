@@ -43,7 +43,7 @@ export const Sliders = () => {
                         style={okaidia}
                         showLineNumbers
                     >
-                        {`type Button: (
+                        {`type Slider: (
   ~theme: option(UiTypes.theme)),
   ~label: UiStyles.labels, /* defaults to "UiStyles.Unlabeled" */
   ~min:int, /* defaults to 0 */
