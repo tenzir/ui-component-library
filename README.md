@@ -43,6 +43,7 @@ The following components are currently built.
 - Dropdown
 - Segment
 - Notifications
+- Slider
 
 Preview here: [Tenzir-Ui-Component-Library][storybook-url]
 
