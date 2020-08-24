@@ -65,7 +65,7 @@ type Dropdown: (
 
                 <h3>Preview</h3>
                 <div style={dropdownContainer}>
-                    <p>A regular dropdown without anything</p>
+                    <p>A regular dropdown</p>
                     <Dropdown
                         theme={theme}
                         onChange={setValue}
