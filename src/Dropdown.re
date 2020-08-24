@@ -11,58 +11,115 @@ type dropdownState =
 
 module Styles = {
   open Css;
-  let container = minimumWidth =>
+  let container = (state, variant, theme, minimumWidth) => {
+    let colors = Some(theme)->StyleHelpers.colorsFromThemeVariant;
+    let bgColor =
+      state === Open
+        ? ButtonStyles.defineBackgroundColor(
+            colors,
+            variant,
+            UiTypes.Hovering,
+          )
+        : ButtonStyles.defineBackgroundColor(colors, variant, UiTypes.Base);
+
+    let shadow =
+      state === Open
+        ? ButtonStyles.buttonShadow(colors, variant, UiTypes.Hovering)
+        : ButtonStyles.buttonShadow(colors, variant, UiTypes.Base);
+
     style([
+      borderRadius(Config.Misc.borderRadius),
+      boxShadow(shadow),
       position(`relative),
+      backgroundColor(bgColor)->important,
       overflow(`visible),
       minWidth(minimumWidth->px),
     ]);
-  let button = minimumWidth =>
+  };
+  let button = (state, minimumWidth) => {
+    let openedStyle =
+      switch (state) {
+      | Open => [
+          borderBottomLeftRadius(`zero)->important,
+          borderBottomRightRadius(`zero)->important,
+          boxShadow(
+            Shadow.box(
+              ~y=px(0),
+              ~x=px(0),
+              ~blur=px(5),
+              `rgba((0, 0, 0, 0.0)),
+            ),
+          )
+          ->important,
+        ]
+      | Closed => [
+          borderBottomLeftRadius(Config.Misc.borderRadius),
+          borderBottomRightRadius(Config.Misc.borderRadius),
+        ]
+      };
     style([
       width(100.0->pct),
       wordBreak(`breakAll)->important,
       fontSize(0.9->rem)->important,
       minWidth(minimumWidth->px),
+      ...openedStyle,
     ]);
+  };
   let searchBox = style([marginBottom(1.0->rem)]);
-  let listContainer = maximumHeight =>
+  let listContainer = (variant, theme) => {
+    let bgColor =
+      Some(theme)
+      ->StyleHelpers.colorsFromThemeVariant
+      ->ButtonStyles.baseColorDirectlyMapped(variant);
     style([
-      boxShadow(
-        Shadow.box(
-          ~y=`zero,
-          ~x=`zero,
-          ~blur=1.5->rem,
-          `rgba((0, 0, 0, 0.2)),
-        ),
-      ),
       position(`absolute)->important,
       left(`zero),
-      top(105.0->pct),
+      top(100.0->pct),
+      padding2(~h=0.5->rem, ~v=0.5->rem),
       width(`auto)->important,
       height(`auto)->important,
+      backgroundColor(bgColor)->important,
+      borderTopLeftRadius(`zero)->important,
+      borderTopRightRadius(`zero)->important,
       minWidth(100.0->pct)->important,
-      maxHeight(maximumHeight->px)->important,
-      padding2(~h=0.5->rem, ~v=0.3->rem)->important,
-      overflowY(`auto)->important,
       zIndex(1),
     ]);
+  };
 
-  let uList = style([margin(`zero), padding(`zero), listStyleType(`none)]);
+  let uList = (variant, theme, maximumHeight) => {
+    let bgColor =
+      Some(theme)
+      ->StyleHelpers.colorsFromThemeVariant
+      ->ButtonStyles.baseColorDirectlyMapped(variant);
+    style([
+      margin(`zero),
+      padding(`zero),
+      maxHeight(maximumHeight->px)->important,
+      borderRadius(Config.Misc.borderRadius),
+      overflowY(`auto)->important,
+      listStyleType(`none),
+      backgroundColor(bgColor),
+    ]);
+  };
 
-  let listItem = (~theme=?, ~depth, ~isActive=false, ()) => {
-    let colors = theme->StyleHelpers.colorsFromThemeVariant;
+  let listItem = (state, variant, ~theme=?, ~depth, ~isActive=false, ()) => {
+    let colors = StyleHelpers.colorsFromThemeVariant(theme);
     let offset = StyleHelpers.offsetBgColor(theme);
+    let bgColor = colors->ButtonStyles.baseColorDirectlyMapped(variant);
+    let fontColor =
+      state === Open
+        ? ButtonStyles.buttonFontColor(colors, variant, UiTypes.Active)
+        : ButtonStyles.buttonFontColor(colors, variant, UiTypes.Base);
     style([
       cursor(isActive ? `default : `pointer),
       margin(`zero),
       padding2(~h=1.5->rem, ~v=0.5->rem),
+      color(fontColor)->important,
       borderRadius(Config.Misc.borderRadius),
-      backgroundColor(
-        isActive ? offset(depth - 1, colors.background) : `transparent,
-      ),
+      backgroundColor(isActive ? offset(depth - 2, bgColor) : `transparent),
       hover([
-        backgroundColor(offset(depth + 1, colors.background)),
-        active([backgroundColor(offset(depth + 2, colors.background))]),
+        backgroundColor(offset(depth - 3, bgColor)),
+        active([backgroundColor(offset(depth - 3, bgColor))]),
       ]),
       ...Config.Misc.baseTransitions,
     ]);
@@ -78,8 +135,9 @@ let make =
       ~enableSearch=false,
       ~value: 'a,
       ~depth=1,
+      ~variant=ButtonStyles.Secondary,
       ~minWidth=150,
-      ~maxHeight=250,
+      ~maxHeight=200,
       ~onChange,
       ~title=?,
       ~className="",
@@ -91,8 +149,7 @@ let make =
   let (name, setName) = React.useState(_ => "");
 
   let possiblyClose = e =>
-    element
-    ->React.Ref.current
+    element.current
     ->Js.Nullable.toOption
     ->Belt.Option.map(domElement => {
         let targetElement =
@@ -160,12 +217,14 @@ let make =
 
   <div
     ref={ReactDOMRe.Ref.domRef(element)}
-    className={Styles.container(minWidth) ++ "  " ++ className}>
+    className={
+      Styles.container(state, variant, theme, minWidth) ++ "  " ++ className
+    }>
     <div>
       <Button
         disabled
-        className={Styles.button(minWidth)}
-        variant=ButtonStyles.secondary
+        className={Styles.button(state, minWidth)}
+        variant
         onClick=toggleState
         icon={<Icons.ChevronDown />}
         iconPosition=ButtonStyles.Right>
@@ -181,7 +240,7 @@ let make =
          theme
          depth
          spacing=CardStyles.tiny
-         className={Styles.listContainer(maxHeight)}>
+         className={Styles.listContainer(variant, theme)}>
          {enableSearch
             ? <Input
                 onKeyDown=possiblySubmit
@@ -193,12 +252,14 @@ let make =
                 }
               />
             : <Empty />}
-         <ul className=Styles.uList>
+         <ul className={Styles.uList(variant, theme, maxHeight)}>
            {filteredOptions
             ->Belt.Array.map(_option =>
                 <li
                   key={_option.name}
                   className={Styles.listItem(
+                    state,
+                    variant,
                     ~theme,
                     ~depth,
                     ~isActive=_option.value === value,

@@ -41,6 +41,7 @@ The following components are currently built.
 - Loader
 - Alert
 - Dropdown
+- Dropdown with Action Button
 - Segment
 - Notifications
 - Slider

@@ -200,6 +200,7 @@ let buttonGroup =
       [
         borderTopRightRadius(Misc.borderRadius),
         borderBottomRightRadius(Misc.borderRadius),
+        selector("&:after", [display(`none)]),
       ],
     ),
   ]);
