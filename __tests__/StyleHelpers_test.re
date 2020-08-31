@@ -7,7 +7,7 @@ describe("rgbWithAlpha", () => {
   let supportedColour = `rgb((0, 0, 0));
   let unsupportedColours = [
     ("hex", `hex("000")),
-    ("rgba", `rgba((0, 0, 0, 0))),
+    ("rgba", `rgba((0, 0, 0, `num(0)))),
     ("hsl", `hsl((0.0->deg, [0.0->pct], [0.0->pct]))),
     ("hsla", `hsla((0.0->deg, [0.0->pct], [0.0->pct], [0.0->pct]))),
     ("transparent", `transparent),
@@ -16,7 +16,7 @@ describe("rgbWithAlpha", () => {
 
   test("Add an alpha channel to RGB colors", () =>
     expect(rgbWithAlpha(supportedColour, 0))
-    |> toEqual(`rgba((0, 0, 0, 0)))
+    |> toEqual(`rgba((0, 0, 0, `num(0))))
   );
 
   unsupportedColours
@@ -43,7 +43,7 @@ describe("mapRGB", () => {
 describe("applyPercentageToColor", () => {
   let percentage = 10;
   let color = `rgb((50, 50, 50));
-  let colorWithAlpha = `rgba((50, 50, 50, 50.0));
+  let colorWithAlpha = `rgba((50, 50, 50, `num(50.0)));
   let unsupportedColours = [
     ("hex", `hex("000")),
     ("transparent", `transparent),
@@ -64,14 +64,14 @@ describe("applyPercentageToColor", () => {
     expect(
       applyPercentageToColor(UiTypes.Lighten, percentage, colorWithAlpha),
     )
-    |> toEqual(`rgba((75, 75, 75, 50.0)))
+    |> toEqual(`rgba((75, 75, 75, `num(50.0))))
   );
 
   test("Darken RGBA", () =>
     expect(
       applyPercentageToColor(UiTypes.Darken, percentage, colorWithAlpha),
     )
-    |> toEqual(`rgba((25, 25, 25, 50.0)))
+    |> toEqual(`rgba((25, 25, 25, `num(50.0))))
   );
 
   unsupportedColours
@@ -93,7 +93,7 @@ describe("applyPercentageToColor", () => {
 describe("lighten / darken shorthands", () => {
   let percentage = 10;
   let color = `rgb((50, 50, 50));
-  let colorWithAlpha = `rgba((50, 50, 50, 50.0));
+  let colorWithAlpha = `rgba((50, 50, 50, `num(50.0)));
   let unsupportedColours = [
     ("hex", `hex("000")),
     ("transparent", `transparent),
@@ -110,12 +110,12 @@ describe("lighten / darken shorthands", () => {
 
   test("Lighten RGBA", () =>
     expect(lighten(percentage, colorWithAlpha))
-    |> toEqual(`rgba((75, 75, 75, 50.0)))
+    |> toEqual(`rgba((75, 75, 75, `num(50.0))))
   );
 
   test("Darken RGBA", () =>
     expect(darken(percentage, colorWithAlpha))
-    |> toEqual(`rgba((25, 25, 25, 50.0)))
+    |> toEqual(`rgba((25, 25, 25, `num(50.0))))
   );
 
   unsupportedColours

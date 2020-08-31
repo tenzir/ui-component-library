@@ -5,7 +5,7 @@ open GenericHelpers;
 /* Converts `rgb to `rgba */
 let rgbWithAlpha = (rgb, alpha) =>
   switch (rgb) {
-  | `rgb(r, g, b) => `rgba((r, g, b, alpha))
+  | `rgb(r, g, b) => `rgba((r, g, b, `num(alpha)))
   | x => x
   };
 

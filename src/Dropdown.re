@@ -47,7 +47,7 @@ module Styles = {
               ~y=px(0),
               ~x=px(0),
               ~blur=px(5),
-              `rgba((0, 0, 0, 0.0)),
+              `rgba((0, 0, 0, `num(0.0))),
             ),
           )
           ->important,

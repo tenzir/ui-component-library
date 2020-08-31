@@ -24,7 +24,7 @@ module Colors = {
   let activeChangePercent = 5;
   let light = {
     background: `rgb((254, 255, 255)),
-    darkBlueBg: `rgba((0, 51, 77, 1.0)),
+    darkBlueBg: `rgba((0, 51, 77, `num(1.0))),
     primary: `rgb((0, 164, 241)),
     secondary: `rgb((189, 207, 219)),
     success: `rgb((154, 248, 0)),
@@ -44,7 +44,7 @@ module Colors = {
 
   let tenzirBlue = {
     ...light,
-    background: `rgba((0, 51, 77, 1.0)),
+    background: `rgba((0, 51, 77, `num(1.0))),
     font: `rgb((238, 238, 238)),
   };
 };
