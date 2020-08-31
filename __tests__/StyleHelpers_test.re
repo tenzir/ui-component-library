@@ -134,15 +134,15 @@ describe("lighten / darken shorthands", () => {
 
 describe("colorsFromThemeVariant", () => {
   test("Return light theme", () =>
-    expect(colorsFromThemeVariant(Some(UiTypes.Light))) |> toEqual(Config.Colors.light)
+    expect(colorsFromThemeVariant(UiTypes.Light))
+    |> toEqual(Config.Colors.light)
   );
   test("Return dark theme", () =>
-    expect(colorsFromThemeVariant(Some(UiTypes.Dark))) |> toEqual(Config.Colors.dark)
+    expect(colorsFromThemeVariant(UiTypes.Dark))
+    |> toEqual(Config.Colors.dark)
   );
   test("Return tenzir blue theme", () =>
-    expect(colorsFromThemeVariant(Some(UiTypes.TenzirBlue))) |> toEqual(Config.Colors.tenzirBlue)
-  );
-  test("Return default theme", () =>
-    expect(colorsFromThemeVariant(None)) |> toEqual(Config.Colors.light)
+    expect(colorsFromThemeVariant(UiTypes.TenzirBlue))
+    |> toEqual(Config.Colors.tenzirBlue)
   );
 });

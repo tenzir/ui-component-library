@@ -6,7 +6,7 @@ let make =
       ~onMouseOver=?,
       ~onMouseOut=?,
       ~spacing=Normal,
-      ~theme=?,
+      ~theme=Config.defaultTheme,
       ~depth=1,
       ~className="",
       ~header=?,
@@ -26,10 +26,10 @@ let make =
     ?onMouseOver
     ?onMouseOut
     className={
-      className ++ " " ++ card(~spacing, ~theme?, ~depth, ~styles, ()) ++ "  "
+      className ++ " " ++ card(~spacing, ~theme, ~depth, ~styles, ()) ++ "  "
     }>
     {header->Belt.Option.mapWithDefault(<Empty />, header =>
-       <div className={cardHeader(~theme?, ~depth, ())}> header </div>
+       <div className={cardHeader(~theme, ~depth, ())}> header </div>
      )}
     <div
       className={cardContent(
@@ -39,7 +39,7 @@ let make =
       children
     </div>
     {footer->Belt.Option.mapWithDefault(<Empty />, footer =>
-       <div className={cardFooter(~theme?, ~depth, ())}> footer </div>
+       <div className={cardFooter(~theme, ~depth, ())}> footer </div>
      )}
   </div>;
 };

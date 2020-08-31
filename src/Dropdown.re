@@ -12,7 +12,7 @@ type dropdownState =
 module Styles = {
   open Css;
   let container = (state, variant, theme, minimumWidth) => {
-    let colors = Some(theme)->StyleHelpers.colorsFromThemeVariant;
+    let colors = StyleHelpers.colorsFromThemeVariant(theme);
     let bgColor =
       state === Open
         ? ButtonStyles.defineBackgroundColor(
@@ -68,8 +68,7 @@ module Styles = {
   let searchBox = style([marginBottom(1.0->rem)]);
   let listContainer = (variant, theme) => {
     let bgColor =
-      Some(theme)
-      ->StyleHelpers.colorsFromThemeVariant
+      StyleHelpers.colorsFromThemeVariant(theme)
       ->ButtonStyles.baseColorDirectlyMapped(variant);
     style([
       position(`absolute)->important,
@@ -88,8 +87,7 @@ module Styles = {
 
   let uList = (variant, theme, maximumHeight) => {
     let bgColor =
-      Some(theme)
-      ->StyleHelpers.colorsFromThemeVariant
+      StyleHelpers.colorsFromThemeVariant(theme)
       ->ButtonStyles.baseColorDirectlyMapped(variant);
     style([
       margin(`zero),
@@ -102,7 +100,7 @@ module Styles = {
     ]);
   };
 
-  let listItem = (state, variant, ~theme=?, ~depth, ~isActive=false, ()) => {
+  let listItem = (state, variant, ~theme, ~depth, ~isActive=false, ()) => {
     let colors = StyleHelpers.colorsFromThemeVariant(theme);
     let offset = StyleHelpers.offsetBgColor(theme);
     let bgColor = colors->ButtonStyles.baseColorDirectlyMapped(variant);
@@ -129,7 +127,7 @@ module Styles = {
 [@react.component]
 let make =
     (
-      ~theme,
+      ~theme=Config.defaultTheme,
       ~options,
       ~disabled=false,
       ~enableSearch=false,

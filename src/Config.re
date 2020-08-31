@@ -1,6 +1,8 @@
 open Css_AtomicTypes;
 open UiTypes;
 
+let defaultTheme = UiTypes.Light;
+
 type colors = {
   background: Color.t,
   darkBlueBg: Color.t,

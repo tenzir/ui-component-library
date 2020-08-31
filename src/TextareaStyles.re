@@ -76,7 +76,7 @@ let textareaContainerStyles = (~pctWidth=100.0, ~label=Unlabeled, ()) =>
 
 let textareaStyles =
     (
-      ~theme=?,
+      ~theme,
       ~variant=Normal,
       ~resize as resizeType,
       ~validity,
@@ -116,7 +116,7 @@ let textareaStyles =
   ]);
 };
 
-let labelStyles = (~theme=?, ~variant=Normal, ()) => {
+let labelStyles = (~theme, ~variant=Normal, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     display(`inlineBlock),

@@ -13,7 +13,7 @@ let make =
       ~validity=Valid,
       ~width=[@reason.preserve_braces] 100.0,
       ~resize=NoResize,
-      ~theme=?,
+      ~theme=Config.defaultTheme,
       ~placeholder="",
       ~onChange=?,
       ~onBlur=?,
@@ -38,7 +38,7 @@ let make =
          placeholder
          className={textareaStyles(
            ~variant,
-           ~theme?,
+           ~theme,
            ~resize,
            ~validity,
            ~styles,
@@ -57,7 +57,7 @@ let make =
          placeholder
          className={textareaStyles(
            ~variant,
-           ~theme?,
+           ~theme,
            ~resize,
            ~validity,
            ~styles,

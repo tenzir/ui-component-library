@@ -5,7 +5,7 @@ let make =
       ~type_="button",
       ~variant=ButtonStyles.Primary,
       ~size=ButtonStyles.Medium,
-      ~theme=?,
+      ~theme=Config.defaultTheme,
       ~icon=?,
       ~iconPosition=ButtonStyles.Left,
       ~onClick=?,
@@ -19,7 +19,7 @@ let make =
     className={
       className
       ++ "  "
-      ++ ButtonStyles.button(~variant, ~theme?, size, icon, iconPosition, ())
+      ++ ButtonStyles.button(~variant, ~theme, size, icon, iconPosition, ())
     }>
     {switch (icon) {
      | Some(icon) =>

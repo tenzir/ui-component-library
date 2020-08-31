@@ -77,7 +77,7 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
   modifier(baseColorDirectlyMapped(colors, variant));
 };
 
-let messagePill = (~theme=?, ~variant, ()) => {
+let messagePill = (~theme, ~variant, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let pillFontColor = pillFontColor(colors, variant);

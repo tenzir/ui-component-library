@@ -54,7 +54,7 @@ let inputContainerStyles = (~pctWidth=100.0, ~label=Unlabeled, ()) =>
     position(`relative),
   ]);
 
-let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
+let inputStyles = (~theme, ~validity, ~variant=Normal, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     display(`inlineBlock),
@@ -88,7 +88,7 @@ let inputStyles = (~theme=?, ~validity, ~variant=Normal, ()) => {
   ]);
 };
 
-let labelStyles = (~theme=?, ~variant=Normal, ()) => {
+let labelStyles = (~theme, ~variant=Normal, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     display(`block),

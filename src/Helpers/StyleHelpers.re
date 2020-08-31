@@ -41,13 +41,14 @@ let lighten = applyPercentageToColor(Lighten);
 let darken = applyPercentageToColor(Darken);
 
 let offsetBgColor = (theme, depth, color) => {
-  let offset =
+  (
     switch (theme) {
-    | Some(UiTypes.Dark)
-    | Some(UiTypes.TenzirBlue) => Misc.cardDarkeningPct * (depth * (-1) - 1)
+    | UiTypes.Dark
+    | UiTypes.TenzirBlue => Misc.cardDarkeningPct * (depth * (-1) - 1)
     | _ => Misc.cardDarkeningPct * depth
-    };
-  darken(offset, color);
+    }
+  )
+  ->darken(color);
 };
 
 let hoverColorChange =
@@ -62,13 +63,9 @@ let activeColorChange =
   | Darken => darken(Colors.activeChangePercent)
   };
 
-let colorsFromThemeVariant = (possibleThemeVariant: option(UiTypes.theme)) =>
-  switch (possibleThemeVariant) {
-  | Some(themeVariant) =>
-    switch (themeVariant) {
-    | Light => Colors.light
-    | Dark => Colors.dark
-    | TenzirBlue => Colors.tenzirBlue
-    }
-  | None => Colors.light
+let colorsFromThemeVariant = (themeVariant: UiTypes.theme) =>
+  switch (themeVariant) {
+  | Light => Colors.light
+  | Dark => Colors.dark
+  | TenzirBlue => Colors.tenzirBlue
   };

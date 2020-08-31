@@ -51,7 +51,7 @@ let make =
       ~segments: array(t),
       ~onSegmentUpdate: string => unit,
       ~default=?,
-      ~theme=?,
+      ~theme=Config.defaultTheme,
     ) => {
   let (active: option(string), setActive) =
     React.useState(_ =>

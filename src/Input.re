@@ -14,7 +14,7 @@ let make =
       ~validity=Valid,
       ~variant=Normal,
       ~width=[@reason.preserve_braces] 100.0,
-      ~theme=?,
+      ~theme=Config.defaultTheme,
       ~placeholder="",
       ~onChange=?,
       ~onKeyDown=?,
@@ -36,7 +36,7 @@ let make =
          value
          placeholder
          className={
-           inputStyles(~variant, ~validity, ~theme?, ()) ++ " " ++ className
+           inputStyles(~variant, ~validity, ~theme, ()) ++ " " ++ className
          }
        />
      | None =>
@@ -50,7 +50,7 @@ let make =
          defaultValue
          placeholder
          className={
-           inputStyles(~variant, ~validity, ~theme?, ()) ++ " " ++ className
+           inputStyles(~variant, ~validity, ~theme, ()) ++ " " ++ className
          }
        />
      }}

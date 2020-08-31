@@ -22,7 +22,7 @@ let deteriminePadding = spacing => {
   };
 };
 
-let card = (~theme=?, ~spacing=Normal, ~depth, ~styles, ()) => {
+let card = (~theme, ~spacing=Normal, ~depth, ~styles, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let extraStyles = Belt.Option.getWithDefault(styles, []);
   style([
@@ -43,7 +43,7 @@ let card = (~theme=?, ~spacing=Normal, ~depth, ~styles, ()) => {
   ]);
 };
 
-let cardHeader = (~theme=?, ~depth, ()) => {
+let cardHeader = (~theme, ~depth, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     height(3.5->rem),
@@ -70,7 +70,7 @@ let cardContent = (~hasHeader, ~hasFooter) => {
   ]);
 };
 
-let cardFooter = (~theme=?, ~depth, ()) => {
+let cardFooter = (~theme, ~depth, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     height(3.5->rem),
