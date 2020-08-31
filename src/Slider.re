@@ -153,7 +153,7 @@ module Styles = {
 [@react.component]
 let make =
     (
-      ~theme,
+      ~theme=Config.defaultTheme,
       ~label=UiTypes.Unlabeled,
       ~min=0,
       ~max=100,
@@ -188,13 +188,13 @@ let make =
     };
 
   <div>
-    {aligned(<Label label identifier variant=font theme={Some(theme)} />)}
+    {aligned(<Label label identifier variant=font theme />)}
     <div className={Styles.container ++ "  " ++ className}>
       <input
         id=identifier
         ?onChange
         ?onInput
-        className={Styles.range(theme->Some)}
+        className={Styles.range(theme)}
         type_="range"
         value={value |> string_of_int}
         min={min->string_of_int}
@@ -208,9 +208,8 @@ let make =
            children
          </div>
        )}
-      <div
-        className={Styles.rangeButton(theme->Some, variant, overlayPosition)}>
-        <span className={Styles.value(theme->Some, font)}>
+      <div className={Styles.rangeButton(theme, variant, overlayPosition)}>
+        <span className={Styles.value(theme, font)}>
           {displayValue
            ->Belt.Option.getWithDefault(value |> string_of_int)
            ->React.string}

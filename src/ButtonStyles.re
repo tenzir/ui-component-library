@@ -87,7 +87,7 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
   modifier(baseColorDirectlyMapped(colors, variant));
 };
 
-let button = (~theme=?, ~variant, size, icon, iconPosition, ()) => {
+let button = (~theme, ~variant, size, icon, iconPosition, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let btnFontColor = buttonFontColor(colors, variant);

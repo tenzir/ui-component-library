@@ -24,7 +24,7 @@ module Styles = {
 [@react.component]
 let make =
     (
-      ~theme,
+      ~theme=Config.defaultTheme,
       ~options,
       ~disabled=false,
       ~enableSearch=false,

@@ -26,7 +26,7 @@ type state =
 module Styles = {
   open Css;
   let notification = (theme, state, defaultAnimationTime) => {
-    let colors = StyleHelpers.colorsFromThemeVariant(Some(theme));
+    let colors = StyleHelpers.colorsFromThemeVariant(theme);
 
     let animOut =
       keyframes([
@@ -102,7 +102,7 @@ module Styles = {
   let timeout = (theme, timeout, hovered) => {
     let size =
       keyframes([(0, [width(0.0->pct)]), (100, [width(100.0->pct)])]);
-    let colors = StyleHelpers.colorsFromThemeVariant(Some(theme));
+    let colors = StyleHelpers.colorsFromThemeVariant(theme);
     style([
       backgroundColor(
         StyleHelpers.rgbWithAlpha(
@@ -132,7 +132,13 @@ type dismissal =
   | Forced;
 
 [@react.component]
-let make = (~theme, ~notification, ~handleDismissal, ~defaultAnimationTime) => {
+let make =
+    (
+      ~theme=Config.defaultTheme,
+      ~notification,
+      ~handleDismissal,
+      ~defaultAnimationTime,
+    ) => {
   let (state, setState) = React.useState(_ => Entering);
   let (hovered, setHovered) = React.useState(_ => false);
   let (readyForDismissal, setReadyForDismissal) =

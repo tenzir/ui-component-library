@@ -32,7 +32,7 @@ type background =
   | Light;
 
 [@react.component]
-let make = (~theme, ~className="") => {
+let make = (~theme=Config.defaultTheme, ~className="") => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
 
   <div className={loaderStyles ++ "  " ++ className}>

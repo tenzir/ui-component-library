@@ -30,7 +30,7 @@ let inputContainerStyles = (~pctWidth=100.0, ~disabled, ()) =>
     hover([cursor(disabled ? `notAllowed : `default)]),
   ]);
 
-let checkboxStyles = (~theme=?, ()) => {
+let checkboxStyles = (~theme, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     display(`inline),
@@ -52,7 +52,7 @@ let checkboxStyles = (~theme=?, ()) => {
   ]);
 };
 
-let labelStyles = (~theme=?, ~validity, ()) => {
+let labelStyles = (~theme, ~validity, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   style([
     color(labelFontColor(colors, Base, ~validity, ())),

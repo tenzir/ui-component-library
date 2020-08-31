@@ -2,8 +2,14 @@ open AlertStyles;
 
 [@react.component]
 let make =
-    (~children=?, ~variant=Primary, ~theme=?, ~className="", ~message=?) =>
-  <h4 className={messagePill(~variant, ~theme?, ()) ++ " " ++ className}>
+    (
+      ~children=?,
+      ~variant=Primary,
+      ~theme=Config.defaultTheme,
+      ~className="",
+      ~message=?,
+    ) =>
+  <h4 className={messagePill(~variant, ~theme, ()) ++ " " ++ className}>
     <>
       <span className=icon>
         {switch (variant) {

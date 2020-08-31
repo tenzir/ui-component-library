@@ -9,7 +9,7 @@ let make =
       ~label,
       ~id=?,
       ~width=[@reason.preserve_braces] 100.0,
-      ~theme=?,
+      ~theme=Config.defaultTheme,
       ~placeholder="",
       ~validity=Valid,
       ~onChange=?,
@@ -21,7 +21,7 @@ let make =
     };
 
   <div className={inputContainerStyles(~pctWidth=width, ~disabled, ())}>
-    <label className={labelStyles(~theme?, ~validity, ())} htmlFor=identifier>
+    <label className={labelStyles(~theme, ~validity, ())} htmlFor=identifier>
       <input
         disabled
         ?onChange
@@ -29,7 +29,7 @@ let make =
         type_="checkbox"
         checked=defaultValue
         placeholder
-        className={checkboxStyles(~theme?, ())}
+        className={checkboxStyles(~theme, ())}
       />
       label->React.string
     </label>
