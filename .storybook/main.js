@@ -1,8 +1,8 @@
 const { themes } = require('@storybook/theming')
+const { addParameters } = require('@storybook/react')
 
 module.exports = {
-    stories: [
-        '@storybook/preset-create-react-app',
+    addons: [
         '@storybook/addon-actions/register',
         '@storybook/addon-links/register',
         'storybook-dark-mode/register',
@@ -17,9 +17,13 @@ module.exports = {
         enableShortcuts: false,
         isToolshown: true,
         storySort: undefined,
+        configureJSX: false,
     },
+}
+
+addParameters({
     darkMode: {
         dark: { ...themes.dark, appBg: 'rgb(34, 38, 38)' },
         light: themes.light,
     },
-}
+})
