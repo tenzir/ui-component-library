@@ -183,7 +183,7 @@ let buttonGroup =
             height(50.0->pct),
             right(`zero),
             top(25.0->pct),
-            backgroundColor(`rgba((0, 0, 0, 0.1))),
+            backgroundColor(`rgba((0, 0, 0, `num(0.1)))),
           ],
         ),
       ],
