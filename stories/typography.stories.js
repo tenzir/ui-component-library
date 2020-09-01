@@ -1,6 +1,7 @@
 import React from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { useDarkMode } from 'storybook-dark-mode'
 import { make as Card } from '../src/Card.bs.js'
 import { light, dark } from '../src/UiTypes.bs'
 
