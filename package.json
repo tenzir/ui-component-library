@@ -41,7 +41,7 @@
     "bs-flexboxgrid": "^2.1.0",
     "bs-webapi": "^0.19.1",
     "react-icons": "^3.10.0",
-    "react-syntax-highlighter": "^15.2.1",
+    "react-syntax-highlighter": "^15.3.1",
     "regenerator-runtime": "^0.13.5",
     "storybook-dark-mode": "^1.0.3"
   },
