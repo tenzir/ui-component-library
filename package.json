@@ -1,14 +1,14 @@
 {
   "name": "tenzir-ui-component-library",
   "author": "Tenzir",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "scripts": {
     "build:reason": "bsb -clean-world && bsb -make-world",
     "build:storybook": "build-storybook",
     "build": "yarn build:reason && yarn build:storybook",
     "clean": "bsb -clean-world",
     "start": "bsb -make-world -w -ws _ ",
-    "storybook": "start-storybook -p 6006",
+    "server": "start-storybook -p 6006",
     "deploy-storybook": "yarn build:reason && storybook-to-ghpages",
     "test": "jest",
     "tdd": "jest --watchAll"
