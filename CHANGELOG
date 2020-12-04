@@ -15,4 +15,4 @@ Every entry has a category for which we use the following visual abbreviations:
 
 - 🧬 Tooltips [#59](https://github.com/tenzir/ui-component-library/pull/59)
 We've used a CSS only approach for tooltips that is reasonably flexible in terms
-of positioning. We'll test this internally before releasing it publically.
+of positioning. We'll test this internally before releasing it publicly.
