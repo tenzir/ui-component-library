@@ -161,6 +161,7 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
           whiteSpace(`nowrap),
           zIndex(999),
           opacity(0.),
+          pointerEvents(`none),
           transitionProperty("all"),
           transitionDuration(200),
           transitionTimingFunction(`easeInOut),
@@ -181,6 +182,7 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
           borderBottom(8->px, `solid, tooltipBackground),
           zIndex(100),
           opacity(0.),
+          pointerEvents(`none),
           transitionProperty("all"),
           transitionDuration(200),
           transitionTimingFunction(`easeInOut),
@@ -189,8 +191,8 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
         ],
       ),
       hover([
-        selector("&:before", [opacity(1.)]),
-        selector("&:after", [opacity(1.)]),
+        selector("&:before", [opacity(1.), pointerEvents(`auto)]),
+        selector("&:after", [opacity(1.), pointerEvents(`auto)]),
       ]),
     ])
   );
