@@ -75,7 +75,8 @@
   "resolutions": {
     "node-forge": "^0.10.0",
     "axios": "0.21.1",
-    "node-notifier": "8.0.1"
+    "node-notifier": "8.0.1",
+    "immer": "8.0.1"
   },
   "jest": {
     "transformIgnorePatterns": [
