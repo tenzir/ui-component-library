@@ -99,7 +99,7 @@ let make =
   React.useEffect2(
     () => {
       options
-      ->Belt.Array.keep(({name}) =>
+      ->Belt.Array.keep(({name, _}) =>
           Js.String.includes(
             Js.String.toLowerCase(filter),
             Js.String.toLowerCase(name),
