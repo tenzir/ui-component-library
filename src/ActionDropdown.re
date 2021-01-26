@@ -1,5 +1,5 @@
 open Webapi.Dom;
-open Dropdown;
+open! Dropdown;
 
 type t('a) = {
   name: string,
@@ -8,7 +8,7 @@ type t('a) = {
 };
 
 module Styles = {
-  open Css;
+  open! Css;
   let buttonContainer = style([display(`flex), flexDirection(`row)]);
   let actionButton = style([borderTopRightRadius(`zero)]);
   let arrowButton =

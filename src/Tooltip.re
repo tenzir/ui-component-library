@@ -18,7 +18,7 @@ type tPosition =
   | Right(vertical);
 
 let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
-  open Css;
+  open! Css;
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
 
   /* ---- Configuration */
@@ -141,66 +141,64 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
       ]
     };
 
-  Css.(
-    style([
-      position(`relative),
-      selector(
-        "&:before",
-        [
-          position(`absolute),
-          display(`block),
-          padding2(~h=0.8->rem, ~v=0.4->rem),
-          boxShadow(
-            Shadow.box(~y=0->px, ~x=0->px, ~blur=10->px, tooltipShadowColor),
-          ),
-          fontWeight(`semiBold),
-          borderRadius(Config.Misc.borderRadius),
-          backgroundColor(tooltipBackground),
-          color(tooltipTextColor),
-          unsafe("content", "\"" ++ value ++ "\""),
-          whiteSpace(`nowrap),
-          zIndex(999),
-          opacity(0.),
-          pointerEvents(`none),
-          transitionProperty("all"),
-          transitionDuration(200),
-          transitionTimingFunction(`easeInOut),
-          ...positions,
-        ],
-      ),
-      selector(
-        "&:after",
-        [
-          left(`zero),
-          top(`zero),
-          position(`absolute),
-          display(`block),
-          width(0->px),
-          height(0->px),
-          borderLeft(6->px, `solid, `transparent),
-          borderRight(6->px, `solid, `transparent),
-          borderBottom(8->px, `solid, tooltipBackground),
-          zIndex(100),
-          opacity(0.),
-          pointerEvents(`none),
-          transitionProperty("all"),
-          transitionDuration(200),
-          transitionTimingFunction(`easeInOut),
-          unsafe("content", ""),
-          ...tipPositions,
-        ],
-      ),
-      hover([
-        selector("&:before", [opacity(1.), pointerEvents(`auto)]),
-        selector("&:after", [opacity(1.), pointerEvents(`auto)]),
-      ]),
-    ])
-  );
+  style([
+    position(`relative),
+    selector(
+      "&:before",
+      [
+        position(`absolute),
+        display(`block),
+        padding2(~h=0.8->rem, ~v=0.4->rem),
+        boxShadow(
+          Shadow.box(~y=0->px, ~x=0->px, ~blur=10->px, tooltipShadowColor),
+        ),
+        fontWeight(`semiBold),
+        borderRadius(Config.Misc.borderRadius),
+        backgroundColor(tooltipBackground),
+        color(tooltipTextColor),
+        unsafe("content", "\"" ++ value ++ "\""),
+        whiteSpace(`nowrap),
+        zIndex(999),
+        opacity(0.),
+        pointerEvents(`none),
+        transitionProperty("all"),
+        transitionDuration(200),
+        transitionTimingFunction(`easeInOut),
+        ...positions,
+      ],
+    ),
+    selector(
+      "&:after",
+      [
+        left(`zero),
+        top(`zero),
+        position(`absolute),
+        display(`block),
+        width(0->px),
+        height(0->px),
+        borderLeft(6->px, `solid, `transparent),
+        borderRight(6->px, `solid, `transparent),
+        borderBottom(8->px, `solid, tooltipBackground),
+        zIndex(100),
+        opacity(0.),
+        pointerEvents(`none),
+        transitionProperty("all"),
+        transitionDuration(200),
+        transitionTimingFunction(`easeInOut),
+        unsafe("content", ""),
+        ...tipPositions,
+      ],
+    ),
+    hover([
+      selector("&:before", [opacity(1.), pointerEvents(`auto)]),
+      selector("&:after", [opacity(1.), pointerEvents(`auto)]),
+    ]),
+  ]);
 };
 
 module Examples = {
   module Styles = {
-    open Css;
+    open! Css;
     let exampleContainer =
       style([
         padding2(~h=2.->rem, ~v=1.->rem),
