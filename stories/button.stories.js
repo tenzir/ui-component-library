@@ -1,46 +1,50 @@
-import React from "react";
-import { make as Button, Group } from "../src/Button.bs.js";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useDarkMode } from "storybook-dark-mode";
-import { FiActivity as Activity } from "react-icons/fi";
-import { make as Card } from "../src/Card.bs.js";
-import { light, dark } from "../src/UiTypes.bs";
+import React from 'react'
+import { make as Button, Group } from '../src/Button.bs.js'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { useDarkMode } from 'storybook-dark-mode'
+import { FiActivity as Activity } from 'react-icons/fi'
+import { make as Card } from '../src/Card.bs.js'
+import { light, dark } from '../src/UiTypes.bs'
 import {
-  primary,
-  secondary,
-  success,
-  warning,
-  danger,
-} from "../src/ButtonStyles.bs";
+    primary,
+    secondary,
+    success,
+    warning,
+    danger,
+} from '../src/ButtonStyles.bs'
 
-const ButtonGroup = Group.make;
+const ButtonGroup = Group.make
 export default {
-  title: "Button",
-};
+    title: 'Button',
+}
 
 const margin = {
-  margin: "1rem",
-};
+    margin: '1rem',
+}
 
 const buttons = [
-  { variant: primary, text: "Primary" },
-  { variant: secondary, text: "Secondary" },
-  { variant: success, text: "Success" },
-  { variant: warning, text: "Warning" },
-  { variant: danger, text: "Danger" },
-];
+    { variant: primary, text: 'Primary' },
+    { variant: secondary, text: 'Secondary' },
+    { variant: success, text: 'Success' },
+    { variant: warning, text: 'Warning' },
+    { variant: danger, text: 'Danger' },
+]
 
 export const Buttons = () => {
-  const theme = useDarkMode() ? dark : light;
-  return (
-    <>
-      <div style={margin}>
-        <Card theme={theme}>
-          <h1>Buttons</h1>
-          <h3>Interface</h3>
-          <SyntaxHighlighter language="reason" style={okaidia} showLineNumbers>
-            {`type Button: (
+    const theme = useDarkMode() ? dark : light
+    return (
+        <>
+            <div style={margin}>
+                <Card theme={theme}>
+                    <h1>Buttons</h1>
+                    <h3>Interface</h3>
+                    <SyntaxHighlighter
+                        language="reason"
+                        style={okaidia}
+                        showLineNumbers
+                    >
+                        {`type Button: (
   ~disabled:boolean,
   ~type_: string,
   ~variant:ButtonStyles.Primary
@@ -49,68 +53,80 @@ export const Buttons = () => {
   ~onClick=option(React.SyntheticEvent.t->unit),
   ~children=option(React.Element)
 )=> React.element;`}
-          </SyntaxHighlighter>
+                    </SyntaxHighlighter>
 
-          <h3>Previews</h3>
-          <h4>Normal Buttons</h4>
-          {buttons.map(({ variant, text }) => (
-            <span style={margin}>
-              <Button theme={theme} variant={variant}>
-                {text}
-              </Button>
-            </span>
-          ))}
+                    <h3>Previews</h3>
+                    <h4>Normal Buttons</h4>
+                    {buttons.map(({ variant, text }) => (
+                        <span key={variant} style={margin}>
+                            <Button theme={theme} variant={variant}>
+                                {text}
+                            </Button>
+                        </span>
+                    ))}
 
-          <h4>Disabled</h4>
-          {buttons.map(({ variant, text }) => (
-            <span style={margin}>
-              <Button disabled theme={theme} variant={variant}>
-                {text}
-              </Button>
-            </span>
-          ))}
+                    <h4>Disabled</h4>
+                    {buttons.map(({ variant, text }) => (
+                        <span style={margin}>
+                            <Button disabled theme={theme} variant={variant}>
+                                {text}
+                            </Button>
+                        </span>
+                    ))}
 
-          <h4>With Icons</h4>
-          {buttons.map(({ variant, text }) => (
-            <span style={margin}>
-              <Button icon={<Activity />} theme={theme} variant={variant}>
-                {text}
-              </Button>
-            </span>
-          ))}
+                    <h4>With Icons</h4>
+                    {buttons.map(({ variant, text }) => (
+                        <span style={margin}>
+                            <Button
+                                icon={<Activity />}
+                                theme={theme}
+                                variant={variant}
+                            >
+                                {text}
+                            </Button>
+                        </span>
+                    ))}
 
-          <h4>Grouped</h4>
-          {buttons.map(({ variant, text }) => (
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={theme} variant={variant}>
-                  {text}
-                </Button>
-                <Button theme={theme} variant={variant}>
-                  {text}
-                </Button>
-                <Button icon={<Activity />} theme={theme} variant={variant}>
-                  {text}
-                </Button>
-              </ButtonGroup>
-            </span>
-          ))}
+                    <h4>Grouped</h4>
+                    {buttons.map(({ variant, text }) => (
+                        <span style={margin}>
+                            <ButtonGroup>
+                                <Button theme={theme} variant={variant}>
+                                    {text}
+                                </Button>
+                                <Button theme={theme} variant={variant}>
+                                    {text}
+                                </Button>
+                                <Button
+                                    icon={<Activity />}
+                                    theme={theme}
+                                    variant={variant}
+                                >
+                                    {text}
+                                </Button>
+                            </ButtonGroup>
+                        </span>
+                    ))}
 
-          <h4>Grouped with Mixed Variants</h4>
-          {buttons.map(({ variant, text }) => (
-            <span style={margin}>
-              <ButtonGroup>
-                <Button theme={theme} variant={secondary}>
-                  {text}
-                </Button>
-                <Button icon={<Activity />} theme={theme} variant={variant}>
-                  {text}
-                </Button>
-              </ButtonGroup>
-            </span>
-          ))}
-        </Card>
-      </div>
-    </>
-  );
-};
+                    <h4>Grouped with Mixed Variants</h4>
+                    {buttons.map(({ variant, text }) => (
+                        <span style={margin}>
+                            <ButtonGroup>
+                                <Button theme={theme} variant={secondary}>
+                                    {text}
+                                </Button>
+                                <Button
+                                    icon={<Activity />}
+                                    theme={theme}
+                                    variant={variant}
+                                >
+                                    {text}
+                                </Button>
+                            </ButtonGroup>
+                        </span>
+                    ))}
+                </Card>
+            </div>
+        </>
+    )
+}
