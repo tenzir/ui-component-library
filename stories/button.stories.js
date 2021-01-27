@@ -58,7 +58,7 @@ export const Buttons = () => {
                     <h3>Previews</h3>
                     <h4>Normal Buttons</h4>
                     {buttons.map(({ variant, text }) => (
-                        <span key={variant} style={margin}>
+                        <span key={variant + text} style={margin}>
                             <Button theme={theme} variant={variant}>
                                 {text}
                             </Button>
@@ -67,7 +67,7 @@ export const Buttons = () => {
 
                     <h4>Disabled</h4>
                     {buttons.map(({ variant, text }) => (
-                        <span style={margin}>
+                        <span key={variant + text} style={margin}>
                             <Button disabled theme={theme} variant={variant}>
                                 {text}
                             </Button>
@@ -76,7 +76,7 @@ export const Buttons = () => {
 
                     <h4>With Icons</h4>
                     {buttons.map(({ variant, text }) => (
-                        <span style={margin}>
+                        <span key={variant + text} style={margin}>
                             <Button
                                 icon={<Activity />}
                                 theme={theme}
@@ -89,7 +89,7 @@ export const Buttons = () => {
 
                     <h4>Grouped</h4>
                     {buttons.map(({ variant, text }) => (
-                        <span style={margin}>
+                        <span key={variant + text} style={margin}>
                             <ButtonGroup>
                                 <Button theme={theme} variant={variant}>
                                     {text}
@@ -110,7 +110,7 @@ export const Buttons = () => {
 
                     <h4>Grouped with Mixed Variants</h4>
                     {buttons.map(({ variant, text }) => (
-                        <span style={margin}>
+                        <span key={variant + text} style={margin}>
                             <ButtonGroup>
                                 <Button theme={theme} variant={secondary}>
                                     {text}
