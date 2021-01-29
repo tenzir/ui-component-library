@@ -1,5 +1,5 @@
 open Webapi.Dom;
-open Dropdown;
+open! Dropdown;
 
 type t('a) = {
   name: string,
@@ -8,7 +8,7 @@ type t('a) = {
 };
 
 module Styles = {
-  open Css;
+  open! Css;
   let buttonContainer = style([display(`flex), flexDirection(`row)]);
   let actionButton = style([borderTopRightRadius(`zero)]);
   let arrowButton =
@@ -99,7 +99,7 @@ let make =
   React.useEffect2(
     () => {
       options
-      ->Belt.Array.keep(({name}) =>
+      ->Belt.Array.keep(({name, _}) =>
           Js.String.includes(
             Js.String.toLowerCase(filter),
             Js.String.toLowerCase(name),

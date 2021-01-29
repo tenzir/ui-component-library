@@ -43,25 +43,25 @@
     "react-icons": "^3.10.0",
     "react-syntax-highlighter": "^15.3.1",
     "regenerator-runtime": "^0.13.5",
-    "storybook-dark-mode": "^1.0.3"
+    "storybook-dark-mode": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@glennsl/bs-jest": "^0.5.1",
-    "@storybook/addon-actions": "^6.0.26",
-    "@storybook/addon-links": "^6.0.26",
-    "@storybook/addons": "^6.0.26",
-    "@storybook/api": "^6.0.26",
-    "@storybook/components": "^6.0.26",
-    "@storybook/core": "^6.0.26",
-    "@storybook/core-events": "^6.0.26",
-    "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.26",
-    "@storybook/theming": "^6.0.26",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/addons": "^6.1.15",
+    "@storybook/api": "^6.1.15",
+    "@storybook/components": "^6.1.15",
+    "@storybook/core": "^6.1.15",
+    "@storybook/core-events": "^6.1.15",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.15",
+    "@storybook/theming": "^6.1.15",
     "babel-loader": "^8.1.0",
     "bs-platform": "^8.3.1",
-    "html-webpack-plugin": "^4.5.0",
-    "husky": "^4.3.0",
+    "html-webpack-plugin": "^4.5.1",
+    "husky": "^4.3.8",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2",
     "react": "^16.13.1",
@@ -70,12 +70,13 @@
     "reason-react": ">=0.9.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "resolutions": {
     "node-forge": "^0.10.0",
     "axios": "0.21.1",
-    "node-notifier": "8.0.1"
+    "node-notifier": "8.0.1",
+    "immer": "8.0.1"
   },
   "jest": {
     "transformIgnorePatterns": [
