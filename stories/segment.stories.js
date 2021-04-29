@@ -35,19 +35,19 @@ export const Segments = () => {
                     showLineNumbers
                 >
                     {`type t = {
-  disabled: bool,
-  id: string,
-  title: string,
-};
+		  disabled: bool,
+		  id: 'a,
+		  title: string,
+		};
 
-type Dropdown: (
-  ~theme: option(UiTypes.theme)
-  ~segments: array(t),
-  ~default: option(string), /* The id of the item */
-  ~onSegmentUpdate: string => unit, /* The changed id get's pushed back */
-  ~title: option(string),
-) => React.element;
-`}
+		type Segment('a): (
+		  ~theme: option(UiTypes.theme)
+		  ~segments: array(t('a)),
+		  ~default: option(string), /* The id of the item */
+		  ~onSegmentUpdate: 'a => unit, /* The changed id get's pushed back */
+		  ~title: option(string),
+		) => React.element;
+		`}
                 </SyntaxHighlighter>
 
                 <h3>Preview</h3>
