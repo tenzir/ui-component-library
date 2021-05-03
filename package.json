@@ -74,6 +74,7 @@
   "resolutions": {
     "node-forge": "^0.10.0",
     "axios": "0.21.1",
+    "sockjs": "0.3.20",
     "node-notifier": "8.0.1",
     "prismjs": "^1.23.0",
     "elliptic": "^6.5.4",
