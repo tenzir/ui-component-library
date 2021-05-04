@@ -110,7 +110,7 @@ module Styles = {
   };
 
   let thumb = [
-    unsafe("-webkit-appearance", "none"),
+    unsafe("WebkitAppearance", "none"),
     borderWidth(`zero),
     marginTop((- Conf.height / 2)->px),
     width(Conf.widthPx),
@@ -139,7 +139,7 @@ module Styles = {
   let range = theme =>
     style([
       width(100.0->pct),
-      unsafe("-webkit-appearance", "none"),
+      unsafe("WebkitAppearance", "none"),
       backgroundColor(`transparent),
       cursor(`pointer),
       focus([outline(`zero, `none, `transparent)]),
