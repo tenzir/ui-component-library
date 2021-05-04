@@ -1,8 +1,8 @@
 open Flexboxgrid;
 
-type t = {
+type t('a) = {
   disabled: bool,
-  id: string,
+  id: 'a,
   title: string,
 };
 
@@ -48,12 +48,12 @@ module Styles = {
 [@react.component]
 let make =
     (
-      ~segments: array(t),
-      ~onSegmentUpdate: string => unit,
+      ~segments: array(t('a)),
+      ~onSegmentUpdate: 'a => unit,
       ~default=?,
       ~theme=Config.defaultTheme,
     ) => {
-  let (active: option(string), setActive) =
+  let (active: option('a), setActive) =
     React.useState(_ =>
       switch (default) {
       | Some(id) => id
@@ -67,10 +67,7 @@ let make =
 
   React.useEffect1(
     () => {
-      switch (active) {
-      | Some(segment) => onSegmentUpdate(segment)
-      | None => ()
-      };
+      active->Belt.Option.map(onSegmentUpdate)->ignore;
       None;
     },
     [|active|],
@@ -80,7 +77,9 @@ let make =
       {segments
        ->Belt.Array.map(segment => {
            let isActive =
-             active->Belt.Option.getWithDefault("") === segment.id;
+             active
+             ->Belt.Option.map(x => x === segment.id)
+             ->Belt.Option.getWithDefault(false);
 
            <a
              key={segment.title}

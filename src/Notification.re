@@ -143,6 +143,12 @@ let make =
   let (hovered, setHovered) = React.useState(_ => false);
   let (readyForDismissal, setReadyForDismissal) =
     React.useState(_ => Initial);
+  let mounted = React.useRef(false);
+
+  React.useEffect0(_ => {
+    mounted.current = true;
+    Some(_ => mounted.current = false);
+  });
 
   React.useEffect2(
     () => {
@@ -157,6 +163,7 @@ let make =
         ->ignore;
       | _ => ()
       };
+
       None;
     },
     (hovered, readyForDismissal),
@@ -199,11 +206,13 @@ let make =
      ->Belt.Option.mapWithDefault(
          <Empty />,
          timeout => {
-           Js.Global.setTimeout(
-             () => setReadyForDismissal(_ => Timeout),
-             timeout,
-           )
-           ->ignore;
+           if (mounted.current) {
+             Js.Global.setTimeout(
+               () => setReadyForDismissal(_ => Timeout),
+               timeout,
+             )
+             ->ignore;
+           };
            <div className={Styles.timeout(theme, timeout, hovered)}>
              <Empty />
            </div>;

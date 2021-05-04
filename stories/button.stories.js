@@ -7,6 +7,9 @@ import { FiActivity as Activity } from 'react-icons/fi'
 import { make as Card } from '../src/Card.bs.js'
 import { light, dark } from '../src/UiTypes.bs'
 import {
+    small,
+    medium,
+    large,
     primary,
     secondary,
     success,
@@ -64,6 +67,50 @@ export const Buttons = () => {
                             </Button>
                         </span>
                     ))}
+
+                    <h4>Small / Medium / Large</h4>
+                    <div>
+                        {buttons.map(({ variant, text }) => (
+                            <span key={variant + text + 'small'} style={margin}>
+                                <Button
+                                    theme={theme}
+                                    variant={variant}
+                                    size={small}
+                                >
+                                    {text}
+                                </Button>
+                            </span>
+                        ))}
+                    </div>
+                    <div>
+                        {buttons.map(({ variant, text }) => (
+                            <span
+                                key={variant + text + 'medium'}
+                                style={margin}
+                            >
+                                <Button
+                                    theme={theme}
+                                    variant={variant}
+                                    size={medium}
+                                >
+                                    {text}
+                                </Button>
+                            </span>
+                        ))}
+                    </div>
+                    <div>
+                        {buttons.map(({ variant, text }) => (
+                            <span key={variant + text + 'large'} style={margin}>
+                                <Button
+                                    theme={theme}
+                                    variant={variant}
+                                    size={large}
+                                >
+                                    {text}
+                                </Button>
+                            </span>
+                        ))}
+                    </div>
 
                     <h4>Disabled</h4>
                     {buttons.map(({ variant, text }) => (

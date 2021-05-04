@@ -86,6 +86,21 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
 
   modifier(baseColorDirectlyMapped(colors, variant));
 };
+let adjustForSize = (size, value) =>
+  switch (size) {
+  | Small => 0.5 *. value
+  | Medium => 1.0 *. value
+  | Large => 1.4 *. value
+  };
+
+let adjustForSizeP4 = (~size, ~left, ~right, ~top, ~bottom) => {
+  padding4(
+    ~left=adjustForSize(size, left)->rem,
+    ~right=adjustForSize(size, right)->rem,
+    ~top=adjustForSize(size, top)->rem,
+    ~bottom=adjustForSize(size, bottom)->rem,
+  );
+};
 
 let button = (~theme, ~variant, size, icon, iconPosition, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
@@ -95,26 +110,11 @@ let button = (~theme, ~variant, size, icon, iconPosition, ()) => {
   let padding =
     switch (icon, iconPosition) {
     | (None, _) =>
-      padding4(
-        ~left=1.2->rem,
-        ~right=1.2->rem,
-        ~top=0.6->rem,
-        ~bottom=0.65->rem,
-      )
+      adjustForSizeP4(~size, ~left=1.2, ~right=1.2, ~top=0.6, ~bottom=0.65)
     | (Some(_), Left) =>
-      padding4(
-        ~left=2.2->rem,
-        ~right=1.2->rem,
-        ~top=0.6->rem,
-        ~bottom=0.65->rem,
-      )
+      adjustForSizeP4(~size, ~left=2.2, ~right=1.2, ~top=0.6, ~bottom=0.65)
     | (Some(_), Right) =>
-      padding4(
-        ~left=1.2->rem,
-        ~right=2.2->rem,
-        ~top=0.6->rem,
-        ~bottom=0.65->rem,
-      )
+      adjustForSizeP4(~size, ~left=1.2, ~right=2.2, ~top=0.6, ~bottom=0.65)
     };
   style([
     backgroundColor(bgColor(Base)),
@@ -140,13 +140,6 @@ let button = (~theme, ~variant, size, icon, iconPosition, ()) => {
       color(btnFontColor(Active)),
       backgroundColor(bgColor(Active)),
     ]),
-    transform(
-      switch (size) {
-      | Small => scale(0.9, 0.9)
-      | Medium => scale(1.0, 1.0)
-      | Large => scale(1.1, 1.1)
-      },
-    ),
     selector("&[disabled]", [opacity(0.8), cursor(`notAllowed)]),
     ...Misc.baseTransitions,
   ]);

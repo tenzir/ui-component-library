@@ -1,7 +1,7 @@
 {
   "name": "tenzir-ui-component-library",
   "author": "Tenzir",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "scripts": {
     "build:reason": "bsb -clean-world && bsb -make-world",
     "build:storybook": "build-storybook",
@@ -30,15 +30,14 @@
   ],
   "license": "BSD-3-Clause",
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "reason-react": ">=0.9.1"
   },
   "dependencies": {
     "@storybook/storybook-deployer": "^2.8.7",
-    "bs-css": "^13.1.0",
     "bs-css-emotion": "^2.1.0",
-    "bs-flexboxgrid": "^2.1.0",
+    "bs-flexboxgrid": "^2.1.4",
     "bs-webapi": "^0.19.1",
     "react-icons": "^3.10.0",
     "react-syntax-highlighter": "^15.3.1",
@@ -64,8 +63,8 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "react-scripts": "^3.4.4",
     "reason-react": ">=0.9.1",
     "webpack": "^4.43.0",
@@ -75,6 +74,7 @@
   "resolutions": {
     "node-forge": "^0.10.0",
     "axios": "0.21.1",
+    "sockjs": "0.3.20",
     "node-notifier": "8.0.1",
     "prismjs": "^1.23.0",
     "elliptic": "^6.5.4",
