@@ -1,4 +1,4 @@
-open Flexboxgrid;
+open BsFlexboxgrid;
 
 module Raw = {
   let sliderPosition: (string, int) => int = [%bs.raw

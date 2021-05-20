@@ -1,4 +1,4 @@
-open Flexboxgrid;
+open BsFlexboxgrid;
 
 type t('a) = {
   disabled: bool,

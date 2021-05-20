@@ -1,4 +1,4 @@
-open Flexboxgrid;
+open BsFlexboxgrid;
 
 [@bs.deriving accessors]
 type t = {
