@@ -11,6 +11,10 @@ Every entry has a category for which we use the following visual abbreviations:
 - ⚡️ Breaking Change
 - 🐞 Bugfix
 
+## [0.10.0]
+- 🎁 Sizing [#69](https://github.com/tenzir/ui-component-library/pull/71)
+We now support sizes (`small` / `medium` / `large`) for buttons and alerts
+
 ## [0.9.0]
 - 🎁 Generalized Segments [#67](https://github.com/tenzir/ui-component-library/pull/67)
 Instead of using strings as identifiers, the segments now use a generic type.
