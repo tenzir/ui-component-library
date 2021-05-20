@@ -1,4 +1,4 @@
-open Flexboxgrid;
+open BsFlexboxgrid;
 
 module Styles = {
   open Css;

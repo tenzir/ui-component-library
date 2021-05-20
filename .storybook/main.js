@@ -17,7 +17,7 @@ module.exports = {
         enableShortcuts: false,
         isToolshown: true,
         storySort: undefined,
-        configureJSX: false,
+        configureJSX: true,
     },
 }
 
