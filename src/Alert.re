@@ -6,12 +6,14 @@ let make =
       ~children=?,
       ~variant=Primary,
       ~theme=Config.defaultTheme,
+      ~size=UiTypes.Medium,
       ~className="",
       ~message=?,
     ) =>
-  <h4 className={messagePill(~variant, ~theme, ()) ++ " " ++ className}>
+  <h4
+    className={messagePill(~variant, ~theme, ~size, ()) ++ " " ++ className}>
     <>
-      <span className=icon>
+      <span className={icon(~size)}>
         {switch (variant) {
          | Primary
          | Secondary => <Icons.Info />

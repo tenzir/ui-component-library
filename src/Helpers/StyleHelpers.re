@@ -69,3 +69,22 @@ let colorsFromThemeVariant = (themeVariant: UiTypes.theme) =>
   | Dark => Colors.dark
   | TenzirBlue => Colors.tenzirBlue
   };
+
+let adjustForSize = (size, value) =>
+  switch (size) {
+  | Small => 0.6 *. value
+  | Medium => 1.0 *. value
+  | Large => 1.2 *. value
+  };
+
+let adjustForSizeP4 =
+  Css.(
+    (~size, ~left, ~right, ~top, ~bottom) => {
+      padding4(
+        ~left=adjustForSize(size, left)->rem,
+        ~right=adjustForSize(size, right)->rem,
+        ~top=adjustForSize(size, top)->rem,
+        ~bottom=adjustForSize(size, bottom)->rem,
+      );
+    }
+  );

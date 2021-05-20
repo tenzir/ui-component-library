@@ -77,11 +77,19 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
   modifier(baseColorDirectlyMapped(colors, variant));
 };
 
-let messagePill = (~theme, ~variant, ()) => {
+let messagePill = (~theme, ~variant, ~size, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
   let bgColor = defineBackgroundColor(colors, variant);
   let pillFontColor = pillFontColor(colors, variant);
   let pillShadow = pillShadow(colors, variant);
+  let padding =
+    StyleHelpers.adjustForSizeP4(
+      ~size,
+      ~left=2.2,
+      ~right=1.2,
+      ~top=0.6,
+      ~bottom=0.65,
+    );
   style([
     width(`fitContent),
     backgroundColor(bgColor(Base)),
@@ -94,10 +102,7 @@ let messagePill = (~theme, ~variant, ()) => {
     fontSize(Typography.size),
     borderRadius(Misc.borderRadius),
     letterSpacing(0.01->rem),
-    paddingLeft(2.2->rem),
-    paddingRight(1.2->rem),
-    paddingTop(0.6->rem),
-    paddingBottom(0.65->rem),
+    padding,
     margin(`zero),
     position(`relative),
     hover([
@@ -109,10 +114,22 @@ let messagePill = (~theme, ~variant, ()) => {
   ]);
 };
 
-let icon =
-  style([
-    position(`absolute),
-    left(0.8->rem),
-    top(11->px),
-    selector("& svg", [height(16->px)]),
-  ]);
+let iconSpace = (size, value) =>
+  switch (size) {
+  | Small => 0.6 *. value
+  | Medium => 1.0 *. value
+  | Large => 1.2 *. value
+  };
+let iconSize = (size, value) =>
+  switch (size) {
+  | Small => 0.6 *. value
+  | Medium => 1.0 *. value
+  | Large => 1.2 *. value
+  };
+
+let icon = (~size) => {
+  let top = top(iconSpace(size, 0.6)->rem);
+  let left = left(iconSpace(size, 0.6)->rem);
+  let height = height(iconSize(size, 1.1)->rem);
+  style([position(`absolute), top, left, selector("& svg", [height])]);
+};

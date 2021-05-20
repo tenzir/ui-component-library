@@ -3,12 +3,6 @@ open Config;
 open UiTypes;
 
 [@bs.deriving accessors]
-type size =
-  | Small
-  | Medium
-  | Large;
-
-[@bs.deriving accessors]
 type variant =
   | Primary
   | Secondary
@@ -86,21 +80,6 @@ let defineBackgroundColor = (colors: colors, variant, componentState) => {
 
   modifier(baseColorDirectlyMapped(colors, variant));
 };
-let adjustForSize = (size, value) =>
-  switch (size) {
-  | Small => 0.5 *. value
-  | Medium => 1.0 *. value
-  | Large => 1.4 *. value
-  };
-
-let adjustForSizeP4 = (~size, ~left, ~right, ~top, ~bottom) => {
-  padding4(
-    ~left=adjustForSize(size, left)->rem,
-    ~right=adjustForSize(size, right)->rem,
-    ~top=adjustForSize(size, top)->rem,
-    ~bottom=adjustForSize(size, bottom)->rem,
-  );
-};
 
 let button = (~theme, ~variant, size, icon, iconPosition, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
@@ -110,11 +89,29 @@ let button = (~theme, ~variant, size, icon, iconPosition, ()) => {
   let padding =
     switch (icon, iconPosition) {
     | (None, _) =>
-      adjustForSizeP4(~size, ~left=1.2, ~right=1.2, ~top=0.6, ~bottom=0.65)
+      StyleHelpers.adjustForSizeP4(
+        ~size,
+        ~left=1.2,
+        ~right=1.2,
+        ~top=0.6,
+        ~bottom=0.65,
+      )
     | (Some(_), Left) =>
-      adjustForSizeP4(~size, ~left=2.2, ~right=1.2, ~top=0.6, ~bottom=0.65)
+      StyleHelpers.adjustForSizeP4(
+        ~size,
+        ~left=2.2,
+        ~right=1.2,
+        ~top=0.6,
+        ~bottom=0.65,
+      )
     | (Some(_), Right) =>
-      adjustForSizeP4(~size, ~left=1.2, ~right=2.2, ~top=0.6, ~bottom=0.65)
+      StyleHelpers.adjustForSizeP4(
+        ~size,
+        ~left=1.2,
+        ~right=2.2,
+        ~top=0.6,
+        ~bottom=0.65,
+      )
     };
   style([
     backgroundColor(bgColor(Base)),
