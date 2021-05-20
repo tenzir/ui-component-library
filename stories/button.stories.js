@@ -5,11 +5,8 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useDarkMode } from 'storybook-dark-mode'
 import { FiActivity as Activity } from 'react-icons/fi'
 import { make as Card } from '../src/Card.bs.js'
-import { light, dark } from '../src/UiTypes.bs'
+import { small, medium, large, light, dark } from '../src/UiTypes.bs'
 import {
-    small,
-    medium,
-    large,
     primary,
     secondary,
     success,
@@ -52,6 +49,7 @@ export const Buttons = () => {
   ~type_: string,
   ~variant:ButtonStyles.Primary
   ~theme: option(UiTypes.theme)),
+  ~size=UiTypes.size,
   ~icon=option(React.Element),
   ~onClick=option(React.SyntheticEvent.t->unit),
   ~children=option(React.Element)

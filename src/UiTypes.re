@@ -1,4 +1,10 @@
 [@bs.deriving accessors]
+type size =
+  | Small
+  | Medium
+  | Large;
+
+[@bs.deriving accessors]
 type theme =
   | Light
   | Dark

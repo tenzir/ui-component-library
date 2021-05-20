@@ -197,7 +197,7 @@ let make =
     {notification.action
      ->Belt.Option.mapWithDefault(<Empty />, ((title, action)) =>
          <Row _end=`xs>
-           <Button size=ButtonStyles.small onClick={handleAction(action)}>
+           <Button size=UiTypes.small onClick={handleAction(action)}>
              title->React.string
            </Button>
          </Row>
