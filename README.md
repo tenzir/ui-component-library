@@ -80,7 +80,7 @@ yarn start
 
 **Start Storybook server (should be ran simultaniously):**
 ```sh
-yarn storybook
+yarn server
 ```
 
 ## License
