@@ -45,7 +45,7 @@ export const Sliders = () => {
                     >
                         {`type Slider: (
   ~theme: option(UiTypes.theme)),
-  ~label: UiStyles.labels, /* defaults to "UiStyles.Unlabeled" */
+  ~label: UiTypes.labels, /* defaults to "UiTypes.Unlabeled" */
   ~min:int, /* defaults to 0 */
   ~max:int, /* defaults to 100 */
   ~value: int,
