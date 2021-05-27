@@ -72,6 +72,9 @@
       "node_modules/(?!(@glennsl|bs-platform|bs-css)/)"
     ]
   },
+  "resolutions": {
+    "browserslist": "^4.16.5"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
