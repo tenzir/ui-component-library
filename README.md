@@ -52,7 +52,7 @@ Preview here: [Tenzir-Ui-Component-Library][storybook-url]
 ### Installation
 **Add dependency:**
 ```sh
-yarn add bs-tenzir-ui-components
+yarn add tenzir-ui-component-library
 ```
 
 **Add the library to the `bs-dependencies` in your `bsconfig.json`:**
