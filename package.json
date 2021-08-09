@@ -14,12 +14,8 @@
         "tdd": "jest --watchAll"
     },
     "lint-staged": {
-        "*.js": [
-            "prettier --print-width 80 --write"
-        ],
-        "*.{re,rei}": [
-            "bsrefmt --in-place"
-        ]
+        "*.js": ["prettier --print-width 80 --write"],
+        "*.{re,rei}": ["bsrefmt --in-place"]
     },
     "keywords": [
         "UI-Library",
@@ -72,6 +68,15 @@
         "transformIgnorePatterns": [
             "node_modules/(?!(@glennsl|bs-platform|bs-css)/)"
         ]
+    },
+    "resolutions": {
+        "trim": ">=0.0.3",
+        "tar": ">=6.1.2",
+        "prismjs": ">=1.24.0",
+        "glob-parent": ">=5.1.2",
+        "postcss": ">=8.2.10",
+        "browserslist": ">=4.16.5",
+        "ws": ">=7.4.6"
     },
     "husky": {
         "hooks": {
