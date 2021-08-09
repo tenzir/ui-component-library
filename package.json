@@ -14,8 +14,12 @@
         "tdd": "jest --watchAll"
     },
     "lint-staged": {
-        "*.js": ["prettier --print-width 80 --write"],
-        "*.{re,rei}": ["bsrefmt --in-place"]
+        "*.js": [
+            "prettier --print-width 80 --write"
+        ],
+        "*.{re,rei}": [
+            "bsrefmt --in-place"
+        ]
     },
     "keywords": [
         "UI-Library",
@@ -26,17 +30,17 @@
     ],
     "license": "BSD-3-Clause",
     "peerDependencies": {
+        "bs-platform": "7 | 8 | 9",
         "react": "17",
         "react-dom": "17",
-        "reason-react": ">=0.9.1",
-        "bs-platform": "7 | 8 | 9"
+        "reason-react": ">=0.9.1"
     },
     "dependencies": {
         "bs-css-emotion": "^3.0.0",
         "bs-flexboxgrid": "^3.0.0",
         "bs-webapi": "^0.19.1",
         "react-icons": "^4.2.0",
-        "react-syntax-highlighter": "^15.4.3",
+        "react-syntax-highlighter": "^15.4.4",
         "storybook-dark-mode": "^1.0.8"
     },
     "devDependencies": {
@@ -44,25 +48,25 @@
         "@glennsl/bs-jest": "^0.7.0",
         "@storybook/addon-actions": "^6.2.9",
         "@storybook/addon-links": "^6.2.9",
-        "@storybook/storybook-deployer": "^2.8.8",
         "@storybook/addons": "^6.2.9",
         "@storybook/api": "^6.2.9",
         "@storybook/components": "^6.2.9",
         "@storybook/core": "^6.2.9",
         "@storybook/core-events": "^6.2.9",
         "@storybook/react": "^6.2.9",
+        "@storybook/storybook-deployer": "^2.8.10",
         "@storybook/theming": "^6.2.9",
-        "regenerator-runtime": "^0.13.5",
         "babel-loader": "^8.2.2",
         "bs-platform": "^8.3.1",
-        "html-webpack-plugin": "^5.3.1",
+        "html-webpack-plugin": "^5.3.2",
         "husky": "^4.3.8",
         "lint-staged": "^10.4.2",
-        "prettier": "^2.3.0",
-        "react": "17.0.1",
-        "react-dom": "17.0.1",
+        "prettier": "^2.3.2",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
         "react-scripts": "^4.0.3",
-        "reason-react": ">=0.9.1"
+        "reason-react": ">=0.9.1",
+        "regenerator-runtime": "^0.13.5"
     },
     "jest": {
         "transformIgnorePatterns": [
