@@ -46,16 +46,16 @@
     "devDependencies": {
         "@babel/core": "^7.14.3",
         "@glennsl/bs-jest": "^0.7.0",
-        "@storybook/addon-actions": "^6.2.9",
-        "@storybook/addon-links": "^6.2.9",
-        "@storybook/addons": "^6.2.9",
-        "@storybook/api": "^6.2.9",
-        "@storybook/components": "^6.2.9",
-        "@storybook/core": "^6.2.9",
-        "@storybook/core-events": "^6.2.9",
-        "@storybook/react": "^6.2.9",
+        "@storybook/addon-actions": "^6.3.6",
+        "@storybook/addon-links": "^6.3.6",
+        "@storybook/addons": "^6.3.6",
+        "@storybook/api": "^6.3.6",
+        "@storybook/components": "^6.3.6",
+        "@storybook/core": "^6.3.6",
+        "@storybook/core-events": "^6.3.6",
+        "@storybook/react": "^6.3.6",
         "@storybook/storybook-deployer": "^2.8.10",
-        "@storybook/theming": "^6.2.9",
+        "@storybook/theming": "^6.3.6",
         "babel-loader": "^8.2.2",
         "bs-platform": "^8.3.1",
         "html-webpack-plugin": "^5.3.2",
@@ -66,7 +66,7 @@
         "react-dom": "17.0.2",
         "react-scripts": "^4.0.3",
         "reason-react": ">=0.9.1",
-        "regenerator-runtime": "^0.13.5"
+        "regenerator-runtime": "^0.13.9"
     },
     "jest": {
         "transformIgnorePatterns": [
