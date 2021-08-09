@@ -4,6 +4,7 @@ const { addParameters } = require('@storybook/react')
 module.exports = {
     addons: [
         '@storybook/addon-actions/register',
+        '@storybook/addon-postcss',
         '@storybook/addon-links/register',
         'storybook-dark-mode/register',
     ],
