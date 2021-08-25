@@ -12,22 +12,11 @@ let make =
       ~header=?,
       ~footer=?,
       ~children=<Empty />,
-      ~styles=?,
     ) => {
-  switch (styles) {
-  | Some(_) =>
-    Js.log(
-      "*Deprecated* - Adding styles this way will be removed in favour of a custom classname",
-    )
-  | None => ()
-  };
-
   <div
     ?onMouseOver
     ?onMouseOut
-    className={
-      className ++ " " ++ card(~spacing, ~theme, ~depth, ~styles, ()) ++ "  "
-    }>
+    className={className ++ " " ++ card(~spacing, ~theme, ~depth, ()) ++ "  "}>
     {header->Belt.Option.mapWithDefault(<Empty />, header =>
        <div className={cardHeader(~theme, ~depth, ())}> header </div>
      )}

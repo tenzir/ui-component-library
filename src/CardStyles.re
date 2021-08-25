@@ -22,9 +22,8 @@ let deteriminePadding = spacing => {
   };
 };
 
-let card = (~theme, ~spacing=Normal, ~depth, ~styles, ()) => {
+let card = (~theme, ~spacing=Normal, ~depth, ()) => {
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
-  let extraStyles = Belt.Option.getWithDefault(styles, []);
   style([
     width(100.0->pct),
     height(100.0->pct),
@@ -39,7 +38,6 @@ let card = (~theme, ~spacing=Normal, ~depth, ~styles, ()) => {
     borderRadius(Misc.borderRadius),
     deteriminePadding(spacing),
     position(`relative),
-    ...extraStyles,
   ]);
 };
 
