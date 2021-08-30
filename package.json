@@ -1,7 +1,7 @@
 {
     "name": "tenzir-ui-component-library",
     "author": "Tenzir",
-    "version": "0.11.0",
+    "version": "0.12.0",
     "scripts": {
         "build:reason": "bsb -clean-world && bsb -make-world",
         "build:storybook": "build-storybook",
@@ -14,12 +14,8 @@
         "tdd": "jest --watchAll"
     },
     "lint-staged": {
-        "*.js": [
-            "prettier --print-width 80 --write"
-        ],
-        "*.{re,rei}": [
-            "bsrefmt --in-place"
-        ]
+        "*.js": ["prettier --print-width 80 --write"],
+        "*.{re,rei}": ["bsrefmt --in-place"]
     },
     "keywords": [
         "UI-Library",
