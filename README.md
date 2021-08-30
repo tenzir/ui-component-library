@@ -30,7 +30,7 @@ contribution ([Contributing Guidelines][contributing-url]) in these cases.
 ### Components
 The following components are currently built.
 - Button
-- Card
+- Card (optionally with a tabbed header)
 - Checkbox
 - Icons - A script generates bindings for [React 
   Icons](https://github.com/react-icons/react-icons). We currently generate
@@ -45,6 +45,7 @@ The following components are currently built.
 - Segment
 - Notifications
 - Slider
+- Tabs
 
 Preview here: [Tenzir-Ui-Component-Library][storybook-url]
 

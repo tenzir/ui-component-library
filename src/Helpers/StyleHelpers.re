@@ -40,6 +40,19 @@ let applyPercentageToColor =
 let lighten = applyPercentageToColor(Lighten);
 let darken = applyPercentageToColor(Darken);
 
+let offsetBgColorFlt = (theme, depth: float, color) => {
+  (
+    switch (theme) {
+    | UiTypes.Dark
+    | UiTypes.TenzirBlue =>
+      float_of_int(Misc.cardDarkeningPct) *. (depth *. (-1.) -. 1.)
+    | _ => float_of_int(Misc.cardDarkeningPct) *. depth
+    }
+  )
+  ->int_of_float
+  ->darken(color);
+};
+
 let offsetBgColor = (theme, depth, color) => {
   (
     switch (theme) {

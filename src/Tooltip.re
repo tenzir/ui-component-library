@@ -17,7 +17,14 @@ type tPosition =
   | Left(vertical)
   | Right(vertical);
 
-let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
+let tip =
+    (
+      ~positionFix=false,
+      ~theme=UiTypes.light,
+      ~delayMs=100,
+      ~tipPosition=Top(Center),
+      value,
+    ) => {
   open! Css;
   let colors = StyleHelpers.colorsFromThemeVariant(theme);
 
@@ -27,21 +34,21 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
     | UiTypes.Dark => (
         colors.background,
         colors.font,
-        StyleHelpers.rgbWithAlpha(colors.black, 0.8),
+        StyleHelpers.rgbWithAlpha(colors.black, 0.1),
       )
     | UiTypes.Light => (
         colors.background,
         colors.font,
-        StyleHelpers.rgbWithAlpha(colors.black, 0.2),
+        StyleHelpers.rgbWithAlpha(colors.black, 0.04),
       )
     | UiTypes.TenzirBlue => (
         colors.background,
         colors.font,
-        StyleHelpers.rgbWithAlpha(colors.black, 0.5),
+        StyleHelpers.rgbWithAlpha(colors.black, 0.1),
       )
     };
   let tipHeight = 10; // in px
-  let offset = 5; // in px
+  let offset = 2; // in px
   let tipInset = 5;
   /* ---- Configuration */
 
@@ -142,12 +149,12 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
     };
 
   style([
-    position(`relative),
+    position(positionFix ? `static : `relative),
     selector(
       "&:before",
       [
         position(`absolute),
-        display(`block),
+        display(`inlineBlock),
         padding2(~h=0.8->rem, ~v=0.4->rem),
         boxShadow(
           Shadow.box(~y=0->px, ~x=0->px, ~blur=10->px, tooltipShadowColor),
@@ -158,11 +165,12 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
         color(tooltipTextColor),
         unsafe("content", "\"" ++ value ++ "\""),
         whiteSpace(`nowrap),
-        zIndex(999),
+        zIndex(9999),
         opacity(0.),
         pointerEvents(`none),
         transitionProperty("all"),
         transitionDuration(200),
+        transitionDelay(0),
         transitionTimingFunction(`easeInOut),
         ...positions,
       ],
@@ -173,7 +181,7 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
         left(`zero),
         top(`zero),
         position(`absolute),
-        display(`block),
+        display(`inlineBlock),
         width(0->px),
         height(0->px),
         borderLeft(6->px, `solid, `transparent),
@@ -184,14 +192,21 @@ let tip = (~theme=UiTypes.light, ~tipPosition=Top(Center), value) => {
         pointerEvents(`none),
         transitionProperty("all"),
         transitionDuration(200),
+        transitionDelay(0),
         transitionTimingFunction(`easeInOut),
         unsafe("content", ""),
         ...tipPositions,
       ],
     ),
     hover([
-      selector("&:before", [opacity(1.), pointerEvents(`auto)]),
-      selector("&:after", [opacity(1.), pointerEvents(`auto)]),
+      selector(
+        "&:before",
+        [opacity(1.), pointerEvents(`auto), transitionDelay(delayMs)],
+      ),
+      selector(
+        "&:after",
+        [opacity(1.), pointerEvents(`auto), transitionDelay(delayMs)],
+      ),
     ]),
   ]);
 };

@@ -1,38 +1,38 @@
 {
-	"name": "tenzir-ui-component-library",
-	"reason": {
-		"react-jsx": 3
-	},
-	"sources": [
-		{
-			"dir": "src",
-			"subdirs": true
-		},
-		{
-			"dir": "__tests__",
-			"type": "dev"
-		}
-	],
-	"bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
-	"warnings": {
-		"number": "+A-4-41-48-102-107",
-		"error": "+A-3-44-102-103"
-	},
-	"package-specs": [
-		{
-			"module": "es6-global",
-			"in-source": true
-		}
-	],
-	"suffix": ".bs.js",
-	"namespace": true,
-	"bs-dependencies": [
-		"bs-flexboxgrid",
-		"bs-webapi",
-		"reason-react",
-		"bs-css",
-		"bs-css-emotion"
-	],
-	"bs-dev-dependencies": ["@glennsl/bs-jest"],
-	"refmt": 3
+    "name": "tenzir-ui-component-library",
+    "reason": {
+        "react-jsx": 3
+    },
+    "sources": [
+        {
+            "dir": "src",
+            "subdirs": true
+        },
+        {
+            "dir": "__tests__",
+            "type": "dev"
+        }
+    ],
+    "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+    "warnings": {
+        "number": "+A-4-41-48-102-107",
+        "error": "+A-3-44-102-103"
+    },
+    "package-specs": [
+        {
+            "module": "es6-global",
+            "in-source": true
+        }
+    ],
+    "suffix": ".bs.js",
+    "namespace": true,
+    "bs-dependencies": [
+        "bs-flexboxgrid",
+        "bs-webapi",
+        "reason-react",
+        "bs-css",
+        "bs-css-emotion"
+    ],
+    "bs-dev-dependencies": ["@glennsl/bs-jest"],
+    "refmt": 3
 }

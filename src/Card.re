@@ -12,22 +12,11 @@ let make =
       ~header=?,
       ~footer=?,
       ~children=<Empty />,
-      ~styles=?,
     ) => {
-  switch (styles) {
-  | Some(_) =>
-    Js.log(
-      "*Deprecated* - Adding styles this way will be removed in favour of a custom classname",
-    )
-  | None => ()
-  };
-
   <div
     ?onMouseOver
     ?onMouseOut
-    className={
-      className ++ " " ++ card(~spacing, ~theme, ~depth, ~styles, ()) ++ "  "
-    }>
+    className={className ++ " " ++ card(~spacing, ~theme, ~depth, ()) ++ "  "}>
     {header->Belt.Option.mapWithDefault(<Empty />, header =>
        <div className={cardHeader(~theme, ~depth, ())}> header </div>
      )}
@@ -42,4 +31,58 @@ let make =
        <div className={cardFooter(~theme, ~depth, ())}> footer </div>
      )}
   </div>;
+};
+
+module Tabbed = {
+  [@react.component]
+  let make =
+      (
+        ~onMouseOver=?,
+        ~onMouseOut=?,
+        ~spacing=Normal,
+        ~theme=Config.defaultTheme,
+        ~depth=1,
+        ~className="",
+        ~footer=?,
+        ~children=<Empty />,
+        ~activeTabId: string,
+        ~tabs: array(Tabs.t),
+        ~onAdd=?,
+        ~onMove=?,
+        ~onOpen=?,
+        ~onClose=?,
+        ~onDuplicate=?,
+        ~onRename=?,
+      ) => {
+    <div
+      ?onMouseOver
+      ?onMouseOut
+      className={
+        className ++ " " ++ card(~spacing, ~theme, ~depth, ()) ++ "  "
+      }>
+      <Tabs
+        standalone=false
+        tabs
+        activeTabId
+        theme
+        depth
+        ?onAdd
+        ?onMove
+        ?onOpen
+        ?onClose
+        ?onDuplicate
+        ?onRename
+      />
+      <div
+        className={cardContent(
+          ~hasHeader=true,
+          ~hasFooter=footer->Belt.Option.isSome,
+        )}>
+        children
+      </div>
+      {footer->Belt.Option.mapWithDefault(<Empty />, footer =>
+         <div className={cardFooter(~theme, ~depth, ())}> footer </div>
+       )}
+    </div>;
+  };
 };

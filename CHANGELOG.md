@@ -11,8 +11,14 @@ Every entry has a category for which we use the following visual abbreviations:
 - ⚡️ Breaking Change
 - 🐞 Bugfix
 
+## [0.12.0]
+- 🎁 Tabs [#81](https://github.com/tenzir/ui-component-library/pull/81)
+We now have a tabs, and tabbed card component. They have built-in support for
+drag'n'drop replacing, updating, adding, duplicating and removing. Depending
+on which callback functions are supplied they're activated.
+
 ## [0.10.0]
-- 🎁 Sizing [#69](https://github.com/tenzir/ui-component-library/pull/71)
+- 🎁 Sizing [#71](https://github.com/tenzir/ui-component-library/pull/71)
 We now support sizes (`small` / `medium` / `large`) for buttons and alerts
 
 ## [0.9.0]
