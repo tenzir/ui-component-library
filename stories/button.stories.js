@@ -16,7 +16,7 @@ import {
 
 const ButtonGroup = Group.make
 export default {
-    title: 'Button',
+    title: 'Buttons',
 }
 
 const margin = {

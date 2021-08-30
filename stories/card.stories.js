@@ -3,11 +3,12 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { make as Button, Group } from '../src/Button.bs.js'
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useDarkMode } from 'storybook-dark-mode'
-import { make as Card } from '../src/Card.bs.js'
+import { make as Card, Tabbed } from '../src/Card.bs.js'
+import { Helpers } from '../src/Tabs.bs.js'
 import { light, dark } from '../src/UiTypes.bs'
 import { tiny, large, huge } from '../src/CardStyles.bs'
 
-;<Card theme={light}>Light</Card>
+const TabbedCard = Tabbed.make
 export default {
     title: 'Card',
 }
@@ -22,6 +23,11 @@ const cardContainer = {
 const smallCardContainer = {
     ...cardContainer,
     height: '200px',
+}
+
+const smallCardContainerWide = {
+    ...smallCardContainer,
+    width: '80%',
 }
 
 const nestedCardContainer = {
@@ -58,6 +64,8 @@ export const card = () => {
                     showLineNumbers
                 >
                     {`type Card: (
+  ~onMouseOut: option(ReactEvent.Mouse.t -> unit),
+  ~onMouseOver: option(ReactEvent.Mouse.t -> unit),
   ~spacing: option(CardStyles.spacing),
   ~theme: option(UiTypes.theme),
   ~depth: option(int),
@@ -154,6 +162,119 @@ export const card = () => {
                     >
                         <p>Some forms could go here...</p>
                     </Card>
+                </div>
+            </Card>
+        </div>
+    )
+}
+
+export const cardWithTabs = () => {
+    const theme = useDarkMode() ? dark : light
+    const [tabs, setTabs] = React.useState([
+        {
+            id: 'one',
+            title: 'foo',
+        },
+        {
+            id: 'two',
+            title: 'bar',
+        },
+        {
+            id: 'three',
+            title: 'Some uncomfortably long tab title that will never fit',
+        },
+    ])
+    const [activeTabId, setActiveTabId] = React.useState('one')
+    return (
+        <div style={margin}>
+            <Card theme={theme}>
+                <h1>Tabbed Card</h1>
+                <h3>Interface</h3>
+                <SyntaxHighlighter
+                    language="reason"
+                    style={okaidia}
+                    showLineNumbers
+                >
+                    {`type Card: (
+   ~onMouseOver: option(ReactEvent.Mouse.t => unit),
+   ~onMouseOut: option(ReactEvent.Mouse.t => unit),
+   ~spacing: option(CardStyles.spacing),
+   ~theme: option(UiTypes.theme),
+   ~depth: option(int),
+   ~className: option(string),
+   ~footer: option(React.element),
+   ~children: option(React.element),
+   /* Tab specific */
+   ~activeTabId: string, /* tabId */
+   ~tabs: array(Tabs.t),
+   ~onMove: option(((int, int)) => unit), /* (fromIdx, toIdx) */
+   ~onOpen: option(string => 'a), /* tabId */
+   ~onClose: option(string => 'a), /* tabId */
+   ~onDuplicate: option(string => 'a), /* tabId */
+   ~onUpdate: option(Tabs.t => 'a),
+) => React.element;`}
+                </SyntaxHighlighter>
+
+                <h3>Preview</h3>
+                <h4>A Tabbed card with all features enabled:</h4>
+                <div style={smallCardContainerWide}>
+                    <TabbedCard
+                        onOpen={setActiveTabId}
+                        onMove={([from, to]) => {
+                            setTabs(Helpers.move(tabs, from, to))
+                        }}
+                        onUpdate={(x) => {
+                            setTabs((tabs) => Helpers.update(tabs, x))
+                        }}
+                        onClose={(x) => {
+                            const tabIdx = tabs.findIndex((y) => y.id === x)
+                            console.log(tabIdx, x)
+                            if (tabs[tabIdx + 1]) {
+                                setActiveTabId(tabs[tabIdx + 1].id)
+                            } else if (tabs[tabIdx - 1]) {
+                                setActiveTabId(tabs[tabIdx - 1].id)
+                            } else {
+                                setActiveTabId('')
+                            }
+                            setTabs((tabs) => Helpers.removeById(tabs, x))
+                        }}
+                        onDuplicate={(x) => {
+                            const [newTabs, newId] = Helpers.duplicateById(
+                                tabs,
+                                x
+                            )
+                            setActiveTabId(newId)
+                            setTabs(newTabs)
+                        }}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        spacing={tiny}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </TabbedCard>
+                </div>
+                <h4>A Tabbed card with almost no features enabled</h4>
+                <div style={smallCardContainerWide}>
+                    <TabbedCard
+                        onOpen={setActiveTabId}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        spacing={tiny}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </TabbedCard>
                 </div>
             </Card>
         </div>

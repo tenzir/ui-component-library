@@ -1,0 +1,224 @@
+module Styles = TabStyles;
+open Lib.Function.Infix;
+open Lib.Jsx.Infix;
+
+type t = {
+  id: string,
+  title: string,
+};
+
+module Helpers = {
+  let create = title => {id: GenericHelpers.v4(), title};
+  let createMany = arr => Belt.Array.map(arr, create);
+  let add = (arr, tab) => Belt.Array.concat(arr, [|tab|]);
+  let update = (arr, x) => Belt.Array.map(arr, y => y.id === x.id ? x : y);
+  let removeById = (arr, id) => Belt.Array.keep(arr, x => x.id !== id);
+  let removeByIndex = (arr, idx) =>
+    Belt.Array.concat(
+      Belt.Array.slice(arr, ~offset=0, ~len=idx),
+      Belt.Array.sliceToEnd(arr, idx + 1),
+    );
+  let duplicateById = (arr, id) => {
+    let newId = GenericHelpers.v4();
+    let arr =
+      Js.Array2.find(arr, x => x.id === id)
+      ->Belt.Option.map(elem =>
+          Belt.Array.concat(arr, [|{...elem, id: newId}|])
+        )
+      ->Belt.Option.getWithDefault(arr);
+    (arr, newId);
+  };
+  let duplicateByIdx = (arr, idx) => {
+    let newId = GenericHelpers.v4();
+    let arr =
+      Belt.Array.get(arr, idx)
+      ->Belt.Option.map(elem =>
+          Belt.Array.concat(arr, [|{...elem, id: newId}|])
+        )
+      ->Belt.Option.getWithDefault(arr);
+    (arr, newId);
+  };
+  let move = (arr, from, to_) => {
+    Belt.Array.get(arr, from)
+    ->Belt.Option.map(elem => {
+        let copy = Belt.Array.copy(arr);
+        Js.Array2.spliceInPlace(copy, ~pos=from, ~remove=1, ~add=[||])
+        ->ignore;
+        Js.Array2.spliceInPlace(copy, ~pos=to_, ~remove=0, ~add=[|elem|])
+        ->ignore;
+        copy;
+      })
+    ->Belt.Option.getWithDefault(arr);
+  };
+};
+
+module TabInput = {
+  [@react.component]
+  let make = (~defaultValue, ~onUpdate) => {
+    let ref = React.useRef(Js.Nullable.null);
+
+    React.useEffect0(() => {
+      Lib.Jsx.focus(ref);
+      None;
+    });
+
+    let handleKeyDown = e => {
+      Lib.Event.Keyboard.keyWas("Enter", e)
+        ? onUpdate(e |> Lib.Event.getValueFromEvent) : ();
+    };
+
+    <input
+      className=Styles.input
+      ref={ReactDOM.Ref.domRef(ref)}
+      defaultValue
+      onBlur={Lib.Event.getValueFromEvent >> onUpdate}
+      onKeyUp=handleKeyDown
+    />;
+  };
+};
+
+type action =
+  | Open(string)
+  | Update(t)
+  | Close(string)
+  | Duplicate(string);
+
+module Tab = {
+  [@react.component]
+  let make =
+      (
+        ~tab: t,
+        ~dispatch: action => unit,
+        ~index: int,
+        ~active: bool,
+        ~depth: int,
+        ~features,
+        ~theme,
+      ) => {
+    let (editing, setEditing) = React.useState(Lib.Function.const(false));
+    let (canOpen, canClose, canUpdate, canDuplicate) = features;
+    <Dnd.Draggable draggableId={tab.id} index>
+      <div
+        id={tab.id}
+        className={Styles.tab(theme, depth, active, canOpen)}
+        onClick={_ => Open(tab.id)->dispatch}>
+        {editing
+           ? <TabInput
+               defaultValue={tab.title}
+               onUpdate={title => {
+                 setEditing(Lib.Function.const(false));
+                 Update({...tab, title})->dispatch;
+               }}
+             />
+           : <span
+               onClick={e => {
+                 e->ReactEvent.Synthetic.stopPropagation;
+                 active && canUpdate
+                   ? setEditing(Lib.Function.const(true))
+                   : Open(tab.id)->dispatch;
+               }}
+               className={Styles.text(active, canUpdate)}>
+               tab.title->React.string
+             </span>}
+        {canDuplicate
+         <&&> <span
+                onClick={e => {
+                  e->ReactEvent.Synthetic.stopPropagation;
+                  Duplicate(tab.id)->dispatch;
+                }}
+                className={Styles.roundedIconButton(
+                  ~leftMargin=true,
+                  theme,
+                  depth,
+                  active,
+                )}>
+                <Icons.Copy size=10 />
+              </span>}
+        {canClose
+         <&&> <span
+                onClick={e => {
+                  e->ReactEvent.Synthetic.stopPropagation;
+                  Close(tab.id)->dispatch;
+                }}
+                className={Styles.roundedIconButton(theme, depth, active)}>
+                <Icons.X size=10 />
+              </span>}
+      </div>
+    </Dnd.Draggable>;
+  };
+};
+
+[@react.component]
+let make =
+    (
+      ~standalone=true,
+      ~activeTabId: string,
+      ~tabs: array(t),
+      ~theme,
+      ~depth=0,
+      ~onMove=?,
+      ~onOpen=?,
+      ~onUpdate=?,
+      ~onClose=?,
+      ~onDuplicate=?,
+    ) => {
+  let onDispatch = action =>
+    (
+      switch (action) {
+      | Open(x) => Belt.Option.map(onOpen, Lib.Function.apply(x))
+      | Close(x) => Belt.Option.map(onClose, Lib.Function.apply(x))
+      | Update(x) => Belt.Option.map(onUpdate, Lib.Function.apply(x))
+      | Duplicate(x) => Belt.Option.map(onDuplicate, Lib.Function.apply(x))
+      }
+    )
+    ->ignore;
+
+  let onDragEnd = (e: Dnd.Context.dragEndEvent) => {
+    let move =
+      e.destination
+      ->Js.Nullable.toOption
+      ->Belt.Option.map(d => (e.source.index, d.index));
+
+    switch (move, onMove) {
+    | (Some((from, to_)), Some(fn)) => fn((from, to_))
+    | _ => ()
+    };
+  };
+
+  let onDragStart = (e: Dnd.Context.dragStartEvent) =>
+    Belt.Option.map(
+      onOpen,
+      Belt.Array.getExn(tabs, e.source.index)
+      |> (x => x.id)
+      |> Lib.Function.apply,
+    )
+    ->ignore;
+
+  <div className={Styles.container(standalone, theme, depth)}>
+    <Dnd.Context onDragEnd onDragStart>
+      <Dnd.Droppable direction=`horizontal droppableId="droppable-tabs">
+        <div className=Styles.droppable>
+          {tabs
+           ->Belt.Array.mapWithIndex((index, tab) =>
+               <Tab
+                 key={tab.id}
+                 index
+                 tab
+                 theme
+                 depth
+                 features=(
+                   onOpen->Belt.Option.isSome,
+                   onClose->Belt.Option.isSome,
+                   onUpdate->Belt.Option.isSome,
+                   onDuplicate->Belt.Option.isSome,
+                 )
+                 dispatch=onDispatch
+                 active={tab.id === activeTabId}
+               />
+             )
+           ->React.array}
+        </div>
+      </Dnd.Droppable>
+    </Dnd.Context>
+  </div>;
+};
