@@ -1,6 +1,7 @@
 module Function = {
   let id = x => x;
   let apply = (x, fn) => fn(x);
+  let applyF = (fn, x) => fn(x);
   let const = (x, _) => x;
   let compose = (f, g, x) => f(g(x));
   let pipe = (g, f, x) => f(g(x));

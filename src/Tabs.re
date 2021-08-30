@@ -87,16 +87,25 @@ type action =
 module AddTab = {
   [@react.component]
   let make = (~dispatch: action => unit, ~depth: int, ~standalone, ~theme) => {
-    <div
-      className={
-        Styles.tab(theme, standalone, depth, false, true)
-        ++ " "
-        ++ Styles.addTab
-      }
-      onClick={_ => Add(Helpers.create("New tab"))->dispatch}>
-      <span className=Styles.addIcon> <Icons.Plus /> </span>
-      <span className=Styles.addText> "Add"->React.string </span>
-    </div>;
+    /*
+       The index below is technically incorrect. But by adding it to the
+       list of draggable items, it means the placeholder will be correctly
+       updated.
+     */
+    <Dnd.Draggable isDragDisabled=true draggableId="add-tab" index=max_int>
+      <div
+        key="add-tab"
+        id="add-tab"
+        className={
+          Styles.tab(theme, standalone, depth, false, true)
+          ++ " "
+          ++ Styles.addTab
+        }
+        onClick={_ => Add(Helpers.create("New tab"))->dispatch}>
+        <span className=Styles.addIcon> <Icons.Plus /> </span>
+        <span className=Styles.addText> "Add"->React.string </span>
+      </div>
+    </Dnd.Draggable>;
   };
 };
 module Tab = {
@@ -113,8 +122,8 @@ module Tab = {
         ~theme,
       ) => {
     let (editing, setEditing) = React.useState(Lib.Function.const(false));
-    let (canOpen, canClose, canUpdate, canDuplicate) = features;
-    <Dnd.Draggable draggableId={tab.id} index>
+    let (canOpen, canClose, canUpdate, canDuplicate, canMove) = features;
+    <Dnd.Draggable draggableId={tab.id} index isDragDisabled={!canMove}>
       <div
         id={tab.id}
         className={Styles.tab(theme, standalone, depth, active, canOpen)}
@@ -211,12 +220,10 @@ let make =
   };
 
   let onDragStart = (e: Dnd.Context.dragStartEvent) =>
-    Belt.Option.map(
-      onOpen,
-      Belt.Array.getExn(tabs, e.source.index)
-      |> (x => x.id)
-      |> Lib.Function.apply,
-    )
+    Belt.Option.map(onOpen, fn => {
+      Belt.Array.get(tabs, e.source.index)
+      ->Belt.Option.map((x => x.id) >> Lib.Function.applyF(fn))
+    })
     ->ignore;
 
   <div className={Styles.container(standalone, theme, depth)}>
@@ -237,6 +244,7 @@ let make =
                    onClose->Belt.Option.isSome,
                    onRename->Belt.Option.isSome,
                    onDuplicate->Belt.Option.isSome,
+                   onMove->Belt.Option.isSome,
                  )
                  dispatch=onDispatch
                  active={tab.id === activeTabId}

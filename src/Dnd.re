@@ -36,7 +36,12 @@ module Context = {
 module Draggable = {
   [@bs.module "./Dnd.js"] [@react.component]
   external make:
-    (~draggableId: string, ~index: int, ~children: React.element=?) =>
+    (
+      ~isDragDisabled: bool=?,
+      ~draggableId: string,
+      ~index: int,
+      ~children: React.element=?
+    ) =>
     React.element =
     "DraggableWrapper";
 };

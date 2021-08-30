@@ -41,6 +41,9 @@ let container = (standalone, theme, depth) =>
     top(standalone ? `unset : `zero),
     height(standalone ? 3.5->rem : 3.0->rem),
   ]);
+
+let droppableContainer = style([display(`inlineFlex)]);
+
 let input = style([maxWidth(100->px)]);
 let text = (active, canUpdate) =>
   style([

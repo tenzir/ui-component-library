@@ -35,10 +35,19 @@ export const DroppableWrapper = ({ direction, droppableId, children }) => {
     )
 }
 
-export const DraggableWrapper = ({ index, draggableId, children }) => {
+export const DraggableWrapper = ({
+    index,
+    isDragDisabled,
+    draggableId,
+    children,
+}) => {
     const ref = React.useRef()
     return (
-        <Draggable draggableId={draggableId} index={index}>
+        <Draggable
+            draggableId={draggableId}
+            isDragDisabled={isDragDisabled}
+            index={index}
+        >
             {(provided) => {
                 return (
                     <Provided provided={provided} innerRef={provided.innerRef}>
