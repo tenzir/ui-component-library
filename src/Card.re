@@ -47,11 +47,12 @@ module Tabbed = {
         ~children=<Empty />,
         ~activeTabId: string,
         ~tabs: array(Tabs.t),
+        ~onAdd=?,
         ~onMove=?,
         ~onOpen=?,
         ~onClose=?,
         ~onDuplicate=?,
-        ~onUpdate=?,
+        ~onRename=?,
       ) => {
     <div
       ?onMouseOver
@@ -65,11 +66,12 @@ module Tabbed = {
         activeTabId
         theme
         depth
+        ?onAdd
         ?onMove
         ?onOpen
         ?onClose
         ?onDuplicate
-        ?onUpdate
+        ?onRename
       />
       <div
         className={cardContent(

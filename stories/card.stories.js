@@ -181,7 +181,7 @@ export const cardWithTabs = () => {
         },
         {
             id: 'three',
-            title: 'Some uncomfortably long tab title that will never fit',
+            title: 'baz',
         },
     ])
     const [activeTabId, setActiveTabId] = React.useState('one')
@@ -211,19 +211,35 @@ export const cardWithTabs = () => {
    ~onOpen: option(string => 'a), /* tabId */
    ~onClose: option(string => 'a), /* tabId */
    ~onDuplicate: option(string => 'a), /* tabId */
-   ~onUpdate: option(Tabs.t => 'a),
+   ~onRename: option(Tabs.t => 'a),
 ) => React.element;`}
                 </SyntaxHighlighter>
 
                 <h3>Preview</h3>
-                <h4>A Tabbed card with all features enabled:</h4>
+                <p>
+                    Tabs support a number of callbacks:
+                    <ul>
+                        <li>Open a tab (onMove)</li>
+                        <li>Close a tab (onClose)</li>
+                        <li>Duplicate a tab (onDuplicate)</li>
+                        <li>Rename a tab (onRename)</li>
+                        <li>Move a tab (via drag 'n drop) (onMove)</li>
+                    </ul>
+                    Features can be disabled by omitting the callback. I.e if
+                    there is no function to rename the tab, the text won't be
+                    editable.
+                </p>
                 <div style={smallCardContainerWide}>
                     <TabbedCard
+                        onAdd={(newTab) => {
+                            setTabs((tabs) => Helpers.add(tabs, newTab))
+                            setActiveTabId(newTab.id)
+                        }}
                         onOpen={setActiveTabId}
                         onMove={([from, to]) => {
                             setTabs(Helpers.move(tabs, from, to))
                         }}
-                        onUpdate={(x) => {
+                        onRename={(x) => {
                             setTabs((tabs) => Helpers.update(tabs, x))
                         }}
                         onClose={(x) => {

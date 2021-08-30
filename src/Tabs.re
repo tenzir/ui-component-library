@@ -54,7 +54,7 @@ module Helpers = {
 
 module TabInput = {
   [@react.component]
-  let make = (~defaultValue, ~onUpdate) => {
+  let make = (~defaultValue, ~onRename) => {
     let ref = React.useRef(Js.Nullable.null);
 
     React.useEffect0(() => {
@@ -64,25 +64,41 @@ module TabInput = {
 
     let handleKeyDown = e => {
       Lib.Event.Keyboard.keyWas("Enter", e)
-        ? onUpdate(e |> Lib.Event.getValueFromEvent) : ();
+        ? onRename(e |> Lib.Event.getValueFromEvent) : ();
     };
 
     <input
       className=Styles.input
       ref={ReactDOM.Ref.domRef(ref)}
       defaultValue
-      onBlur={Lib.Event.getValueFromEvent >> onUpdate}
+      onBlur={Lib.Event.getValueFromEvent >> onRename}
       onKeyUp=handleKeyDown
     />;
   };
 };
 
 type action =
+  | Add(t)
   | Open(string)
-  | Update(t)
+  | Rename(t)
   | Close(string)
   | Duplicate(string);
 
+module AddTab = {
+  [@react.component]
+  let make = (~dispatch: action => unit, ~depth: int, ~standalone, ~theme) => {
+    <div
+      className={
+        Styles.tab(theme, standalone, depth, false, true)
+        ++ " "
+        ++ Styles.addTab
+      }
+      onClick={_ => Add(Helpers.create("New tab"))->dispatch}>
+      <span className=Styles.addIcon> <Icons.Plus /> </span>
+      <span className=Styles.addText> "Add"->React.string </span>
+    </div>;
+  };
+};
 module Tab = {
   [@react.component]
   let make =
@@ -91,6 +107,7 @@ module Tab = {
         ~dispatch: action => unit,
         ~index: int,
         ~active: bool,
+        ~standalone: bool,
         ~depth: int,
         ~features,
         ~theme,
@@ -100,14 +117,14 @@ module Tab = {
     <Dnd.Draggable draggableId={tab.id} index>
       <div
         id={tab.id}
-        className={Styles.tab(theme, depth, active, canOpen)}
+        className={Styles.tab(theme, standalone, depth, active, canOpen)}
         onClick={_ => Open(tab.id)->dispatch}>
         {editing
            ? <TabInput
                defaultValue={tab.title}
-               onUpdate={title => {
+               onRename={title => {
                  setEditing(Lib.Function.const(false));
-                 Update({...tab, title})->dispatch;
+                 Rename({...tab, title})->dispatch;
                }}
              />
            : <span
@@ -120,6 +137,8 @@ module Tab = {
                className={Styles.text(active, canUpdate)}>
                tab.title->React.string
              </span>}
+        {(!canDuplicate && !canClose)
+         <&&> <Spacer.Horizontal amount={0.5->Css.rem} />}
         {canDuplicate
          <&&> <span
                 onClick={e => {
@@ -156,18 +175,24 @@ let make =
       ~tabs: array(t),
       ~theme,
       ~depth=0,
+      ~onAdd=?,
       ~onMove=?,
       ~onOpen=?,
-      ~onUpdate=?,
+      ~onRename=?,
       ~onClose=?,
       ~onDuplicate=?,
     ) => {
   let onDispatch = action =>
     (
       switch (action) {
+      | Add(x) => Belt.Option.map(onAdd, Lib.Function.apply(x))
       | Open(x) => Belt.Option.map(onOpen, Lib.Function.apply(x))
       | Close(x) => Belt.Option.map(onClose, Lib.Function.apply(x))
-      | Update(x) => Belt.Option.map(onUpdate, Lib.Function.apply(x))
+      | Rename(x) =>
+        Belt.Option.map(
+          onRename,
+          Lib.Function.apply(x.title === "" ? {...x, title: "Untitled"} : x),
+        )
       | Duplicate(x) => Belt.Option.map(onDuplicate, Lib.Function.apply(x))
       }
     )
@@ -206,10 +231,11 @@ let make =
                  tab
                  theme
                  depth
+                 standalone
                  features=(
                    onOpen->Belt.Option.isSome,
                    onClose->Belt.Option.isSome,
-                   onUpdate->Belt.Option.isSome,
+                   onRename->Belt.Option.isSome,
                    onDuplicate->Belt.Option.isSome,
                  )
                  dispatch=onDispatch
@@ -217,6 +243,8 @@ let make =
                />
              )
            ->React.array}
+          {onAdd->Belt.Option.isSome
+           <&&> <AddTab theme depth standalone dispatch=onDispatch />}
         </div>
       </Dnd.Droppable>
     </Dnd.Context>

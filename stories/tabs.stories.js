@@ -65,7 +65,7 @@ export const tabs = () => {
         },
         {
             id: 'three',
-            title: 'Some uncomfortably long tab title that will never fit',
+            title: 'baz',
         },
     ])
     const [activeTabId, setActiveTabId] = React.useState('one')
@@ -87,11 +87,12 @@ export const tabs = () => {
 type Tabs: (
    ~activeTabId: string;
    ~depth: option(int);
-   ~onClose: option(string -> unit) option;
-   ~onDuplicate: option(string -> unit) option;
-   ~onMove: option(( int, int ) -> unit) option;
-   ~onOpen: option(string -> unit) option;
-   ~onUpdate: option(t -> unit) option;
+   ~onAdd: option(t -> unit);
+   ~onClose: option(string -> unit);
+   ~onDuplicate: option(string -> unit);
+   ~onMove: option(( int, int ) -> unit);
+   ~onOpen: option(string -> unit);
+   ~onRename: option(t -> unit);
    ~standalone: option(bool);
    ~tabs: array(t);
    ~theme: UiTypes.theme;
@@ -99,19 +100,32 @@ type Tabs: (
                 </SyntaxHighlighter>
 
                 <h3>Preview</h3>
-                <h4>A Tabbed card with all features enabled:</h4>
                 <p>
-                    Features can be disabled by omitting the functionality. I.e
-                    if there is no function to update the tab, the text won't be
+                    Tabs support a number of callbacks:
+                    <ul>
+                        <li>Add a tab (onAdd)</li>
+                        <li>Open a tab (onMove)</li>
+                        <li>Close a tab (onClose)</li>
+                        <li>Duplicate a tab (onDuplicate)</li>
+                        <li>Rename a tab (onRename)</li>
+                        <li>Move a tab (via drag 'n drop) (onMove)</li>
+                    </ul>
+                    Features can be disabled by omitting the callback. I.e if
+                    there is no function to rename the tab, the text won't be
                     editable.
                 </p>
+                <h3>All Functionality Enabled</h3>
                 <div style={smallCardContainerWide}>
                     <Tabs
+                        onAdd={(newTab) => {
+                            setTabs((tabs) => Helpers.add(tabs, newTab))
+                            setActiveTabId(newTab.id)
+                        }}
                         onOpen={setActiveTabId}
                         onMove={([from, to]) => {
                             setTabs(Helpers.move(tabs, from, to))
                         }}
-                        onUpdate={(x) => {
+                        onRename={(x) => {
                             setTabs((tabs) => Helpers.update(tabs, x))
                         }}
                         onClose={(x) => {
@@ -146,7 +160,145 @@ type Tabs: (
                         </p>
                     </Tabs>
                 </div>
+                <h3>No Duplication</h3>
+                <div style={smallCardContainerWide}>
+                    <Tabs
+                        onOpen={setActiveTabId}
+                        onMove={([from, to]) => {
+                            setTabs(Helpers.move(tabs, from, to))
+                        }}
+                        onRename={(x) => {
+                            setTabs((tabs) => Helpers.update(tabs, x))
+                        }}
+                        onClose={(x) => {
+                            const tabIdx = tabs.findIndex((y) => y.id === x)
+                            console.log(tabIdx, x)
+                            if (tabs[tabIdx + 1]) {
+                                setActiveTabId(tabs[tabIdx + 1].id)
+                            } else if (tabs[tabIdx - 1]) {
+                                setActiveTabId(tabs[tabIdx - 1].id)
+                            } else {
+                                setActiveTabId('')
+                            }
+                            setTabs((tabs) => Helpers.removeById(tabs, x))
+                        }}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </Tabs>
+                </div>
+                <h3>No Duplication or Moving</h3>
+                <div style={smallCardContainerWide}>
+                    <Tabs
+                        onOpen={setActiveTabId}
+                        onRename={(x) => {
+                            setTabs((tabs) => Helpers.update(tabs, x))
+                        }}
+                        onClose={(x) => {
+                            const tabIdx = tabs.findIndex((y) => y.id === x)
+                            console.log(tabIdx, x)
+                            if (tabs[tabIdx + 1]) {
+                                setActiveTabId(tabs[tabIdx + 1].id)
+                            } else if (tabs[tabIdx - 1]) {
+                                setActiveTabId(tabs[tabIdx - 1].id)
+                            } else {
+                                setActiveTabId('')
+                            }
+                            setTabs((tabs) => Helpers.removeById(tabs, x))
+                        }}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </Tabs>
+                </div>
+                <h3>No Duplication or Moving or Renaming</h3>
+                <div style={smallCardContainerWide}>
+                    <Tabs
+                        onOpen={setActiveTabId}
+                        onClose={(x) => {
+                            const tabIdx = tabs.findIndex((y) => y.id === x)
+                            console.log(tabIdx, x)
+                            if (tabs[tabIdx + 1]) {
+                                setActiveTabId(tabs[tabIdx + 1].id)
+                            } else if (tabs[tabIdx - 1]) {
+                                setActiveTabId(tabs[tabIdx - 1].id)
+                            } else {
+                                setActiveTabId('')
+                            }
+                            setTabs((tabs) => Helpers.removeById(tabs, x))
+                        }}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </Tabs>
+                </div>
+                <h3>Only Opening</h3>
+                <div style={smallCardContainerWide}>
+                    <Tabs
+                        onOpen={setActiveTabId}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </Tabs>
+                </div>
             </Card>
         </div>
+    )
+}
+
+export const TabHelpers = () => {
+    const theme = useDarkMode() ? dark : light
+    return (
+        <Card theme={theme}>
+            <h1>Helper Functions </h1>
+            <p>
+                These helper functions should abstract away most of the logic of
+                updating the underlying array of tabs. They are quite self
+                explanatory given the name and type signature.
+            </p>
+            <SyntaxHighlighter
+                language="reason"
+                style={okaidia}
+                showLineNumbers
+            >
+                {`type create: string -> t
+type createMany: array(string) -> array(t)
+type add: (array(t), t) -> array(t)
+type update: (array(t), t) -> array(t)
+type removeById: (array(t), string) -> array(t)
+type removeByIndex: (array(t), int) -> array(t)
+type duplicateById: (array(t), string) -> array(t)
+type duplicateByIdx: (array(t), int) -> array(t)
+type move : (array(t), int, int) -> array(t) /* from / to */`}
+            </SyntaxHighlighter>
+        </Card>
     )
 }

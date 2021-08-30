@@ -72,7 +72,8 @@ let roundedIconButton = (~leftMargin=false, theme, depth, active) =>
     ]),
     ...Config.Misc.baseTransitions,
   ]);
-let tab = (theme, depth, active, canOpen) =>
+
+let tab = (theme, standalone, depth, active, canOpen) =>
   style([
     cursor(canOpen ? `auto : `notAllowed),
     backgroundColor(
@@ -80,6 +81,8 @@ let tab = (theme, depth, active, canOpen) =>
     ),
     borderTopLeftRadius(Config.Misc.borderRadius),
     borderTopRightRadius(Config.Misc.borderRadius),
+    borderBottomLeftRadius(standalone ? Config.Misc.borderRadius : `zero),
+    borderBottomRightRadius(standalone ? Config.Misc.borderRadius : `zero),
     display(`flex),
     justifyContent(`center),
     alignItems(`center),
@@ -119,3 +122,7 @@ let tab = (theme, depth, active, canOpen) =>
       ),
     ]),
   ]);
+
+let addTab = style([cursor(`pointer)->important]);
+let addIcon = style([display(`flex), marginRight(0.5->rem)]);
+let addText = style([display(`flex), paddingRight(0.5->rem)]);
