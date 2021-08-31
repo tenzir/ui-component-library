@@ -1,3 +1,14 @@
+module OpaqueTypes = {
+  type draggableProps;
+  type dragHandleProps;
+  type provided = {
+    innerRef: ReactDOM.Ref.t,
+    placeholder: React.element,
+    draggableProps,
+    dragHandleProps,
+  };
+};
+
 module Context = {
   type dragItem = {
     droppableId: string,
@@ -33,28 +44,75 @@ module Context = {
     "DragDropContext";
 };
 
+module Provided = {
+  let augmentChildren: (OpaqueTypes.provided, React.element) => React.element = [%bs.raw
+    {|
+    function (provided, children) {
+      return {
+        ...children,
+        ref: provided.innerRef,
+        props: {
+            ...children.props,
+            ...provided.draggableProps,
+            ...provided.dragHandleProps,
+        }
+     };
+    }
+  |}
+  ];
+};
+
 module Draggable = {
-  [@bs.module "./Dnd.js"] [@react.component]
-  external make:
-    (
-      ~isDragDisabled: bool=?,
-      ~draggableId: string,
-      ~index: int,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "DraggableWrapper";
+  module Wrapper = {
+    [@bs.module "react-beautiful-dnd"] [@react.component]
+    external make:
+      (
+        ~isDragDisabled: bool=?,
+        ~draggableId: string,
+        ~index: int,
+        ~children: OpaqueTypes.provided => React.element=?
+      ) =>
+      React.element =
+      "Draggable";
+  };
+
+  [@react.component]
+  let make = (~draggableId, ~index, ~isDragDisabled, ~children) => {
+    <Wrapper draggableId index isDragDisabled>
+      {(provided: OpaqueTypes.provided) => {
+         <>
+           {Provided.augmentChildren(provided, children)}
+           {provided.placeholder}
+         </>;
+       }}
+    </Wrapper>;
+  };
 };
 
 module Droppable = {
   type direction = [ | `vertical | `horizontal];
-  [@bs.module "./Dnd.js"] [@react.component]
-  external make:
-    (
-      ~droppableId: string,
-      ~direction: direction=?,
-      ~children: React.element=?
-    ) =>
-    React.element =
-    "DroppableWrapper";
+
+  module Wrapper = {
+    [@bs.module "react-beautiful-dnd"] [@react.component]
+    external make:
+      (
+        ~droppableId: string,
+        ~direction: direction=?,
+        ~children: OpaqueTypes.provided => React.element=?
+      ) =>
+      React.element =
+      "Droppable";
+  };
+
+  [@react.component]
+  let make = (~droppableId, ~direction, ~children) => {
+    <Wrapper droppableId direction>
+      {(provided: OpaqueTypes.provided) => {
+         <>
+           {Provided.augmentChildren(provided, children)}
+           {provided.placeholder}
+         </>;
+       }}
+    </Wrapper>;
+  };
 };
