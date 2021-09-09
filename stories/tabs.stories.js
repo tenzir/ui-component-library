@@ -87,6 +87,7 @@ export const tabs = () => {
 type Tabs: (
    ~activeTabId: string;
    ~depth: option(int);
+   ~addButtonIconOnly: bool; // Defaults to false
    ~onAdd: option(t -> unit);
    ~onClose: option(string -> unit);
    ~onDuplicate: option(string -> unit);
@@ -117,6 +118,53 @@ type Tabs: (
                 <h3>All Functionality Enabled</h3>
                 <div style={smallCardContainerWide}>
                     <Tabs
+                        onAdd={(newTab) => {
+                            setTabs((tabs) => Helpers.add(tabs, newTab))
+                            setActiveTabId(newTab.id)
+                        }}
+                        onOpen={setActiveTabId}
+                        onMove={([from, to]) => {
+                            setTabs(Helpers.move(tabs, from, to))
+                        }}
+                        onRename={(x) => {
+                            setTabs((tabs) => Helpers.update(tabs, x))
+                        }}
+                        onClose={(x) => {
+                            const tabIdx = tabs.findIndex((y) => y.id === x)
+                            console.log(tabIdx, x)
+                            if (tabs[tabIdx + 1]) {
+                                setActiveTabId(tabs[tabIdx + 1].id)
+                            } else if (tabs[tabIdx - 1]) {
+                                setActiveTabId(tabs[tabIdx - 1].id)
+                            } else {
+                                setActiveTabId('')
+                            }
+                            setTabs((tabs) => Helpers.removeById(tabs, x))
+                        }}
+                        onDuplicate={(x) => {
+                            const [newTabs, newId] = Helpers.duplicateById(
+                                tabs,
+                                x
+                            )
+                            setActiveTabId(newId)
+                            setTabs(newTabs)
+                        }}
+                        tabs={tabs}
+                        activeTabId={activeTabId}
+                        depth={2}
+                        theme={theme}
+                    >
+                        <h2>Tabs</h2>
+                        <p>
+                            Active Tab:{' '}
+                            {tabs.find((x) => x.id === activeTabId).title}
+                        </p>
+                    </Tabs>
+                </div>
+                <h3>All Functionality Enabled - hiding add text</h3>
+                <div style={smallCardContainerWide}>
+                    <Tabs
+                        addButtonIconOnly={true}
                         onAdd={(newTab) => {
                             setTabs((tabs) => Helpers.add(tabs, newTab))
                             setActiveTabId(newTab.id)
