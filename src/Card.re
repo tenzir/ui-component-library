@@ -47,7 +47,7 @@ module Tabbed = {
         ~children=<Empty />,
         ~activeTabId: string,
         ~tabs: array(Tabs.t),
-        ~addButtonIconOnly=false,
+        ~addButtonText,
         ~onAdd=?,
         ~onMove=?,
         ~onOpen=?,
@@ -67,7 +67,7 @@ module Tabbed = {
         activeTabId
         theme
         depth
-        addButtonIconOnly
+        ?addButtonText
         ?onAdd
         ?onMove
         ?onOpen

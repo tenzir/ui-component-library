@@ -92,7 +92,7 @@ module AddTab = {
         ~depth: int,
         ~standalone,
         ~theme,
-        ~iconOnly=false,
+        ~title=Some("New"),
       ) => {
     /*
        The index below is technically incorrect. But by adding it to the
@@ -110,8 +110,9 @@ module AddTab = {
         }
         onClick={_ => Add(Helpers.create("New tab"))->dispatch}>
         <span className=Styles.addIcon> <Icons.Plus /> </span>
-        {!iconOnly
-         <&&> <span className=Styles.addText> "Add"->React.string </span>}
+        {Belt.Option.mapWithDefault(title, <Empty />, x =>
+           <span className=Styles.addText> x->React.string </span>
+         )}
       </div>
     </Dnd.Draggable>;
   };
@@ -197,7 +198,7 @@ let make =
       ~onOpen=?,
       ~onRename=?,
       ~onClose=?,
-      ~addButtonIconOnly=false,
+      ~addButtonText=?,
       ~onDuplicate=?,
     ) => {
   let onDispatch = action =>
@@ -266,7 +267,7 @@ let make =
                   depth
                   standalone
                   dispatch=onDispatch
-                  iconOnly=addButtonIconOnly
+                  title=addButtonText
                 />}
         </div>
       </Dnd.Droppable>

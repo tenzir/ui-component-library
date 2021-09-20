@@ -87,7 +87,7 @@ export const tabs = () => {
 type Tabs: (
    ~activeTabId: string;
    ~depth: option(int);
-   ~addButtonIconOnly: bool; // Defaults to false
+   ~addButtonText: option(string); // Defaults to "New"
    ~onAdd: option(t -> unit);
    ~onClose: option(string -> unit);
    ~onDuplicate: option(string -> unit);
@@ -164,7 +164,7 @@ type Tabs: (
                 <h3>All Functionality Enabled - hiding add text</h3>
                 <div style={smallCardContainerWide}>
                     <Tabs
-                        addButtonIconOnly={true}
+                        addButtonText={null}
                         onAdd={(newTab) => {
                             setTabs((tabs) => Helpers.add(tabs, newTab))
                             setActiveTabId(newTab.id)
