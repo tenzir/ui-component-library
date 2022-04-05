@@ -86,7 +86,14 @@ type action =
 
 module AddTab = {
   [@react.component]
-  let make = (~dispatch: action => unit, ~depth: int, ~standalone, ~theme) => {
+  let make =
+      (
+        ~dispatch: action => unit,
+        ~depth: int,
+        ~standalone,
+        ~theme,
+        ~title=Some("New"),
+      ) => {
     /*
        The index below is technically incorrect. But by adding it to the
        list of draggable items, it means the placeholder will be correctly
@@ -103,7 +110,9 @@ module AddTab = {
         }
         onClick={_ => Add(Helpers.create("New tab"))->dispatch}>
         <span className=Styles.addIcon> <Icons.Plus /> </span>
-        <span className=Styles.addText> "Add"->React.string </span>
+        {Belt.Option.mapWithDefault(title, <Empty />, x =>
+           <span className=Styles.addText> x->React.string </span>
+         )}
       </div>
     </Dnd.Draggable>;
   };
@@ -189,6 +198,7 @@ let make =
       ~onOpen=?,
       ~onRename=?,
       ~onClose=?,
+      ~addButtonText=?,
       ~onDuplicate=?,
     ) => {
   let onDispatch = action =>
@@ -252,7 +262,13 @@ let make =
              )
            ->React.array}
           {onAdd->Belt.Option.isSome
-           <&&> <AddTab theme depth standalone dispatch=onDispatch />}
+           <&&> <AddTab
+                  theme
+                  depth
+                  standalone
+                  dispatch=onDispatch
+                  title=addButtonText
+                />}
         </div>
       </Dnd.Droppable>
     </Dnd.Context>
